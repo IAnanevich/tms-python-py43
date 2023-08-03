@@ -16,14 +16,16 @@ def summa(a: Union[int, float], b: Union[int, float]) -> Union[int, float]:
     return a + b
 
 
-def mult(a: Union[int, float], b: Union[int, float]) -> Union[int, float]:
+def mult(a: Union[int, float], b: Union[int, float], c: Union[int, float], d: Union[int, float]) -> Union[int, float]:
     """
 
     :param a:
     :param b:
+    :param c:
+    :param d:
     :return:
     """
-    return a * b
+    return a * b * c * d
 
 
 def increase_list(numbers: Any, func: Callable) -> list:
