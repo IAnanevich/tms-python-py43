@@ -17,4 +17,3 @@ dict_ = {'test': 'test_value',
          'ruble': 'rub'}
 
 print({i + str(len(i)): dict_[i] for i in dict_.keys()})
-

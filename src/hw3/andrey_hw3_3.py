@@ -21,5 +21,3 @@ elif age < 100:
     print(f'whatever you want {name}')
 else:
     print(f'{name}, you are lying nowadays in the Python language has the following form: they don\'t live so muc')
-
-

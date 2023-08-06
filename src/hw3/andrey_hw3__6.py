@@ -8,4 +8,3 @@
 list_ = [1,1]
 [list_.append(list_[i] + list_[i-1]) for i in range(1,15)]
 print(list_)
-
