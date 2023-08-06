@@ -15,27 +15,17 @@ number = random.randint(1,100)
 import random
 from typing import Tuple
 
-
-def checking_number(number) -> bool:
-    try:
-        int(number)
-        return True
-    except:
-        return False
-
-
 while True:
     interval_ = input('Enter the interval of integers (Example:1,100): ')
     interval_ = interval_.split(',')
     if len(interval_) != 2:
         print('Error: Incorrect interval')
         continue
-
-    if not (checking_number(interval_[0]) and checking_number(interval_[1])):
+    try:
+        interval_start,interval_end = int(interval_[0]),int(interval_[1])
+    except:
         print('Error: Incorrect interval')
         continue
-    interval_start = int(interval_[0])
-    interval_end = int(interval_[1])
 
     if interval_start < interval_end:
         break

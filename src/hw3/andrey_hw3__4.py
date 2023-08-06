@@ -16,4 +16,4 @@ dict_ = {'test': 'test_value',
          'dollar': 'usd',
          'ruble': 'rub'}
 
-print({i + str(len(i)): dict_[i] for i in dict_.keys()})
+print({f'{i}{len(i)}': dict_[i] for i in dict_.keys()})

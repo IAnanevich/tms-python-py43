@@ -10,5 +10,5 @@ print(sum([i**3 for i in range(1, int(input('Enter an integer: '))+1)]))
 n = int(input('Enter an integer: '))
 summa = 0
 while n := n-1:
-    summa = summa + n ** 3
+    summa += n ** 3
 print(summa)
