@@ -13,4 +13,3 @@ while number != number_1 :
         print("попробуй большее число")
     number_1 = int(input("enter a number: "))
 print("ты угадал")
-
