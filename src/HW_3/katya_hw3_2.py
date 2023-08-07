@@ -12,15 +12,9 @@ print(f'{sum_1}')
 
 print('____________________________')
 
-i = 0
 sum_2 = 0
-
 number_2 = int(input('введите число n= '))
-spisok = []
-while i <= number_2:
-    spisok.append(i)
-    i += 1
-for i in spisok:
-    sum_2 += i**3
+for i in range(number_2 + 1):
+    sum_2 += i ** 3
     i += 1
 print(f'{sum_2}')
