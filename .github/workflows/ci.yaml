@@ -17,10 +17,16 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements_dev.txt
+          pip install -r requirements.txt
 
       - name: Run flake8
         run: flake8
 
+      - name: Run black
+        run: black --check .
+
+      - name: Run isort
+        run: isort .
+
       - name: Run Mypy
-        run: mypy pandaseda
+        run: mypy --strict $(git ls-files '*.py')

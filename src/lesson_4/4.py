@@ -1,4 +1,4 @@
-from typing import Union, Any, Callable
+from typing import Union, Any
 
 # шаблон
 # def имя_функции(параметр_1, параметр_2, ...):
@@ -26,7 +26,7 @@ def mult(a: Union[int, float], b: Union[int, float]) -> Union[int, float]:
     return a * b
 
 
-def increase_list(numbers: Any, func: Callable) -> list:
+def increase_list(numbers: Any) -> list[int]:
     """
 
     :param numbers:
