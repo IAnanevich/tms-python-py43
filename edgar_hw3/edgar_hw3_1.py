@@ -1,4 +1,4 @@
-# Enter  2 words. First method f-string
+# Enter  2 words. First method f-string . comment
 two_words = input("Enter 2 words: ")
 
 # add to list
