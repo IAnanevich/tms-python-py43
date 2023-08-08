@@ -5,12 +5,9 @@ while num > 0:
     a += num ** 3
     num -= 1
 print(a)
-
 ####################################################
-
-# num = int(input("Введите целое число "))
-# a = 0
-# for i in range(1, num + 1):
-#      a += i ** 3
-# print(a)
-#
+num = int(input("Введите целое число "))
+a = 0
+for i in range(1, num + 1):
+     a += i ** 3
+print(a)

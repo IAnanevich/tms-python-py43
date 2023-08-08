@@ -7,12 +7,9 @@ while mode < 5:
     number_one = int(input("Введи число: "))
     if number_one > number:
         print("Попробуй возьми меньше число")
-    if number_one < number:
+    elif number_one < number:
         print("Попробуй возьми число побольше")
-    if number_one == number:
+    else:
+        number_one == number
         print(f"Ура, ты угадал! Мое число {number} ")
         break
-
-
-
-
