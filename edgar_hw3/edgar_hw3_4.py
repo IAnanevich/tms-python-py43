@@ -2,6 +2,8 @@
 # вводятся с клавиатуры. Рассмотреть все случаи дискриминанта.
 
 def solve_quadratic_equation(a, b, c):
+    if a == 0:
+        return "Коэффициент а не может быть равен 0"
     discriminant = b ** 2 - 4 * a * c
 
     if discriminant == 0:
@@ -20,8 +22,8 @@ def solve_quadratic_equation(a, b, c):
 
 # Enter data
 a = float(input('Введите а не равен 0: '))
-b = float(input("Введите b не равен 0: "))
-c = float(input("Введите с не равен 0Ж "))
+b = float(input("Введите b: "))
+c = float(input("Введите с: "))
 
 roots = solve_quadratic_equation(a, b, c)
 
