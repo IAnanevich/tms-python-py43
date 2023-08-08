@@ -15,13 +15,13 @@ while current_num <= n:
     sum_of_cubes += current_num ** 3
     current_num += 1
 
-print("Sum cubes= ", n, ":", sum_of_cubes)
+print(f'Sum of cubes for n = {n}: {sum_of_cubes}')
 
 # -----------------------------------------------------------------------------------
 # Second method "FOR"
 
 m = int(input("Enter m: "))
 
-sum_of_cubes = sum(num ** 3 for num in range(1, m + 1))
+sum_of_cubes1 = sum(num ** 3 for num in range(1, m + 1))
 
-print("Sum of cubes", m, ":", sum_of_cubes)
+print(f'Sum of cubes for m = {m}: {sum_of_cubes1}')

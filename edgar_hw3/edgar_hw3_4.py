@@ -4,8 +4,10 @@
 def solve_quadratic_equation(a, b, c):
     discriminant = b ** 2 - 4 * a * c
 
+    if discriminant == 0:
+        return "Коэффициент а не может быть равен 0"
+
     if discriminant > 0:
-        # Two abs
         x1 = (-b + discriminant ** 0.5) / (2 * a)
         x2 = (-b - discriminant ** 0.5) / (2 * a)
         return x1, x2
@@ -13,19 +15,14 @@ def solve_quadratic_equation(a, b, c):
         x = -b / (2 * a)
         return x
     else:
-        real_part = -b / (2 * a)
-        imaginary_part = abs(discriminant) ** 0.5 / (2 * a)
-        x1 = complex(real_part, imaginary_part)
-        x2 = complex(real_part, -imaginary_part)
-        return x1, x2
+        return "Уравнение не имеет действительных коренй"
 
 
-# Enter a, b и c
-a = float(input("Введите коэффициент a: "))
-b = float(input("Введите коэффициент b: "))
-c = float(input("Введите коэффициент c: "))
+# Enter data
+a = float(input('Введите а не равен 0: '))
+b = float(input("Введите b не равен 0: "))
+c = float(input("Введите с не равен 0Ж "))
 
-# Solutions
-solutions = solve_quadratic_equation(a, b, c)
-print("Solutions:")
-print("ABS:", solutions)
+roots = solve_quadratic_equation(a, b, c)
+
+print("Корни квадратного уравнения: ", roots)
