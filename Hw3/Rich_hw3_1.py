@@ -13,4 +13,3 @@ print(f"!{text_2} ! {text}!")
 text = str(input("Введите первое предложение"))
 text_2 = str(input("Введите второе предложение"))
 print("!{} ! {}!".format(text_2, text))
-#

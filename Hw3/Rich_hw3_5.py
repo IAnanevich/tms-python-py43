@@ -14,4 +14,3 @@ while mode < 5:
         number_one == number
         print(f"Ура, ты угадал! Мое число {number} ")
         break
-#
