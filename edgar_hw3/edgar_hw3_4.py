@@ -6,9 +6,6 @@ def solve_quadratic_equation(a, b, c):
         return "Коэффициент а не может быть равен 0"
     discriminant = b ** 2 - 4 * a * c
 
-    if discriminant == 0:
-        return "Коэффициент а не может быть равен 0"
-
     if discriminant > 0:
         x1 = (-b + discriminant ** 0.5) / (2 * a)
         x2 = (-b - discriminant ** 0.5) / (2 * a)
