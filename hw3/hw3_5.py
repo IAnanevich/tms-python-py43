@@ -1,4 +1,5 @@
 import random
+
 a = int(input("Введите нижнюю границу: "))
 b = int(input("Введите верхнюю границу: "))
 number = random.randint(a, b)
