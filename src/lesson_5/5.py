@@ -141,19 +141,19 @@ from typing import Union, Optional
 # print("Python is " + x)
 
 
-# def main():
-#     global x
-#     x = 10
-#     print(x)
-#
-#     def main2():
-#         global x
-#         x += 1
-#         print(x)
-#
-#     main2()
-#
-# main()
+def main():
+    global x
+    x = 10
+    print(x)
+
+    def main2():
+        global x
+        x += 1
+        print(x)
+
+    main2()
+
+main()
 
 
 # a = [i * 2 for i in range(1, 5) if not i % 2]
