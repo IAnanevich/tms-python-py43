@@ -1,45 +1,36 @@
-#calc
-def plus(a, b):
-    return a + b
-
-
-def minus(a, b):
-    return a - b
-
-
-def umnozh(a, b):
-    return a * b
-
-
-def delit(a, b):
-    return a / b
-
-
-def exp(a, b):
-    return a ** b
-
-
-print("Выберите операцию:")
-print("1. Сложение")
-print("2. Вычитание")
-print("3. Умножение")
-print("4. Деление")
-print("5. Возведение в степень")
-
-operation = input(" 1/2/3/4/5: ")
-
-num1 = int(input("Введите первое число: "))
-num2 = int(input("Введите второе число: "))
-
-if operation == '1':
-    print(num1, "+", num2, "=", plus(num1, num2))
-elif operation == '2':
-    print(num1, "-", num2, "=", minus(num1, num2))
-elif operation == '3':
-    print(num1, "*", num2, "=", umnozh(num1, num2))
-elif operation == '4':
-    print(num1, "/", num2, "=", delit(num1, num2))
-elif operation == '5':
-    print(num1, "**", num2, "=", exp(num1, num2))
-else:
-    print("Неверный ввод")
+# calc
+while True:
+    print("Меню:")
+    print("1. Сложение (+)")
+    print("2. Вычитание (-)")
+    print("3. Умножение (*)")
+    print("4. Деление (/)")
+    print("5. Возведение в степень (**)")
+    print("6. Выход")
+    choice = input("Выберите операцию (1-6): ")
+    if choice == "6":
+        print("Выход из программы...")
+        break
+    num1 = float(input("Введите первое число: "))
+    num2 = float(input("Введите второе число: "))
+    if choice == "1":
+        result = num1 + num2
+        print(f"Результат сложения: {result}")
+    elif choice == "2":
+        result = num1 - num2
+        print(f"Результат вычитания: {result}")
+    elif choice == "3":
+        result = num1 * num2
+        print(f"Результат умножения: {result}")
+    elif choice == "4":
+        if num2 != 0:
+            result = num1 / num2
+            print(f"Результат деления: {result}")
+        else:
+            print("Ошибка! Деление на ноль.")
+    elif choice == "5":
+        result = num1 ** num2
+        print(f"Результат возведения в степень: {result}")
+    else:
+        print("Некорректный выбор операции. Попробуйте снова.")
+print()
