@@ -3,7 +3,7 @@
 # Для проверки нахождения элемента в словаре использовать метод get(), либо оператор in.
 
 
-def count_number(my_list: list[int]) -> dict:
+def count_number(my_list: list[int]) -> dict[int, int]:
     count_dict = {}
     for i in range(len(my_list)):
         if count_dict.get(my_list[i]) is None:

@@ -9,6 +9,11 @@ def make_time_list(n: int) -> list[str]:
     return [datetime.strftime(datetime.now() + timedelta(seconds=i), '%Y-%m-%d %H:%M:%S') for i in range(n)]
 
 
-len_list = int(input('Enter length of list: '))
-times_list = [c for c in make_time_list(len_list)]
-print(times_list)
+while True:
+    len_list = input('Enter length of list: ')
+    if len_list.isdigit():
+        times_list = [c for c in make_time_list(int(len_list))]
+        print(times_list)
+        break
+    else:
+        print('You need to enter integer-number of length, try again)')
