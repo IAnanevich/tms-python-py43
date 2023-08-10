@@ -155,7 +155,6 @@ from typing import Union, Optional
 #
 # main()
 
-
 # a = [i * 2 for i in range(1, 5) if not i % 2]
 
 # a = [i if i > 4 else 'less than 4' for i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]
