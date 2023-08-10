@@ -1,4 +1,4 @@
-# calc
+# calcul
 while True:
     print("Меню:")
     print("1. Сложение (+)")
