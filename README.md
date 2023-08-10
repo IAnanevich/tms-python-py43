@@ -60,7 +60,7 @@ git push origin -f your_name_and_lesson_number
 
 1. Добавляете ссылку исходного репозитория
 ```
-git remote add upstream https://github.com/tamkovich/tms-python-summer.git
+git remote add upstream https://github.com/IAnanevich/tms-python-py43.git
 ```
 2. Создаете временную ветку
 ```
@@ -68,7 +68,7 @@ git checkout -b tmp-branch
 ```
 3. Удаляете master
 ```
-git branch -D master
+git branch -D main
 ```
 4. Качаете кэш веток с исходного репозитория
 ```
@@ -76,10 +76,10 @@ git fetch upstream
 ```
 5. Переключаетечь на master с исходного репозитория
 ```
-git checkout upstream/master
+git checkout upstream/main
 ```
 6. Создаем ветку master локально
 ```
-git checkout -b master
+git checkout -b main
 ```
 7. Пункты от 4-ого до конца из раздела **Как добавить домашку?**

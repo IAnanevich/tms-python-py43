@@ -4,7 +4,9 @@ name: Status Checks
 on:
   # Triggers the workflow on push or pull request events
   push:
-    branches: [main, feature/*, hotfix/*, fix/*]
+    branches:
+      - '*'
+      - '!main'
 
 jobs:
   lint-code:
