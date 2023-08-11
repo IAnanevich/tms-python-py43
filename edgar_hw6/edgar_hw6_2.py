@@ -5,6 +5,12 @@
 check_even_or_odd = lambda x: "even" if x % 2 == 0 else "odd"
 
 # Example
-num = int(input("Enter num: "))
-result = check_even_or_odd(num)
-print(f"Number {num} - {result}")
+
+while True:
+    try:
+        num = int(input("Enter num: "))
+        print(f'Number {num} - {check_even_or_odd(num)}')
+        break
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
+
