@@ -66,7 +66,7 @@ git remote add upstream https://github.com/IAnanevich/tms-python-py43.git
 ```
 git checkout -b tmp-branch
 ```
-3. Удаляете master
+3. Удаляете main
 ```
 git branch -D main
 ```
@@ -74,11 +74,11 @@ git branch -D main
 ```
 git fetch upstream
 ```
-5. Переключаетечь на master с исходного репозитория
+5. Переключаетечь на main с исходного репозитория
 ```
 git checkout upstream/main
 ```
-6. Создаем ветку master локально
+6. Создаем ветку main локально
 ```
 git checkout -b main
 ```
