@@ -1,5 +1,5 @@
 # написать декоратор к двум любым функциям,
-# который бы считал и выводил время из выполнения
+# который бы считал и выводил время их выполнения
 import time
 from datetime import datetime
 
@@ -14,17 +14,28 @@ def time_func(func):
 
 
 @time_func
-def div(elem1: float, elem2: float) -> float:
+def sum(elem1: float, elem2: float) -> float:
     """
-    Calculating the dividing
+    Calculating the sum
     :param elem1: first number
     :param elem2: second number
-    :return: the dividing the first number by the second numbers
+    :return: the sum of first number and second numbers
     """
     return elem1 + elem2
+
+@time_func
+def exp(a: float, b: float) -> float:
+    """
+    Calculating the exponentiation
+    :param a: first number
+    :param b: second number
+    :return: the exponentiation of the first number by the second numbers
+    """
+    return a ** b
 
 
 elem1 = float(input('Введите значение a: '))
 elem2 = float(input('Введите значение b: '))
 
-time_div = div(elem1, elem2)
+time_sum = sum(elem1, elem2)
+time_exp = exp(elem1, elem2)
