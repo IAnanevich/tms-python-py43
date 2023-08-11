@@ -9,4 +9,4 @@ def div(elem1: float, elem2: float) -> float:
     :param elem2: second number
     :return: the dividing the first number by the second numbers
     """
-    return elem1/elem2
+    return elem1 / elem2
