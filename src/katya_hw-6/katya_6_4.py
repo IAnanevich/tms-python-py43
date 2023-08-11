@@ -1,7 +1,6 @@
 # написать декоратор к двум любым функциям,
 # который бы считал и выводил время их выполнения
 import time
-from datetime import datetime
 
 
 def time_func(func):
@@ -9,7 +8,7 @@ def time_func(func):
         start = time.time()
         func(*args)
         finish = time.time()
-        print(finish-start)
+        print(finish - start)
     return wrapper
 
 
@@ -22,6 +21,7 @@ def sum(elem1: float, elem2: float) -> float:
     :return: the sum of first number and second numbers
     """
     return elem1 + elem2
+
 
 @time_func
 def exp(a: float, b: float) -> float:

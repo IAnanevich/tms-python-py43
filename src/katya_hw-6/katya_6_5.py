@@ -1,7 +1,7 @@
 # написать лямбда-функцию, определяющую четное/нечетное число.
 
-numbers = int(input(f'Введите число: '))
+numbers = int(input('Введите число: '))
 
-even_or_odd = lambda x: print(f'четное') if x/2 == 0 else print(f'нечетное')
+even_or_odd = lambda x: print('четное') if x / 2 == 0 else print('нечетное')
 
-print(even_or_odd(numbers))
+even_or_odd(numbers)
