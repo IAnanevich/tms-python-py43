@@ -6,21 +6,24 @@
 
 def do_calc(math_operator: str, str_x: str, str_y: str) -> float | str:
     """
+    Do math calculation by selected math operator from list [+, -, *, /, **]
     :param math_operator: operation needed with x and y
     :param str_x: any number from input as text
     :param str_y: any number from input as text
     :return: result of calculation via operator and numbers
     """
     # try to convert
-    if number_x.isdigit():
+    try:
         x = float(str_x)
-    else:
+    except ValueError as e:
+        print(f"X = 0, because of {e}")
         x = 0
 
     # try to convert
-    if number_y.isdigit():
+    try:
         y = float(str_y)
-    else:
+    except ValueError as e:
+        print(f"Y = 0, because of {e}")
         y = 0
 
     if math_operator == "+":
@@ -32,8 +35,7 @@ def do_calc(math_operator: str, str_x: str, str_y: str) -> float | str:
     elif math_operator == "/":
         if y == 0:
             return "Error: Division by 0"
-        else:
-            return x / y
+        return x / y
     elif math_operator == "**":
         return x ** y
     else:
@@ -56,4 +58,4 @@ while True:
         number_x = input(">> ")
         print("Please enter any number as Y")
         number_y = input(">> ")
-        print(f"\n{number_x} {operator} {number_y} = {do_calc(operator, number_x, number_y)}")
+        print(f"\n{number_x} {operator} {number_y} = {do_calc(math_operator=operator, str_x=number_x, str_y=number_y)}")

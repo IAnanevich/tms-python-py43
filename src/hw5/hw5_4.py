@@ -6,18 +6,23 @@ import time
 from _datetime import datetime
 
 
-def generate_list(l: int = 10) -> list:
+def generate_list(how_many_iems: int = 10) -> list:
     """
-    :param l: length of list
+    Сгенерирует новый лист
+    :param how_many_iems: length of list
     :return: new list
     """
     result = []
-    for i in range(1, l + 1):
+    for i in range(1, how_many_iems + 1):
         result.append(get_time())
     return result
 
 
 def get_time() -> str:
+    """
+    С задержкой в 1 секунду выренет текущее время строкай вида "%d-%m-%Y %H:%M:%S"
+    :return: время строкай вида "%d-%m-%Y %H:%M:%S"
+    """
     time.sleep(1)
     return datetime.strftime(datetime.now(), "%d-%m-%Y %H:%M:%S")
 
