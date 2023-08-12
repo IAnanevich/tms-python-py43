@@ -8,7 +8,7 @@ def count(numbers_list):
     return list
 
 
-numbers = [5,5,5,5,5,1,1,1,12,2,2]
+numbers = [5, 5, 5, 5, 5, 1, 1, 1, 12, 2, 2]
 result = count(numbers)
 for number, count in result.items():
     print(f"Число {number} встречается {count} раз")
