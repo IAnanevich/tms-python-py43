@@ -1,18 +1,21 @@
-# Калькулятор на Python
 def add(x, y):
     return x + y
+
 
 def subtract(x, y):
     return x - y
 
+
 def multiply(x, y):
     return x * y
+
 
 def divide(x, y):
     if y != 0:
         return x / y
     else:
         return "Деление на 0"
+
 
 def decorator_test(func):
     def calculate():
@@ -22,6 +25,7 @@ def decorator_test(func):
         print("3. Умножение")
         print("4. Деление")
         print("5. Выход")
+
 
         choice = input("Введите номер операции (1/2/3/4/5): ")
 
@@ -36,8 +40,8 @@ def decorator_test(func):
         else:
             print("Неправильный ввод")
             return
-
     return calculate
+
 
 @decorator_test
 def calculate(x, y, choice):
@@ -49,5 +53,6 @@ def calculate(x, y, choice):
         return multiply(x, y)
     elif choice == '4':
         return divide(x, y)
+
 
 calculate()
