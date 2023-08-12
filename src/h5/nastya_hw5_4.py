@@ -9,5 +9,18 @@ from datetime import datetime   datetime.strftime(datetime.now(), '%Y-%m-%d %H:%
 from datetime import datetime
 import time
 
-n = int(input('How many times?: '))
-print([datetime.strftime(datetime.now(time.sleep(1)), '%Y-%m-%d %H:%M:%S') for i in range(n)])
+
+def year_mon_day(k: int) -> list:
+    """
+    year month day at the moment but 1 second apart
+    :param k: number
+    :return:year month day as many times as the number with a difference of 1 second
+    """
+    return [datetime.strftime(datetime.now(time.sleep(1)), '%Y-%m-%d %H:%M:%S') for i in range(n)]
+
+
+try:
+    n = int(input('How many times?: '))
+    print(year_mon_day(n))
+except ValueError:
+    print('Try again')

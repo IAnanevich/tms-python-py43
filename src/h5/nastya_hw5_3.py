@@ -4,7 +4,12 @@
 Для проверки нахождения элемента в словаре использовать метод get(), либо оператор in. """
 
 
-def cou(k):
+def cou(k: list | tuple | set) -> dict:
+    """
+    Counts what number and how many times it is repeated
+    :param k: list
+    :return: dict with key: what number, value: how many times it is repeated
+    """
     new_dict = {}
     for i in k:
         new_dict[i] = new_dict.get(i, 0) + 1

@@ -3,11 +3,21 @@
 рекурсивной функции. """
 
 
-def fact(n):
+def fact(n: int) -> int:
+    """
+    Recursion to find the factorial
+    :param n: number
+    :return: factorial of a number
+    """
     if n == 0:
         return 1
-    return n * fact(n-1)
+    elif n < 0:
+        return 'None'
+    return n * fact(n - 1)
 
 
-number = int(input('Enter number for factorial: '))
-print(fact(number))
+try:
+    number = int(input('Enter number for factorial: '))
+    print(fact(number))
+except ValueError:
+    print('Try again')
