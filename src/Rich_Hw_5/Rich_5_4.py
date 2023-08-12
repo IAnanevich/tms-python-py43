@@ -8,5 +8,4 @@ def get_current_time():
 
 n = int(input("Введите чето "))
 time_list = [get_current_time() for _ in range(n)]
-print("Список времен с задержкой:")
-print(time_list)
+print(f"Список времени с задержкой:{time_list}")
