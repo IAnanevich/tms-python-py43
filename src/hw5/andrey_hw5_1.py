@@ -53,11 +53,16 @@ def difference(a: int, b: int) -> int:
     return a - b
 
 
-def error_check(int_x):
+def error_check(x: str) -> int:
+    """
+    casting an argument to int
+    :param x:
+    :return:
+    """
     try:
-        return int(int_x)
-    except ValueError:
-        print('entered not an integer, enter = 0')
+        return int(x)
+    except ValueError as error:
+        print(f'{error}, enter = 0')
         return 0
 
 
