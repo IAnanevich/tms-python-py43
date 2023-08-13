@@ -9,7 +9,7 @@ def factorial(x: int) -> int:
     :param x: factorial of this number
     :return: factorial of x
     """
-    return x * factorial(x-1) if x != 0 else 1
+    return x * factorial(x - 1) if x != 0 else 1
 
 
 if __name__ == '__main__':
