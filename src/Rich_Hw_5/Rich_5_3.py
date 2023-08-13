@@ -1,11 +1,11 @@
 def count(numbers_list):
-    list = {}
-    for number in numbers_list:
-        if list.get(number) is not None:
-            list[number] += 1
+    lister = {}
+    for num in numbers_list:
+        if lister.get(num) is not None:
+            lister[num] += 1
         else:
-            list[number] = 1
-    return list
+            lister[num] = 1
+    return lister
 
 
 numbers = [5, 5, 5, 5, 5, 1, 1, 1, 12, 2, 2]

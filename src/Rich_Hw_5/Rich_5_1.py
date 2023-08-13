@@ -18,14 +18,13 @@ def divide(x, y):
 
 
 def decorator_test(func):
-    def calculate():
+    def calc():
         print("Выберите операцию:")
         print("1. Сложение")
         print("2. Вычитание")
         print("3. Умножение")
         print("4. Деление")
         print("5. Выход")
-
 
         choice = input("Введите номер операции (1/2/3/4/5): ")
 
@@ -40,7 +39,8 @@ def decorator_test(func):
         else:
             print("Неправильный ввод")
             return
-    return calculate
+
+    return calc
 
 
 @decorator_test

@@ -1,5 +1,6 @@
 import time
 
+
 def get_current_time():
     time.sleep(1)
     current_time = time.strftime('%H:%M:%S')
