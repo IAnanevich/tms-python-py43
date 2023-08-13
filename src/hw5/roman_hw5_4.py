@@ -6,16 +6,25 @@ from datetime import datetime, timedelta
 import time
 
 
-def generate_time_list(n):
+def generate_time_list(n: int) -> list[str]:
     current_time = datetime.now()
     time_list = []
+
     for _ in range(n):
         time_list.append(datetime.strftime(current_time, '%Y-%m-%d %H:%M:%S'))
         current_time += timedelta(seconds=1)
         time.sleep(1)
+
     return time_list
 
 
-n = int(input("Введите количество элементов списка: "))
-result = generate_time_list(n)
-print(result)
+while True:
+    n = input("Введите количество элементов списка: ")
+
+    if not n.isdigit():
+        print("Ошибка! Введите число.")
+        continue
+
+    n = int(n)
+    print(generate_time_list(n))
+    break

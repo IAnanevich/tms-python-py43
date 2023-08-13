@@ -4,13 +4,16 @@
 Реализацию выполнить в виде рекурсивной функции.'''
 
 
-def factorial(n):
+def factorial(n: int) -> int:
     if n == 0:
         return 1
-    else:
-        return n * factorial(n - 1)
+    return n * factorial(n - 1)
 
 
-number = int(input("Введите число: "))
-result = factorial(number)
-print("Факториал", number, "равен:", result)
+while True:
+    number = input("Введите число: ")
+    if number.isdigit():
+        number = int(number)
+        print(f'Факториал {number} равен: {factorial(number)}')
+        break
+    print('Введите целое число!')

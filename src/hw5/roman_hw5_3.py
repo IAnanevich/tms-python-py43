@@ -4,13 +4,12 @@
 использовать метод get() , либо оператор in'''
 
 
-def count_numbers(numbers):
+def count_numbers(numbers: list[int]) -> dict[int, int]:
     counts = {}
     for num in numbers:
         counts[num] = counts.get(num, 0) + 1
     return counts
 
 
-numbers = [5, 8, 2, 4, 8, 8, 5, 2, 4, 5, 1, 5]
-result = count_numbers(numbers)
-print(result)
+numbers = [5, 8, 2, 4, 8, 8, 7, 5, 2, 4, 5, 1, 5]
+print(count_numbers(numbers))
