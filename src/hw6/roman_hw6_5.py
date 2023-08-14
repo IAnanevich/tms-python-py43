@@ -3,6 +3,7 @@
 from datetime import datetime
 import time
 
+
 def execution_time_decorator(func):
     def wrapper(*args, **kwargs):
         start_time = datetime.now()
@@ -11,17 +12,21 @@ def execution_time_decorator(func):
         execution_time = end_time - start_time
         print(f"Время выполнения функции {func.__name__}: {execution_time.total_seconds()} секунд")
         return result
+
     return wrapper
+
 
 @execution_time_decorator
 def function1():
     time.sleep(2)
     print("Функция 1 выполнена")
 
+
 @execution_time_decorator
 def function2():
     time.sleep(3)
     print("Функция 2 выполнена")
+
 
 function1()
 function2()
