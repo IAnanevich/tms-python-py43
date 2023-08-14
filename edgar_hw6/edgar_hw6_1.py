@@ -15,9 +15,9 @@ def zero_division_check(func):
         """
         try:
             result1 = func(a, b)
-        except ZeroDivisionError:
-            result1 = "Error: division by 0"
-        return result1
+            return result1
+        except ZeroDivisionError as e:
+            return e
 
     return wrapper
 
@@ -39,7 +39,7 @@ while True:
         num1 = float(input("Enter first num: "))
         num2 = float(input("Enter second num: "))
         break
-    except ValueError:
-        print("Invalid input. Please enter valid numbers.")
+    except ValueError as error:
+        print(error)
 
 print("Result: ", num1/num2)
