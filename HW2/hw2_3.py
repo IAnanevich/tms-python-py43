@@ -5,7 +5,7 @@
 numbers_before = [10, 20, 20, 30, 40, 50, 20]
 print(f"Before: {numbers_before}")
 
-for i in range(0, numbers_before.__len__()):
+for i in range(0, len(numbers_before)):
     if numbers_before[i] == 20:
         numbers_before[i] = 200
         break
