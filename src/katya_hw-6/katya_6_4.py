@@ -43,5 +43,3 @@ while True:
         break
     else:
         print('Введите числовое значение')
-
-
