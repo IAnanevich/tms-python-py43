@@ -13,7 +13,7 @@ def time_func(func):
 
 
 @time_func
-def sum(elem1: float, elem2: float) -> float:
+def sum_numbers(elem1: float, elem2: float) -> float:
     """
     Calculating the sum
     :param elem1: first number
@@ -24,7 +24,7 @@ def sum(elem1: float, elem2: float) -> float:
 
 
 @time_func
-def exp(a: float, b: float) -> float:
+def expon(a: float, b: float) -> float:
     """
     Calculating the exponentiation
     :param a: first number
@@ -34,8 +34,14 @@ def exp(a: float, b: float) -> float:
     return a ** b
 
 
-elem1 = float(input('Введите значение a: '))
-elem2 = float(input('Введите значение b: '))
+while True:
+    elem1 = input('Введите значение a: ')
+    elem2 = input('Введите значение b: ')
+    if elem1.isdigit() and elem2.isdigit():
+        time_sum = sum_numbers(float(elem1), float(elem2))
+        time_exp = expon(float(elem1), float(elem2))
+        break
+    else:
+        print('Введите числовое значение')
 
-time_sum = sum(elem1, elem2)
-time_exp = exp(elem1, elem2)
+

@@ -3,5 +3,5 @@
 
 list_6_2 = [3, 6, 4, 3, 8, -5]
 
-list_6_2_new = list(map(lambda x: f'{x}', list_6_2))
+list_6_2_new = list(map(lambda x: str(x), list_6_2))
 print(list_6_2_new)

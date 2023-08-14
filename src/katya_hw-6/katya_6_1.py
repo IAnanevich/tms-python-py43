@@ -23,7 +23,12 @@ def div(elem1: float, elem2: float) -> float:
     return elem1 / elem2
 
 
-elem1 = float(input('Введите значение a: '))
-elem2 = float(input('Введите значение b: '))
+while True:
+    elem1 = input('Введите значение a: ')
+    elem2 = input('Введите значение b: ')
 
-div(elem1, elem2)
+    if elem1.isdigit() and elem2.isdigit():
+        div(float(elem1), float(elem2))
+        break
+    else:
+        print('Введите числовое значение')
