@@ -17,7 +17,7 @@ number_fact = int(input('ВВедите число для подсчета фа�
 
 if number_fact == 1:
     print('Факториал числа 1 равен 1')
-elif number_fact >0:
+elif number_fact > 0:
     print(f'Факториял числа {number_fact} равен {fact(number_fact)}')
 else:
     print('Введите число больше О')

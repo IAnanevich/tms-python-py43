@@ -1,7 +1,7 @@
 # Калькулятор на Python (+, -, *, /, **).  с циклом while
 
 
-def sum(a: float, b: float) -> float:
+def sum_numbers(a: float, b: float) -> float:
     """
     Calculating the sum
     :param a: first number
@@ -38,10 +38,14 @@ def div(a: float, b: float) -> float:
     :param b: second number
     :return: the dividing the first number by the second numbers
     """
-    return a / b
+    if b == 0:
+        result = print('Делить на ноль нельзя')
+    else:
+        result = print(a / b)
+    return result
 
 
-def exp(a: float, b: float) -> float:
+def expon(a: float, b: float) -> float:
     """
     Calculating the exponentiation
     :param a: first number
@@ -52,31 +56,31 @@ def exp(a: float, b: float) -> float:
 
 
 while True:
-    a = float(input('Введите переменную а: '))
-    b = float(input('Введите переменную b: '))
+    a = input('Введите переменную а: ')
+    b = input('Введите переменную b: ')
     print(' 0: Выход из программы \n','1: Операция сложения: a + b \n','2: Операция вычитания: a - b \n',
         '3: Операция умножения: a * b \n','4: Операция деления: a / b\n','5: Операция возведения в степень: a ** b ')
-    d = int(input('Выберите номер необходимого действия: '))
+    d = input('Выберите номер необходимого действия: ')
 
-    if d == 0:
-        break
-    elif d == 1:
-        result = sum(a, b)
-        print(result)
-    elif d == 2:
-        result = diff(a, b)
-        print(result)
-    elif d == 3:
-        result = mult(a, b)
-        print(result)
-    elif d == 4:
-        if b == 0:
-            print('Делить на ноль нельзя')
+    if a.isdigit() and b.isdigit() and d.isdigit():
+        a = float(a)
+        b = float(b)
+        d = float(d)
+
+        if d == 0:
+            break
+        elif d == 1:
+            sum_numbers(a, b)
+        elif d == 2:
+            diff(a, b)
+        elif d == 3:
+            mult(a, b)
+        elif d == 4:
+            div(a, b)
+        elif d == 5:
+            expon(a, b)
         else:
-            result = div(a, b)
-            print(result)
-    elif d == 5:
-        result = exp(a, b)
-        print(result)
-else:
-    print('Введите номер, соотвествующий, необходимой операции!')
+            print('Введите номер, соотвествующий, необходимой операции!')
+            break
+    else:
+        print('Введите числовые значения')

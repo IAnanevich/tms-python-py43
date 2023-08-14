@@ -1,9 +1,9 @@
-from datetime import datetime
-from datetime import timedelta
+from datetime import datetime, timedelta
 
 #Сделать функцию, которая будет вызываться из генератора списков
 # и по запросу к ней отдавать текущее время с задержкой в секунду. количество элементов
 # нового списка запрашивать у пользователя
+
 
 def return_time(i: int) -> str:
     """
@@ -11,7 +11,7 @@ def return_time(i: int) -> str:
     :param i: number of elements
     :return: time in the specified format
     """
-    my_new_time = datetime.now()+timedelta(seconds=+i)
+    my_new_time = datetime.now() + timedelta(seconds=+i)
     return datetime.strftime(my_new_time, '%Y-%m-%d %H:%M:%S')
 
 
