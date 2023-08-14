@@ -15,7 +15,7 @@ def list_numbers(func):
 
 
 @list_numbers
-def say(a = 5, b = 4) -> int:
+def say(a=5, b=4) -> int:
     """
     adding numbers
     :param a: first number
