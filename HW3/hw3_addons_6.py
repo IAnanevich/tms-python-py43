@@ -7,10 +7,20 @@
 print("\nСоставим список чисел Фибоначчи содержащий 15 элементов")
 print("\nС какого числа начнем?")
 
-start_number = int(input('>> '))
+start_number = 1
+some_value = input('>> ')
+try:
+    start_number = int(some_value)
+except ValueError:
+    print("Ясно... начнем с 1")
+    start_number = 1
+finally:
+    if start_number < 1:
+        print("Ясно... начнем с 1")
+        start_number = 1
 
 # первые два числа равны либо 1 и 1
-numbers = []
+numbers = list()
 numbers.append(start_number)
 numbers.append(start_number)
 

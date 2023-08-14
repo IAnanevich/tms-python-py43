@@ -4,7 +4,11 @@ import random
 
 n = random.randint(1, 100)
 print("\nЗагадано случайное число от 1 до 100. Угадай какое")
-x = int(input('>> '))
+some_value = input('>> ')
+if some_value.isdigit():
+    x = int(some_value)
+else:
+    x = n = 0
 
 while x != n:
     if n > x:
@@ -13,7 +17,15 @@ while x != n:
         print("\nЗагадано число меньше чем ", x)
 
     print("Новая попытка")
-    x = int(input('>> '))
+    some_value = input('>> ')
+    if some_value.isdigit():
+        x = int(some_value)
+    else:
+        x = n = 0
 
-print("\nBingo!!!")
-print("Загаданное число это ", x)
+if x == 0:
+    print("\nПолный провал!")
+    print("Попробуй еще раз и вводи число!")
+else:
+    print("\nBingo!!!")
+    print("Загаданное число это ", x)

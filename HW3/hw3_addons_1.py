@@ -6,14 +6,30 @@
 print("\nРешаем квадратное уравнение вида ax^2 + bx + c = 0")
 
 print("\nВведите A")
-a = int(input('>> '))
+some_value = input('>> ')
+try:
+    a = int(some_value)
+except ValueError:
+    print("Ясно... пусть будет A = 1")
+    a = 1
 
 print("\nВведите B")
-b = int(input('>> '))
+some_value = input('>> ')
+try:
+    b = int(some_value)
+except ValueError:
+    print("Ясно... пусть будет B = 4")
+    b = 4
 
 print("\nВведите C")
-c = int(input('>> '))
+some_value = input('>> ')
+try:
+    c = int(some_value)
+except ValueError:
+    print("Ясно... пусть будет C = 2")
+    c = 2
 
+print(f"\nРешаем квадратное уравнение {a}x^2 + {b}x + {c} = 0")
 dis = b ** 2 - 4 * a * c
 if dis < 0:
     print('Нет корней')
