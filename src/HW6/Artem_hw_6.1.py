@@ -1,10 +1,9 @@
-#написать лямбда-функцию оределеяющую четное\нечетное
+# написать лямбда-функцию оределеяющую четное\нечетное
 
-a = int(input('Enter your number'))
-x = 'even'
-b = 'uneven'
+number_one = lambda a: print('even') if a % 2 == 0 else print('uneven')
 
-number_one = lambda x, b: x if a % 2 == 0 else b
-print(number_one(x,b))
-
-
+a = input()
+if a.isdigit():
+    print('Your number is: ', end=''), number_one(int(a))
+else:
+    print("Enter a number")
