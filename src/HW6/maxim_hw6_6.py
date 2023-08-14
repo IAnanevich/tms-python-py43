@@ -13,7 +13,7 @@ def check_numeric(digit_str: str) -> str:
     :param digit_str: number by string
     :return: format string
     """
-    list_trues = list(map(lambda x: x.isdigit(), digit_str))
+    list_trues = list(map(lambda x: x.isdigit(), digit_str.strip()))
     f, t = list_trues.count(False), list_trues.count(True)
     answer = f"You entered an incorrect number: {digit_str}"
     while 1:
