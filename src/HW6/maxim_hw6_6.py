@@ -39,8 +39,7 @@ def check_numeric(digit_str: str) -> str:
             answer = f"You entered a negative integer: {res}"
             break
         else:
-            res = int(digit_str)
-            answer = f"You entered a positive integer: {res}"
+            answer = f"You entered a positive integer: {int(digit_str)}"
             break
     return answer
 
