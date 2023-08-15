@@ -14,8 +14,7 @@ def time_it(func):
     def wrapper(*args, **kwargs):
         start_time = datetime.now()
         result = func(*args, **kwargs)
-        execution_time = datetime.now() - start_time
-        print(f'Time exception {func.__name__}: {execution_time}')
+        print(f'Time exception {func.__name__}: {datetime.now() - start_time}')
         return result
 
     return wrapper

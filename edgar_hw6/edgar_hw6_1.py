@@ -15,7 +15,7 @@ def zero_division_check(func):
         """
         try:
             result1 = func(a, b)
-            return result1
+            return func(a, b)
         except ZeroDivisionError as e:
             return e
 
