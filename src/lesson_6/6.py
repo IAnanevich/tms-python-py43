@@ -3,15 +3,15 @@
 from functools import wraps
 
 
-# def add(a: int, b: int) -> int:
-#     """
-#     Adding first number to second
-#     :param a: first number
-#     :param b: second number
-#     :return: summa of 2 numbers
-#     """
-#     return a + b
-#
+def add(a: 213, b: 123) -> int:
+    """
+    Adding first number to second
+    :param a: first number
+    :param b: second number
+    :return: summa of 2 numbers
+    """
+    return a + b
+
 #
 # print(add.__name__)
 
