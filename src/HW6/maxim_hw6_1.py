@@ -5,8 +5,8 @@ def check(func):
     def div_by_0(*args):
         try:
             return func(*args)
-        except ZeroDivisionError:
-            return "Denied execution!"
+        except ZeroDivisionError as error:
+            return error
     return div_by_0
 
 
