@@ -2,7 +2,7 @@
 
 def factor(n: int) -> int:
     while n > 1:
-        return factor(n-1) * n
+        return factor(n - 1) * n
     else:
         return 1
 
