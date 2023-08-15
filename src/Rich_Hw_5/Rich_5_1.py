@@ -1,20 +1,21 @@
-def add(x, y):
+from typing import Union
+
+
+def add(x: float, y: float):
     return x + y
 
 
-def subtract(x, y):
+def subtract(x: float, y: float):
     return x - y
 
 
-def multiply(x, y):
+def multiply(x: float, y: float):
     return x * y
 
 
-def divide(x, y):
+def divide(x: float, y: float):
     if y != 0:
         return x / y
-    else:
-        return "Деление на 0"
 
 
 def decorator_test(func):
@@ -26,15 +27,22 @@ def decorator_test(func):
         print("4. Деление")
         print("5. Выход")
 
-        choice = input("Введите номер операции (1/2/3/4/5): ")
+        choice: str = input("Введите номер операции (1/2/3/4/5): ")
 
         if choice == '5':
             print("Выход из программы")
             return
         elif choice in ('1', '2', '3', '4'):
-            num1 = float(input("Введите первое число: "))
-            num2 = float(input("Введите второе число: "))
-            result = func(num1, num2, choice)
+            num1_input = input("Введите первое число: ")
+            num2_input = input("Введите второе число: ")
+            try:
+                num1: float = float(num1_input)
+                num2: float = float(num2_input)
+            except ValueError:
+                print("Введено не число")
+                return
+
+            result: Union[float, str] = func(num1, num2, choice)
             print(f"Результат операции: {result}")
         else:
             print("Неправильный ввод")
@@ -44,7 +52,7 @@ def decorator_test(func):
 
 
 @decorator_test
-def calculate(x, y, choice):
+def calculate(x: float, y: float, choice: str):
     if choice == '1':
         return add(x, y)
     elif choice == '2':

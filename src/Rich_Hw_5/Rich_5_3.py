@@ -1,4 +1,4 @@
-def count(numbers_list):
+def Number(numbers_list):
     lister = {}
     for num in numbers_list:
         if lister.get(num) is not None:
