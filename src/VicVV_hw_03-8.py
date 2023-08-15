@@ -7,5 +7,3 @@ while 1:
     print(list_1)
     if input('ещё? (y)') != 'y':
         break
-
-
