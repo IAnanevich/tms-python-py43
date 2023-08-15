@@ -11,8 +11,7 @@ def decorator(func):
     def wrapper():
         start_time = datetime.now()
         func()
-        run_time = datetime.now() - start_time
-        print(f"Функция {func.__name__} выполняется - {run_time}")
+        print(f"Функция {func.__name__} выполняется - {datetime.now() - start_time}")
     return wrapper
 
 @decorator
