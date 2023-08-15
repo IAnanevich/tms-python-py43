@@ -24,7 +24,7 @@ def check_numeric(digit_str: str) -> str:
                 res = float(digit_str)
             except ValueError:
                 break
-            answer = f"You entered a negative float: {res}"
+            answer = f"You entered a {'positive' if res > 0 else 'negative'} float: {res}"
             break
         elif f == 1:
             try:
@@ -36,7 +36,7 @@ def check_numeric(digit_str: str) -> str:
                     break
                 answer = f"You entered a positive float: {res}"
                 break
-            answer = f"You entered a negative integer: {res}"
+            answer = f"You entered a {'positive' if res > 0 else 'negative'} integer: {res}"
             break
         else:
             answer = f"You entered a positive integer: {int(digit_str)}"
