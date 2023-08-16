@@ -1,5 +1,5 @@
-def decordiv(func):
-    def numdiv(num_one, num_two):
+def decordiv(func: callable) -> callable:
+    def numdiv(num_one: float, num_two: float) -> float:
         """
         :param num_one: one number
         :param num_two: two number
@@ -14,11 +14,11 @@ def decordiv(func):
 
 
 @decordiv
-def divide(num_one, num_two):
+def divide(num_one: float, num_two: float) -> float:
     """
-    :param num_one: num_one/num_two
+    :param num_one:
     :param num_two:
-    :return:
+    :return: num_one/num_two
     """
     return num_one / num_two
 
