@@ -18,4 +18,4 @@ while True:  # endless cycle
     else:
         time_list = [get_current_time() for _ in range(n)]
         print(f"Список времени с задержкой:{time_list}")
-        break # exit cycle
+        break  # exit cycle

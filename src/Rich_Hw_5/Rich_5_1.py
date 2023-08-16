@@ -19,7 +19,7 @@ def subtract(x: float, y: float) -> float:
     return x - y
 
 
-def multiply(x: float, y: float):
+def multiply(x: float, y: float) -> float:
     """
     :param x:
     :param y:
