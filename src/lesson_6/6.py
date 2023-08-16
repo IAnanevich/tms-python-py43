@@ -2,8 +2,6 @@
 # from typing import Callable
 from functools import wraps
 
-# type: ignore
-
 # def add(a: int, b: int) -> int:
 #     """
 #     Adding first number to second
