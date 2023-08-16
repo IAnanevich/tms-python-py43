@@ -1,5 +1,5 @@
-'''Написать декоратор к 2-м любым функциям, который бы считал и выводил
-время их выполнения. Подсказка: from datetime import datetime, time = datetime.now()'''
+"""Написать декоратор к 2-м любым функциям, который бы считал и выводил
+время их выполнения. Подсказка: from datetime import datetime, time = datetime.now()"""
 from datetime import datetime
 import time
 
@@ -8,9 +8,7 @@ def execution_time_decorator(func):
     def wrapper(*args, **kwargs):
         start_time = datetime.now()
         result = func(*args, **kwargs)
-        end_time = datetime.now()
-        execution_time = end_time - start_time
-        print(f"Время выполнения функции {func.__name__}: {execution_time.total_seconds()} секунд")
+        print(f"Время выполнения функции {func.__name__}: {(datetime.now() - start_time).total_seconds()} секунд")
         return result
 
     return wrapper
