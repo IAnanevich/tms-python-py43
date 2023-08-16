@@ -11,9 +11,9 @@ for i in range(4):
 # Writing the first 2 lines to a file
 with open('output.txt', 'w') as file:
     for line in lines[:2]:
-        file.write(line + '\n')
+        file.write(f'{line}\n')
 
 # Finish writing the remaining 2 lines to the file
 with open('output.txt', 'a') as file:
     for line in lines[2:]:
-        file.write(line + '\n')
+        file.write(f'{line}\n')

@@ -5,6 +5,7 @@
 import json
 from typing import Dict, Tuple, Any
 
+
 def write_dict_to_json(filename: str, data: Dict[int, Tuple[str, int]]) -> None:
     """
     Write a dictionary to a JSON file.
@@ -28,6 +29,7 @@ def read_dict_from_json(filename: str) -> Dict[int, Tuple[str, int]]:
         loaded_data = json.load(file)
     return loaded_data
 
+
 # Create dict
 
 data = {
@@ -41,8 +43,8 @@ data = {
 
 # Write dict to json
 
-write_dict_to_json('data.json', data)
+write_dict_to_json(filename='data.json', data=data)
 
 # Read dict from json
-loaded_data = read_dict_from_json("data.json")
+loaded_data = read_dict_from_json(filename='data.json')
 print(loaded_data)

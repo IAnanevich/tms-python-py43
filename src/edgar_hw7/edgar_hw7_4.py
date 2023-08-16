@@ -6,6 +6,7 @@ import json
 import csv
 from typing import Dict, Tuple
 
+
 def read_dict_from_json(filename: str) -> Dict[int, Tuple[str, int]]:
     """
     Read a dictionary from a JSON file.
@@ -15,6 +16,7 @@ def read_dict_from_json(filename: str) -> Dict[int, Tuple[str, int]]:
     with open(filename, 'r') as file:
         loaded_data = json.load(file)
     return loaded_data
+
 
 def write_dict_to_csv(filename: str, data: Dict[int, Tuple[str, int]]) -> None:
     """
@@ -38,4 +40,4 @@ def write_dict_to_csv(filename: str, data: Dict[int, Tuple[str, int]]) -> None:
 loaded_data = read_dict_from_json("data.json")
 
 # Write dictionary to CSV file
-write_dict_to_csv("data.csv", loaded_data)
+write_dict_to_csv(filename="data.csv", data=loaded_data)
