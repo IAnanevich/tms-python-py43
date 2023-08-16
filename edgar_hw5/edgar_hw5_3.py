@@ -9,13 +9,22 @@ from datetime import datetime
 import time
 
 
-def get_current_time_with_delay():
+def get_current_time_with_delay() -> str:
+    """
+    Get current time with a 1-second delay.
+    :return: Current time in the format '%Y-%m-%d %H:%M:%S'
+    """
     time.sleep(1)  # delay 1 sec
     current_time = datetime.now()
     return current_time.strftime('%Y-%m-%d %H:%M:%S')
 
 
-def generator_time_list(n):
+def generator_time_list(n: int) -> list[str]:
+    """
+    Generate a list of current times with delay.
+    :param n: Number of time entries to generate
+    :return: List of current times in the format '%Y-%m-%d %H:%M:%S'
+    """
     time_list = []
     for _ in range(n):
         time_list.append(get_current_time_with_delay())
@@ -23,10 +32,13 @@ def generator_time_list(n):
 
 
 # Get the number of list items from the user
+try:
+    n = int(input("Enter the number of items in the list: "))
+except ValueError:
+    print("Invalid input. Please enter a valid integer.")
+    exit()  # Exit the program
 
-n = int(input("Enter the number of items in the list: "))
 
 # Generate a list of items with delay and output the result
 
-time_list = generator_time_list(n)
-print("Generate list: ", time_list)
+print("Generate list: ", generator_time_list(n))

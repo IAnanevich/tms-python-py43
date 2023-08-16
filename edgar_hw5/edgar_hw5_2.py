@@ -2,14 +2,19 @@
 # Подсказка: для хранения данных использовать словарь. Для проверки нахождения элемента в словаре использовать метод
 # GET(), либо оператор in. bg
 # ------------------------------------------------------------------------------------------------------------------
+from typing import List, Dict
 
-def count_number(number_list):
+
+def count_number(number_list: List[int]) -> Dict[int, int]:
+    """
+    Count the occurrences of each number in the list.
+    :param number_list: List of integers
+    :return: Dictionary where keys are numbers and values are their occurrences
+    """
     count_dict = {}  # Create empty dictionary
 
     for num in number_list:
-        count = count_dict.get(num, 0)  # Get the current count for the number (or 0 if not in the dictionary)
-        count_dict[num] = count + 1  # Increase the number by 1
-
+        count_dict[num] = count_dict.get(num, 0) + 1
     return count_dict
 
 
