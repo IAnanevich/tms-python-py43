@@ -8,7 +8,7 @@ f1.write(f"{str_1}\n{str_2}")
 f1.close()
 
 f2 = open("katya_7_2.txt", "a")
-f2.write(f"\n{str_3}\n{str_4}")
+f2.write(f"\n{str_3}\n{str_4}\n")
 f2.close()
 
 print(open("katya_7_2.txt", "r").read())
