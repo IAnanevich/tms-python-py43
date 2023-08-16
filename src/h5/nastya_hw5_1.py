@@ -39,6 +39,8 @@ def div(a: int, b: int) -> float:
     :param b: second_number
     :return: division first_number by the second_number
     """
+    if b == 0:
+        return "You can't divide by zero"
     return a / b
 
 
@@ -60,15 +62,18 @@ while True:
     elif n not in ['+', '-', '*', '/', '**']:
         print('Try again(')
         continue
-    first_number = int(input('Enter a '))
-    second_number = int(input('Enter b '))
-    if n == '*':
-        print(mul(first_number, second_number))
-    elif n == '/':
-        print(div(first_number, second_number))
-    elif n == '-':
-        print(minus(first_number, second_number))
-    elif n == '+':
-        print(add(first_number, second_number))
-    else:
-        print(con(first_number, second_number))
+    try:
+        first_number = int(input('Enter a '))
+        second_number = int(input('Enter b '))
+        if n == '*':
+            print(mul(first_number, second_number))
+        elif n == '/':
+            print(div(first_number, second_number))
+        elif n == '-':
+            print(minus(first_number, second_number))
+        elif n == '+':
+            print(add(first_number, second_number))
+        else:
+            print(con(first_number, second_number))
+    except ValueError:
+        print('Try again(')

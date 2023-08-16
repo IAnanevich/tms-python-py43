@@ -21,6 +21,7 @@ def year_mon_day(k: int) -> list:
 
 try:
     n = int(input('How many times?: '))
-    print(year_mon_day(n))
 except ValueError:
     print('Try again')
+else:
+    print(year_mon_day(n))

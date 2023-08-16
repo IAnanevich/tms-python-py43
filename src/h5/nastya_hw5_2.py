@@ -3,7 +3,7 @@
 рекурсивной функции. """
 
 
-def fact(n: int) -> int:
+def fact(n: int) -> int | str:
     """
     Recursion to find the factorial
     :param n: number
@@ -18,6 +18,7 @@ def fact(n: int) -> int:
 
 try:
     number = int(input('Enter number for factorial: '))
-    print(fact(number))
 except ValueError:
     print('Try again')
+else:
+    print(fact(number))
