@@ -8,7 +8,8 @@ def div_0(func):
         if elem2:
             print(func(elem1, elem2))
         else:
-            print('Делить на ноль нельзя')
+            print("Делить на ноль нельзя")
+
     return wrapper
 
 
@@ -24,11 +25,11 @@ def div(elem1: float, elem2: float) -> float:
 
 
 while True:
-    elem1 = input('Введите значение a: ')
-    elem2 = input('Введите значение b: ')
+    elem1 = input("Введите значение a: ")
+    elem2 = input("Введите значение b: ")
 
     if elem1.isdigit() and elem2.isdigit():
         div(float(elem1), float(elem2))
         break
     else:
-        print('Введите числовое значение')
+        print("Введите числовое значение")

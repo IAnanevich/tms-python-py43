@@ -8,6 +8,7 @@ def time_func(func):
         start = time.time()
         func(*args)
         print(time.time() - start)
+
     return wrapper
 
 
@@ -30,15 +31,15 @@ def expon(a: float, b: float) -> float:
     :param b: second number
     :return: the exponentiation of the first number by the second numbers
     """
-    return a ** b
+    return a**b
 
 
 while True:
-    elem1 = input('Введите значение a: ')
-    elem2 = input('Введите значение b: ')
+    elem1 = input("Введите значение a: ")
+    elem2 = input("Введите значение b: ")
     if elem1.isdigit() and elem2.isdigit():
         time_sum = sum_numbers(float(elem1), float(elem2))
         time_exp = expon(float(elem1), float(elem2))
         break
     else:
-        print('Введите числовое значение')
+        print("Введите числовое значение")

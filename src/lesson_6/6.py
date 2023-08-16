@@ -236,27 +236,31 @@ from functools import wraps
 # <h1> say() </h1>
 # <h2> text() </h2>
 
+
 def stars(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
-        print('*'*30)
+        print("*" * 30)
         return func(*args, **kwargs)
+
     return wrapper
 
 
 def lines(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
-        print('-'*30)
+        print("-" * 30)
         return func(*args, **kwargs)
+
     return wrapper
 
 
 def equals(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
-        print('='*30)
+        print("=" * 30)
         return func(*args, **kwargs)
+
     return wrapper
 
 
