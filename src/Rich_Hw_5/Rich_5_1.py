@@ -1,7 +1,7 @@
 from typing import Union
 
 
-def add(x: float, y: float):
+def add(x: float, y: float) -> float:
     """
     :param x:
     :param y:
@@ -10,7 +10,7 @@ def add(x: float, y: float):
     return x + y
 
 
-def subtract(x: float, y: float):
+def subtract(x: float, y: float) -> float:
     """
     :param x:
     :param y:
@@ -28,7 +28,7 @@ def multiply(x: float, y: float):
     return x * y
 
 
-def division(x: float, y: float):
+def division(x: float, y: float) -> float:
     """
     :param x:
     :param y:
@@ -76,7 +76,7 @@ def decorator_test(func):
 
 
 @decorator_test
-def calculate(x: float, y: float, choice: str):
+def calculate(x: float, y: float, choice) -> float:
     if choice == '1':
         return add(x, y)
     elif choice == '2':

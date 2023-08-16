@@ -1,4 +1,4 @@
-def number_list(numbers_list):
+def number_list(numbers_list: list) -> dict:
     """
     :param numbers_list: A list of numbers
     :return: Dictionary
