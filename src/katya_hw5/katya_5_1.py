@@ -40,7 +40,7 @@ def div(a: float, b: float) -> float:
     """
     if b:
         return a / b
-    return 'Делить на ноль нельзя'
+    return "Делить на ноль нельзя"
 
 
 def expon(a: float, b: float) -> float:
@@ -50,15 +50,21 @@ def expon(a: float, b: float) -> float:
     :param b: second number
     :return: the exponentiation of the first number by the second numbers
     """
-    return a ** b
+    return a**b
 
 
 while True:
-    a = input('Введите переменную а: ')
-    b = input('Введите переменную b: ')
-    print(' 0: Выход из программы \n','1: Операция сложения: a + b \n','2: Операция вычитания: a - b \n',
-        '3: Операция умножения: a * b \n','4: Операция деления: a / b\n','5: Операция возведения в степень: a ** b ')
-    d = input('Выберите номер необходимого действия: ')
+    a = input("Введите переменную а: ")
+    b = input("Введите переменную b: ")
+    print(
+        " 0: Выход из программы \n",
+        "1: Операция сложения: a + b \n",
+        "2: Операция вычитания: a - b \n",
+        "3: Операция умножения: a * b \n",
+        "4: Операция деления: a / b\n",
+        "5: Операция возведения в степень: a ** b ",
+    )
+    d = input("Выберите номер необходимого действия: ")
 
     if a.isdigit() and b.isdigit() and d.isdigit():
         a = float(a)
@@ -78,7 +84,7 @@ while True:
         elif d == 5:
             print(expon(a, b))
         else:
-            print('Введите номер, соотвествующий, необходимой операции!')
+            print("Введите номер, соотвествующий, необходимой операции!")
             break
     else:
-        print('Введите числовые значения')
+        print("Введите числовые значения")

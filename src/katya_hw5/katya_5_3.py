@@ -13,7 +13,7 @@ def check_number(elements: list[int | str]) -> dict[int | str]:
     return check
 
 
-list_5_3 = [1, 7, 8, 9, 5, 'hello', 7, 3, 7, 7, 7, 'hello']
+list_5_3 = [1, 7, 8, 9, 5, "hello", 7, 3, 7, 7, 7, "hello"]
 
 result = check_number(list_5_3)
 print(result)
