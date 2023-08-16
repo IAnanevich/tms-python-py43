@@ -6,8 +6,7 @@ def get_current_time() -> str:
     :return: '%H:%M:%S' time...
     """
     time.sleep(1)
-    current_time = time.strftime('%H:%M:%S')
-    return current_time
+    return time.strftime('%H:%M:%S')
 
 
 while True:  # endless cycle
