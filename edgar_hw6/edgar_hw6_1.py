@@ -1,12 +1,14 @@
 # Сделать функцию деление чисел и обернуть декоратором который проверял бы
 # деление на ноль и отказывал в работе пользователю
 # ---------------------------------------------------------------------------------------------------------------
+from typing import Any
+
 
 def zero_division_check(func):
     """
     A decoder to check division by zero.
     """
-    def wrapper(a: float, b: float) -> float:
+    def wrapper(a: float, b: float) -> ZeroDivisionError | Any:
         """
         A wrapper function for division with a divide-by-zero check.
         :param a: Divisible
@@ -14,7 +16,6 @@ def zero_division_check(func):
         :return: Result of division
         """
         try:
-            result1 = func(a, b)
             return func(a, b)
         except ZeroDivisionError as e:
             return e
@@ -42,4 +43,4 @@ while True:
     except ValueError as error:
         print(error)
 
-print("Result: ", num1/num2)
+print(f"Result:  {num1/num2}")
