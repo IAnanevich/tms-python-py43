@@ -70,15 +70,15 @@ while True:
         if d == 0:
             break
         elif d == 1:
-            sum_numbers(a, b)
+            print(sum_numbers(a, b))
         elif d == 2:
-            diff(a, b)
+            print(diff(a, b))
         elif d == 3:
-            mult(a, b)
+            print(mult(a, b))
         elif d == 4:
-            div(a, b)
+            print(div(a, b))
         elif d == 5:
-            expon(a, b)
+            print(expon(a, b))
         else:
             print('Введите номер, соотвествующий, необходимой операции!')
             break
