@@ -19,7 +19,6 @@ def time_it(func):
 
     return wrapper
 
-
 # Example
 
 @time_it
@@ -38,7 +37,6 @@ def example_function2():
     """
     for _ in range(100000000):
         pass
-
 
 # Call functions decorated with time_it decorator
 
