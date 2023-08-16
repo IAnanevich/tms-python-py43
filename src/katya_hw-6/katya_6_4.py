@@ -7,8 +7,7 @@ def time_func(func):
     def wrapper(*args):
         start = time.time()
         func(*args)
-        finish = time.time()
-        print(finish - start)
+        print(time.time() - start)
     return wrapper
 
 

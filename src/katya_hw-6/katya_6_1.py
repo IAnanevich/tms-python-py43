@@ -5,10 +5,10 @@
 
 def div_0(func):
     def wrapper(elem1, elem2):
-        if elem2 == 0:
-            print('Делить на ноль нельзя')
-        else:
+        if elem2:
             print(func(elem1, elem2))
+        else:
+            print('Делить на ноль нельзя')
     return wrapper
 
 
