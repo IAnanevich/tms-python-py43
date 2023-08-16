@@ -11,8 +11,7 @@ def return_time(i: int) -> str:
     :param i: number of elements
     :return: time in the specified format
     """
-    my_new_time = datetime.now() + timedelta(seconds=+i)
-    return datetime.strftime(my_new_time, '%Y-%m-%d %H:%M:%S')
+    return datetime.strftime(datetime.now() + timedelta(seconds=+i), '%Y-%m-%d %H:%M:%S')
 
 
 number_of_items = int(input('Введите количесво элементов: '))

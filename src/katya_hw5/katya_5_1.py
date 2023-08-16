@@ -39,9 +39,9 @@ def div(a: float, b: float) -> float:
     :return: the dividing the first number by the second numbers
     """
     if b == 0:
-        result = print('Делить на ноль нельзя')
+        result = 'Делить на ноль нельзя'
     else:
-        result = print(a / b)
+        result = a / b
     return result
 
 
