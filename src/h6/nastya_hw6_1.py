@@ -2,12 +2,5 @@
 Функция принимает параметр (число) и если чётное, то выдаёт слово "чётное",
 если нет - то "нечётное"."""
 
-"""
-Checking a number for parity 
-:param n: number
-:return: 'Even' if number is even | 'Odd' if number is odd.
-"""
-fun = lambda n: 'Even' if n % 2 == 0 else 'Odd'
-print(fun(4))
-# обязательно ли писать документацию для лямбды(ее надо писать до строки с лямдой или после)?
-# как писать аннотацию для нее и надо ли?
+fun = lambda n: 'Odd' if n % 2 else 'Even'
+print(fun(3))

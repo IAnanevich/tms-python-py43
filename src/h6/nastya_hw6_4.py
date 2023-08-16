@@ -5,11 +5,16 @@ from datetime import datetime
 
 
 def dec(fun):
-    def wrapper(i):
+    """
+    The decorator measures the execution time of a function and outputs it after execution
+    :param fun: function_
+    :return: function_ wrapper
+    """
+    def wrapper(i: int):
+        time_fun = datetime.now()
         fun(i)
-        print(datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S'))
+        print(datetime.now() - time_fun)
     return wrapper
-# декоратор надо документировать? как писать аннотацию и надо ли?
 
 
 @dec
