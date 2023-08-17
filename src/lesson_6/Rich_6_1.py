@@ -6,10 +6,9 @@ def decordiv(func: callable) -> callable:
         :return: result / number1,2
         """
         if num_two:
-            return type(func(num_one, num_two))
+            return (func(num_one, num_two))
         else:
             print("division by zero")
-            print(type)
 
     return numdiv
 
