@@ -31,7 +31,7 @@ def mult(a: float, b: float) -> float:
     return a * b
 
 
-def div(a: float, b: float) -> float:
+def div(a: float, b: float) -> float | str:
     """
     Calculating the dividing
     :param a: first number
