@@ -55,7 +55,15 @@ class Truck(Auto):
 
 
 class Car(Auto):
-    def __init__(self, max_speed=int, brand=str, age=int, mark=str, color=str, weight=str, ):
+    def __init__(
+        self,
+        max_speed=int,
+        brand=str,
+        age=int,
+        mark=str,
+        color=str,
+        weight=str,
+    ):
         Auto.__init__(self, brand=str, age=int, mark=str, color=str, weight=str)
         self.max_load = max_speed
 
@@ -63,7 +71,8 @@ class Car(Auto):
         super().move()
         print(f"max speed is {max_speed}")
 
-car_1 = Car(300,'bmw', 9, '7')
+
+car_1 = Car(300, "bmw", 9, "7")
 car_1.move(300)
 car_1.birthday()
 car_1.stop()

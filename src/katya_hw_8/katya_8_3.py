@@ -5,11 +5,12 @@ class RealString:
 
     def main(self):
         if len(self.first_str) == len(self.second_str):
-            print(f'{self.first_str} == {self.second_str}')
+            print(f"{self.first_str} == {self.second_str}")
         elif len(self.first_str) > len(self.second_str):
-            print(f'{self.first_str} > {self.second_str}')
+            print(f"{self.first_str} > {self.second_str}")
         else:
-            print(f'{self.first_str} < {self.second_str}')
+            print(f"{self.first_str} < {self.second_str}")
 
-specified_lines = RealString('jhuygf ghhj', 'hgygygh')
+
+specified_lines = RealString("jhuygf ghhj", "hgygygh")
 specified_lines.main()
