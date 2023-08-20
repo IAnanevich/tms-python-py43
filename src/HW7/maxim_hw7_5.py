@@ -5,9 +5,13 @@ from openpyxl import Workbook
 from openpyxl.styles import Alignment
 
 
-def add_cell(cell: object, value: object, alignment: object):
-    """
-    Appends a value to the specified cell.
+def add_cell(cell: object, value: str | float | int | object, alignment: object) -> None:
+    """ Appends a value to the specified cell.
+
+    :param cell: a cell object based on the given coordinates
+    :param value: set the value stored in the cell
+    :param alignment: alignment options for use in styles
+    :return: None
     """
     cell.value, cell.alignment = value, alignment
 
