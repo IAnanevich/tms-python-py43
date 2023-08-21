@@ -2,23 +2,29 @@
 # Методы move, bithday, stop.
 # Методы  "move" и "stop" выводят сообщения на экран "move" и "stop", а birthday увеличивает атрибут age на 1.
 # Атрибуты brand, age и mark обязательные при объявлении объекта.
+class Auto:
+    def __init__(self, brand: str, age: int, mark: str, color: str = "", weight: float = 0):
+        self.brand = brand
+        self.age = age
+        self.color = color
+        self.mark = mark
+        self.weight = weight
 
-# class ****:
-#     def __init__(self, parameter1, parameter2):
-#         self.parameter1 = parameter1
-#         self.parameter2 = parameter2
-#
-#     def method1(self):
-#         # Код метода 1
-#         pass
-#
-#     def method2(self):
-#         # Код метода 2
-#         pass
-#
-# # Создание объекта класса
-# obj = MyClass(parameter1_value, parameter2_value)
-#
-# # Вызов методов объекта
-# obj.method1()
-# obj.method2()
+    @staticmethod
+    def move():
+        print("move")
+
+    @staticmethod
+    def stop():
+        print("stop")
+
+    def birthday(self):
+        self.age += 1
+
+
+car_one = Auto("mazda", 7, "ford")
+car_one.move()
+car_one.stop()
+car_one.birthday()
+
+print(car_one.brand, car_one.age, car_one.color, car_one.mark, car_one.weight)
