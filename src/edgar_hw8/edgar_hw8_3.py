@@ -58,6 +58,7 @@ class Auto:
         """
         print("stop")
 
+
 class Truck(Auto):
     """
     A class representing a truck, inheriting from Auto.
