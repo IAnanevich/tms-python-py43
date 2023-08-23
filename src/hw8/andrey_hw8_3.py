@@ -12,27 +12,27 @@ import time
 
 
 class Truck(Auto):
-    def __init__(self, max_load, brand: str, age: int, mark: str, color: str = '', weight: int = 0):
+    def __init__(self, max_load: int, brand: str, age: int, mark: str, color: str = '', weight: int = 0):
         Auto.__init__(self, brand, age, mark, color, weight)
         self.max_load = max_load
 
-    def move(self):
+    def move(self) -> None:
         print("attention")
         super().move()
 
     @staticmethod
-    def load():
+    def load() -> None:
         time.sleep(1)
         print("load")
         time.sleep(1)
 
 
 class Car(Auto):
-    def __init__(self, max_speed, brand: str, age: int, mark: str, color: str = '', weight: int = 0):
+    def __init__(self, max_speed: int, brand: str, age: int, mark: str, color: str = '', weight: int = 0):
         Auto.__init__(self, brand, age, mark, color, weight)
         self.max_speed = max_speed
 
-    def move(self):
+    def move(self) -> None:
         super().move()
         print(f"max_speed is {self.max_speed}")
 

@@ -17,13 +17,17 @@ class RealString:
 
     def __lt__(self, other: str | object) -> bool:
         if not isinstance(other, RealString):
-            other = RealString(other)
-        return len(self.row) < len(other.row)
+            other_new = RealString(other)
+        else:
+            other_new = other
+        return len(self.row) < len(other_new.row)
 
     def __le__(self, other: str | object) -> bool:
         if not isinstance(other, RealString):
-            other = RealString(other)
-        return len(self.row) <= len(other.row)
+            other_new = RealString(other)
+        else:
+            other_new = other
+        return len(self.row) <= len(other_new.row)
 
 
 if __name__ == "__main__":
