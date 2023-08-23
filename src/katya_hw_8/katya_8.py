@@ -9,18 +9,23 @@ from time import sleep
 
 
 class Auto:
-    def __init__(self, brand=str, age=int, mark=str, color=str, weight=str):
+    def __init__(self, brand: str, age: int, mark: str, color: str = " ", weight: int = 0):
         self.brand = brand
         self.age = age
         self.mark = mark
+        self.color = color
+        self.weight = weight
 
-    def move(self):
+    @staticmethod
+    def move():
         print("move")
 
     def birthday(self):
-        return self.age + 1
+        self.age += 1
+        print(self.age)
 
-    def stop(self):
+    @staticmethod
+    def stop():
         print("stop")
 
 
@@ -40,14 +45,15 @@ auto_1.birthday()
 
 
 class Truck(Auto):
-    def __init__(self, brand=str, age=int, mark=str, color=str, weight=str, max_load=int):
-        Auto.__init__(self, brand=str, age=int, mark=str, color=str, weight=str)
+    def __init__(self, brand: str, age: int, mark: str, color: str, weight: int, max_load: int):
+        Auto.__init__(self, brand, age, mark, color, weight)
         self.max_load = max_load
 
     def move(self):
         print("attention")
         super().move()
 
+    @staticmethod
     def load(self):
         sleep(1)
         print("'LOAD'")
@@ -62,9 +68,9 @@ class Car(Auto):
         age=int,
         mark=str,
         color=str,
-        weight=str,
+        weight=int,
     ):
-        Auto.__init__(self, brand=str, age=int, mark=str, color=str, weight=str)
+        Auto.__init__(self, brand, age, mark, color, weight)
         self.max_load = max_speed
 
     def move(self, max_speed=int):

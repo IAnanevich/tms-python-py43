@@ -1,16 +1,20 @@
 class RealString:
-    def __init__(self, first_str, second_str):
-        self.first_str = first_str
-        self.second_str = second_str
+    def __init__(self, str_f):
+        self.str_f = str_f
 
-    def main(self):
-        if len(self.first_str) == len(self.second_str):
-            print(f"{self.first_str} == {self.second_str}")
-        elif len(self.first_str) > len(self.second_str):
-            print(f"{self.first_str} > {self.second_str}")
-        else:
-            print(f"{self.first_str} < {self.second_str}")
+    def __lt__(self, other):
+        if not isinstance(other, RealString):
+            other = RealString(other)
+        return len(self.str_f) < len(other.str_f)
+
+    def __gt__(self, other):
+        if not isinstance(other, RealString):
+            other = RealString(other)
+        return len(self.str_f) > len(other.str_f)
 
 
-specified_lines = RealString("jhuygf ghhj", "hgygygh")
-specified_lines.main()
+specified_lines_1 = RealString("kjjjj")
+specified_lines_2 = RealString("hkhligt")
+print(specified_lines_1 > "juhyjjjjjjg")
+print(specified_lines_1 < specified_lines_2)
+print("abc" < "adkkkkkkc")
