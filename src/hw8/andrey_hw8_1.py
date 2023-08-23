@@ -9,7 +9,7 @@
 # К слову, Анне понадобилось только 3 метода внутри класса (включая __init__()) для воплощения задуманного
 
 class RealString:
-    def __init__(self, row: str):
+    def __init__(self, row: str | object):
         try:
             self.row = str(row)
         except ValueError as e:
