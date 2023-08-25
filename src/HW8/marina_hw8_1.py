@@ -16,13 +16,13 @@ class RealString:
         self.word = str(word)
 
     # переопределим "=="
-    def __eq__(self, other):
+    def __eq__(self, other: str | int | object) -> bool:
         if not isinstance(other, RealString):
             other = RealString(other)
         return len(self.word) == len(other.word)
 
     # переопределим ">"
-    def __gt__(self, other):
+    def __gt__(self, other: str | int | object) -> bool:
         if not isinstance(other, RealString):
             other = RealString(other)
         return len(self.word) > len(other.word)

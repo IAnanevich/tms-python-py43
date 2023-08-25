@@ -17,20 +17,20 @@ class Auto:
         self.weight = weight
 
     @staticmethod
-    def move():
+    def move() -> None:
         """
         print message "move"
         """
         print("move")
 
     @staticmethod
-    def stop():
+    def stop() -> None:
         """
         print message "stop"
         """
         print("stop")
 
-    def birthday(self):
+    def birthday(self) -> None:
         """
         increases age of object by 1
         """

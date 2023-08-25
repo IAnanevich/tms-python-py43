@@ -23,20 +23,20 @@ class Auto:
         self.weight = weight
 
     @staticmethod
-    def move():
+    def move() -> None:
         """
         print message "move"
         """
         print("move")
 
     @staticmethod
-    def stop():
+    def stop() -> None:
         """
         print message "stop"
         """
         print("stop")
 
-    def birthday(self):
+    def birthday(self) -> None:
         """
         increases age of object by 1
         """
@@ -57,14 +57,14 @@ class Truck(Auto):
         self.max_load = max_load
 
     @staticmethod
-    def move():
+    def move() -> None:
         """
         print message "Attention" ann after that print "move"
         """
         print("Attention\nmove")
 
     @staticmethod
-    def load():
+    def load() -> None:
         """
         make 1-second-break, print 'load', make another 1-second-break,
         """
@@ -86,7 +86,7 @@ class Car(Auto):
         super().__init__(brand, age, mark, color, weight)
         self.max_speed = max_speed
 
-    def move(self):
+    def move(self) -> None:
         print(f"move \nmax_speed is <{self.max_speed}>")
 
 
