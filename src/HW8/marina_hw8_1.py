@@ -12,7 +12,7 @@
 class RealString:
     """Anna's class"""
 
-    def __init__(self, word: str):
+    def __init__(self, word: str | object):
         self.word = str(word)
 
     # переопределим "=="
