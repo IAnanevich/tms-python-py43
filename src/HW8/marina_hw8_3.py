@@ -22,8 +22,7 @@ class Auto:
         self.mark = mark
         self.weight = weight
 
-    @staticmethod
-    def move() -> None:
+    def move(self) -> None:
         """
         print message "move"
         """
@@ -56,12 +55,12 @@ class Truck(Auto):
         super().__init__(brand, age, mark, color, weight)
         self.max_load = max_load
 
-    @staticmethod
-    def move() -> None:
+    def move(self) -> None:
         """
         print message "Attention" ann after that print "move"
         """
-        print("Attention\nmove")
+        print("attention")
+        super().move()
 
     @staticmethod
     def load() -> None:
@@ -87,7 +86,8 @@ class Car(Auto):
         self.max_speed = max_speed
 
     def move(self) -> None:
-        print(f"move \nmax_speed is <{self.max_speed}>")
+        super().move()
+        print(f"max_speed is <{self.max_speed}>")
 
 
 # объекты класса Truck
