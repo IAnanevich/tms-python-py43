@@ -9,6 +9,6 @@ dict_ = {
         987456: ('Wewm', 87),
         745896: ('Pthy', 41),
         963852: ('Qertgh', 23)
-         }
+}
 with open('nastya_hw7_3.json', 'w') as f:
     json.dump(dict_, f)
