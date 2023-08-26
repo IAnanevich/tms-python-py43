@@ -8,8 +8,14 @@ def exclude_even(func):
     """
     # Декоратор должен производить предварительную проверку данных:
     # удалять все четные элементы из списка.
+    :param numbers:  список чисел
+    :return: производит предварительную проверку
     """
     def inner_check(numbers: list):
+        """
+        :param numbers: список чисел
+        :return: производит предварительную проверку
+        """
         for number in numbers:
             if not number % 2:
                 numbers.remove(number)
@@ -22,6 +28,11 @@ def exclude_even(func):
 
 @exclude_even
 def some_function(numbers: list):
+    """
+    Заглушка
+    :param numbers: список чисел
+    :return: None
+    """
     len(numbers)
 
 
