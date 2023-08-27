@@ -22,9 +22,8 @@ while True:
     m = input("Enter integer number start of interval for elements: ")
     n = input("Enter integer number end of interval for elements: ")
     if m.isdigit() and n.isdigit():
-        m, n = int(m), int(n)
         for _ in range(len_list):
-            list_number_rand.append(randint(m, n))
+            list_number_rand.append(randint(int(m), int(n)))
         break
     print("You need to enter two INTEGER number. Try again")
 # выводим исходный и преобразованный списки

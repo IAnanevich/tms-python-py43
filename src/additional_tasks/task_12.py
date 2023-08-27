@@ -1,9 +1,10 @@
 # Создать декоратор для функции, которая принимает список чисел.
 # Декоратор должен производить предварительную проверку данных - удалять все четные элементы из списка.
+from typing import Callable
 
 
-def del_even_numbers(func):
-    def inner(args):
+def del_even_numbers(func: Callable) -> Callable:
+    def inner(args: list[int]) -> None:
         return func([i for i in args if i % 2])
 
     return inner
