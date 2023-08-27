@@ -3,7 +3,7 @@
 # Вывести все сведения о поездах, время пребывания в пути
 # которых превышает 7 часов 20 минут.
 
-from datetime import datetime
+# from datetime import datetime
 
 # datetime.time(hour, minute)
 
