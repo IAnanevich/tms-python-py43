@@ -3,6 +3,7 @@
 import json
 import numpy as np
 
+
 def matrix_def(matr):
     for i in range(len(matr)):
         for j in range(len(matr[i])):
@@ -11,8 +12,8 @@ def matrix_def(matr):
     return matr
 
 
-a = int(input('Введите количество столбцов: '))
-b = int(input('Введите количество строк: '))
+a = int(input("Введите количество столбцов: "))
+b = int(input("Введите количество строк: "))
 
 matrix_18 = np.random.randint(1, 100, (a, b))
 matrix_list = matrix_18.tolist()
