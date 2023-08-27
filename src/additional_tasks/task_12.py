@@ -5,8 +5,23 @@ import random
 
 
 def exclude_even(func):
+    """
+    Декоратор должен производить предварительную проверку данных: удалять все четные элементы из списка.
+    :param func: Функция для проверки
+    :return: ничего
+    """
     def wrapper(*args):
+        """
+        Обертка для вызова проверки и самой функции
+        :param args:  набор параметров родителя
+        :return: ничего
+        """
         def inner_check(*params):
+            """
+            Удаляет все четные элементы из списка
+            :param params: набор параметров родителя
+            :return: ничего
+            """
             numbers = params[0]
             for number in numbers:
                 if not number % 2:
