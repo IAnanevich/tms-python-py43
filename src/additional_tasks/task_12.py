@@ -4,26 +4,18 @@
 import random
 
 
-def exclude_even(func) -> None:
-    """
-    # Декоратор должен производить предварительную проверку данных:
-    # удалять все четные элементы из списка.
-    :param numbers:  список чисел
-    :return: производит предварительную проверку
-    """
-    def inner_check(numbers: list) -> None:
-        """
-        :param numbers: список чисел
-        :return: производит предварительную проверку
-        """
-        for number in numbers:
-            if not number % 2:
-                numbers.remove(number)
-                inner_check(numbers)
+def exclude_even(func):
+    def wrapper(*args):
+        def inner_check(*params):
+            numbers = params[0]
+            for number in numbers:
+                if not number % 2:
+                    numbers.remove(number)
+                    inner_check(numbers)
 
-        return func(numbers)
-
-    return inner_check
+        inner_check(*args)
+        return func(*args)
+    return wrapper
 
 
 @exclude_even
@@ -33,7 +25,7 @@ def some_function(numbers: list) -> None:
     :param numbers: список чисел
     :return: None
     """
-    len(numbers)
+    print("After: ", numbers)
 
 
 # В массиве целых чисел с количеством элементов 22
@@ -43,4 +35,3 @@ for i in range(1, 23):
 
 print("\nBefore: ", some_list)
 some_function(some_list)
-print("After: ", some_list)
