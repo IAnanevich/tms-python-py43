@@ -15,7 +15,7 @@ class RealString:
     def __lt__(self, other):
         return len(self.string) < len(other.string)
 
-    def __le__(self, other):
+    def __le__(self, other):    
         return len(self.string) <= len(other.string)
 
     def __eq__(self, other):
