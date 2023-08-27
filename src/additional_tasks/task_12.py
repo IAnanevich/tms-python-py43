@@ -4,14 +4,14 @@
 import random
 
 
-def exclude_even(func):
+def exclude_even(func) -> None:
     """
     # Декоратор должен производить предварительную проверку данных:
     # удалять все четные элементы из списка.
     :param numbers:  список чисел
     :return: производит предварительную проверку
     """
-    def inner_check(numbers: list):
+    def inner_check(numbers: list) -> None:
         """
         :param numbers: список чисел
         :return: производит предварительную проверку
@@ -27,7 +27,7 @@ def exclude_even(func):
 
 
 @exclude_even
-def some_function(numbers: list):
+def some_function(numbers: list) -> None:
     """
     Заглушка
     :param numbers: список чисел
