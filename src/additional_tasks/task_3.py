@@ -7,7 +7,7 @@ def harmonic_series(n: int) -> float:
     :param n: number of series
     :return: sum of the harmonic series
     """
-    return sum(1/i for i in range(1, n + 1))
+    return sum(1 / i for i in range(1, n + 1))
 
 
 if __name__ == "__main__":
