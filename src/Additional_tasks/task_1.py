@@ -10,7 +10,6 @@
 # =================================================================================================================
 
 from datetime import datetime, timedelta
-from typing import List, Dict, Any
 
 # List of trains
 list_of_trains = [
