@@ -11,6 +11,7 @@ if __name__ == "__main__":
         679432: ("Jasy", 35),
         208942: ("Olga", 19),
         503281: ("Afanasiy", 32),
-        222222: ("Evlampy", 22)}
+        222222: ("Evlampy", 22)
+    }
     with open('clients.json', 'w') as file:
         json.dump(clients, file)

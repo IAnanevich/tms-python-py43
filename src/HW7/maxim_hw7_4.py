@@ -15,4 +15,5 @@ if __name__ == "__main__":
                 'id': key,
                 'name': value[0],
                 'age': value[-1],
-                'phone': '097-32-88'})
+                'phone': '097-32-88'
+            })
