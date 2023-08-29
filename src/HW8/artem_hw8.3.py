@@ -9,14 +9,28 @@
 # К слову, Анне понадобилось только 3 метода внутри класса (включая __init__()) для воплощения задуманного
 
 class RealString:
-    def __init__(self, str_1: str):
+    def __init__(self, str_1: str) -> None:
+        """
+
+        :param str_1: string
+        """
         self.str_1 = str_1
 
-    def __eq__(self, other):
+    def __eq__(self, other) -> bool:
+        """
+
+        :param other: another object
+        :return: true if length self = length another object
+        """
         check = other if isinstance(other, str) else other.str_1
         return len(self.str_1) == len(check)
 
-    def __gt__(self, other):
+    def __gt__(self, other) -> bool:
+        """
+
+        :param other: another object
+        :return: true if length self > length another object
+        """
         check = other if isinstance(other, str) else other.str_1
         return len(self.str_1) > len(check)
 

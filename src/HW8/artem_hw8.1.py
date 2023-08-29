@@ -4,20 +4,43 @@
 # Атрибуты brand, age и mark являются обязательными при объявлении объекта.
 
 class Auto:
-    def __init__(self, brand: str, age: int, color: str, mark: str, weight: int):
+    """
+    parent class
+    """
+    def __init__(self, brand: str, age: int, color: str, mark: str, weight: int) -> None:
+        """
+
+        :param brand: str
+        :param age: int
+        :param color: str
+        :param mark: str
+        :param weight: int
+        """
         self.brand = brand
         self.age = age
         self.color = color
         self.mark = mark
         self.weight = weight
 
-    def move(self):
+    def move(self) -> None:
+        """
+        print "move"
+        :return:
+        """
         print('move')
 
-    def stop(self):
+    def stop(self) -> None:
+        """
+        print "stop"
+        :return:
+        """
         print('stop')
 
-    def berthday(self):
+    def berthday(self) -> None:
+        """
+        adds one year to the age of the car
+        :return:
+        """
         self.age += 1
 
 

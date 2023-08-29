@@ -12,56 +12,135 @@ import time
 
 
 class Auto():
-    def __init__(self, brand: str, age: int, color: str, mark: str, weight: int):
+    """
+    parent class "Auto" with two children classes: "Car" and "Truck"
+    """
+
+    def __init__(self, brand: str, age: int, color: str, mark: str, weight: int) -> None:
+        """
+
+        :param brand: str
+        :param age: int
+        :param color: str
+        :param mark: str
+        :param weight: int
+        """
         self.brand = brand
         self.age = age
         self.color = color
         self.mark = mark
         self.weight = weight
 
-    def move(self):
+    def move(self) -> None:
+        """
+        print "move"
+        :return:
+        """
         print('move')
 
-    def stop(self):
+    def stop(self) -> None:
+        """
+        print "stop"
+        :return:
+        """
         print('stop')
 
-    def berthday(self):
+    def berthday(self) -> None:
+        """
+        adds one year to the age of the car
+        :return:
+        """
         self.age += 1
 
 
 class Truck(Auto):
-    def __init__(self, brand: str, age: int, color: str, mark: str, weight: int, max_load: int):
+    """
+    child class "Truck" from "Auto" class
+    """
+
+    def __init__(self, brand: str, age: int, color: str, mark: str, weight: int, max_load: int) -> None:
+        """
+
+        :param brand:
+        :param age:
+        :param color:
+        :param mark:
+        :param weight:
+        :param max_load:
+        """
         super().__init__(brand, age, color, mark, weight)
         self.max_load = max_load
 
-    def move(self):
+    def move(self) -> None:
+        """
+        before the "move" appears, it displays the inscription "attention"
+        :return: move after attention
+        """
         print('attention')
         super().move()
 
     def stop(self):
+        """
+        print "stop"
+        :return:
+        """
         print('stop')
 
     def birthday(self):
+        """
+        adds one year to the age of the car
+        :return:
+        """
         self.age += 1
 
     def load(self):
+        """
+        1-second delay, output message "load", 1-second delay
+        :return:
+        """
         time.sleep(1)
         print('load')
         time.sleep(1)
 
 
 class Car(Auto):
-    def __init__(self, brand: str, age: int, color: str, mark: str, weight: int, max_speed: int):
+    """
+    child class "Car" from "Auto" class
+    """
+
+    def __init__(self, brand: str, age: int, color: str, mark: str, weight: int, max_speed: int) -> None:
+        """
+
+        :param brand:
+        :param age:
+        :param color:
+        :param mark:
+        :param weight:
+        :param max_speed:
+        """
         super().__init__(brand, age, color, mark, weight)
         self.max_speed = max_speed
 
-    def move(self):
+    def move(self) -> None:
+        """
+        notification of the maximum speed of the car
+        :return:
+        """
+        super().move()
         print(f'max speed is {self.max_speed}')
 
-    def stop(self):
+    def stop(self) -> None:
+        """
+        print "stop"
+        :return:
+        """
         print('stop')
 
-    def birthday(self):
+    def birthday(self) -> None:
+        """
+        adds one year to the age of the car
+        :return:
+        """
         self.age += 1
 
 
