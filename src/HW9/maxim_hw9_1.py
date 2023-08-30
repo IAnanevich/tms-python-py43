@@ -80,7 +80,7 @@ class Tender(metaclass=RegistryMeta):
         return len(self.unn) == 9
 
     @staticmethod
-    def __get_struct_lot(lots):
+    def __get_struct_lot(lots: list) -> list:
         """ Converts a list of dictionaries to a list of the class Lot
 
         :param lots: list of dictionaries of lots
