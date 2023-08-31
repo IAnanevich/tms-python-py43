@@ -16,7 +16,7 @@ class Auto:
         weight (float, optional): The weight of the automobile in kilograms.
     """
 
-    def __init__(self, brand: str, age: int, mark: str, color: str = "", weight: float = 0.0):
+    def __init__(self, brand: str, age: int, mark: str, color: str = "", weight: float = 0.0) -> None:
         """
          Initialize a new Auto object.
 

@@ -10,7 +10,7 @@
 # ============================================================================================================
 
 class RealString:
-    def __init__(self, value: str):
+    def __init__(self, value: str) -> None:
         """
         Initialize a RealString object.
         :param value: The string value.
@@ -56,10 +56,10 @@ class RealString:
 
 
 # Usage example
-apple = RealString("Apple")
+эпл = RealString("Apple")
 яблоко = RealString("Яблоко")
 
 # Print
-print(apple > яблоко)  # False
-print(яблоко > apple)  # True
-print(apple == яблоко)  # False
+print(эпл > яблоко)  # False
+print(яблоко > эпл)  # True
+print(эпл == яблоко)  # False
