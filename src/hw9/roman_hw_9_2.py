@@ -1,6 +1,6 @@
 # Реализовать любой метакласс
 class SimpleMetaClass(type):
-    def __new__(cls, name: str, bases, attrs) -> type:
+    def __new__(mcs, name: str, bases, attrs) -> type:
         """
 
         :param name:
@@ -8,7 +8,7 @@ class SimpleMetaClass(type):
         :param attrs:
         """
         print(f"Creating class: {name}")
-        return super().__new__(cls, name, bases, attrs)
+        return super().__new__(mcs, name, bases, attrs)
 
 
 # Применение метакласса
