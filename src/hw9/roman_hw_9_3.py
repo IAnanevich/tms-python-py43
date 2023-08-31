@@ -10,7 +10,7 @@ class DataObject:
 
 
 class MyClass:
-    def __init__(self, data: DataObject):
+    def __init__(self, data: DataObject) -> None:
         """
 
         :param data:
