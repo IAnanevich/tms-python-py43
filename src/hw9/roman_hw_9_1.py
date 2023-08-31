@@ -3,83 +3,97 @@
 переопределить один любой из магических методов (__lt__ и тд) сделать один метод
 протектед .Сделать два класса дочерних. В этих классах переопределить все методы
 и конструктор, которые можете (один метод должен быть переопределен ТОЛЬКО ОДИН раз в любом классе ребенке)
-Сделать проверку, что все работает (создать обьекты от классов)'''
+Сделать проверку,что все работает (создать обьекты от классов)'''
 
 
-class Rectangle:
-    def __init__(self, width, height):
-        self.width = width
-        self.height = height
+class Figure:
+    def __init__(self, color: str):
+        '''
+        Инициализирует объект класса Figure.
 
-    def calculate_area(self):
-        return self.width * self.height
-
-    def is_square(self):
-        return self.width == self.height
-
-    def print_info(self):
-        print("Width:", self.width)
-        print("Height:", self.height)
-        print("Area:", self.calculate_area())
+        :param color: цвет фигуры
+        '''
+        self.color = color
 
     @staticmethod
-    def get_smallest_side(width, height):
-        return min(width, height)
+    def static_method():
+        '''
+        Статический метод класса Figure.
+        '''
+        print("This is a static method")
 
     @classmethod
-    def create_square(cls, side):
-        return cls(side, side)
+    def class_method(cls):
+        '''
+        Метод класса Figure.
+        '''
+        print("This is a class method")
 
-    def __str__(self):
-        return f"Rectangle: {self.width} x {self.height}"
+    def __lt__(self, other):
+        '''
+        Магический метод для сравнения двух объектов класса Figure по длине их цвета.
 
+        :param other: другой объект класса Figure
+        :return: True, если self.color меньше по длине, чем other.color, в противном случае False
+        '''
+        return len(self.color) < len(other.color)
 
-class Square(Rectangle):
-    def __init__(self, side):
-        super().__init__(side, side)
-
-    def calculate_area(self):
-        return self.width ** 2
-
-    def is_square(self):
-        return True
-
-    def print_info(self):
-        print("Side:", self.width)
-        print("Area:", self.calculate_area())
-
-
-class ExtendedRectangle(Rectangle):
-    def __init__(self, width, height):
-        super().__init__(width, height)
-
-    def calculate_area(self):
-        return super().calculate_area() * 2
-
-    def is_large_rectangle(self):
-        return self.calculate_area() > 100
+    def _protected_method(self):
+        '''
+        Защищенный метод класса Figure.
+        '''
+        print("This is a protected method")
 
 
-# Create objects and test
-rect = Rectangle(5, 10)
-rect.print_info()
-print("Is square?", rect.is_square())
-print("Smallest side:", Rectangle.get_smallest_side(rect.width, rect.height))
-print(rect)
+class Square(Figure):
+    def __init__(self, color: str, side: int):
+        '''
+        Инициализирует объект класса Square.
 
-print()
+        :param color: цвет квадрата
+        :param side: длина стороны квадрата
+        '''
+        super().__init__(color)
+        self.side = side
 
-square = Square(7)
-square.print_info()
-print("Is square?", square.is_square())
-print("Smallest side:", Rectangle.get_smallest_side(square.width, square.height))
-print(square)
+    def __str__(self) -> str:
+        '''
+        Возвращает строковое представление объекта класса Square.
 
-print()
+        :return: строковое представление объекта класса Square
+        '''
+        return f"Square: color={self.color}, side={self.side}"
 
-extended_rect = ExtendedRectangle(3, 15)
-extended_rect.print_info()
-print("Is square?", extended_rect.is_square())
-print("Smallest side:", Rectangle.get_smallest_side(extended_rect.width, extended_rect.height))
-print("Is large rectangle?", extended_rect.is_large_rectangle())
-print(extended_rect)
+
+class Circle(Figure):
+    def __init__(self, color: str, radius: float):
+        '''
+        Инициализирует объект класса Circle.
+
+        :param color: цвет круга
+        :param radius: радиус круга
+        '''
+        super().__init__(color)
+        self.radius = radius
+
+    def __str__(self) -> str:
+        '''
+        Возвращает строковое представление объекта класса Circle.
+
+        :return: строковое представление объекта класса Circle
+        '''
+        return f"Circle: color={self.color}, radius={self.radius}"
+
+
+# Проверка функциональности классов
+square = Square("black", 5)
+circle = Circle("orange", 3)
+
+# Вызов общих методов и магического метода
+square.static_method()
+circle.class_method()
+print(square < circle)
+
+# Вызов переопределенных методов
+square._protected_method()
+circle._protected_method()
