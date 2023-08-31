@@ -42,6 +42,7 @@ class Figure:
         '''
         print("This is a protected method")
 
+
 class Square(Figure):
     def __init__(self, color: str, side: int) -> None:
         '''
@@ -59,6 +60,7 @@ class Square(Figure):
         '''
         return f"Square: color={self.color}, side={self.side}"
 
+
 class Circle(Figure):
     def __init__(self, color: str, radius: float) -> None:
         '''
@@ -75,6 +77,7 @@ class Circle(Figure):
         :return: строковое представление объекта класса Circle
         '''
         return f"Circle: color={self.color}, radius={self.radius}"
+
 
 # Проверка функциональности классов
 square = Square("black", 5)
