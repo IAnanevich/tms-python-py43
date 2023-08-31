@@ -11,6 +11,10 @@ class DataObject:
 
 class MyClass:
     def __init__(self, data: DataObject):
+        """
+
+        :param data:
+        """
         self.data = data
 
 
