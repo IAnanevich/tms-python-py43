@@ -9,22 +9,43 @@
 
 
 class RealString:
-    def __init__(self, string):
+    def __init__(self, string: str):
+        """
+        Конструктор класса RealString.
+
+        :param string: строка для инициализации объекта
+        """
         self.string = string
 
-    def __len__(self):
+    def __len__(self) -> int:
+        """
+        Метод, возвращающий длину строки.
+
+        :return: длина строки
+        """
         return len(self.string)
 
-    def __lt__(self, other):
+    def __lt__(self, other: str) -> bool:
+        """
+        Метод сравнения длины строки с другой строкой.
+
+        :param other: другая строка для сравнения
+        :return: True, если длина текущей строки меньше длины другой строки, иначе False
+        """
         return len(self) < len(other)
 
-    def __gt__(self, other):
+    def __gt__(self, other:str) -> bool:
+        """
+        Метод сравнения длины строки с другой строкой.
+
+        :param other: другая строка для сравнения
+        :return: True, если длина текущей строки больше длины другой строки, иначе False
+        """
         return len(self) > len(other)
 
 
 string1 = RealString("Apple")
 string2 = RealString("Яблоко")
-
 print(string1 > string2)  # False
 print(string1 < string2)  # True
 print(string2 > "Banana")  # False
