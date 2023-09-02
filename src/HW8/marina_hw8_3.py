@@ -15,7 +15,15 @@ class Auto:
 
     def __init__(
         self, brand: str, age: int, mark: str, color: str = "", weight: int = 0
-    ):
+    ) -> None:
+        """
+        initialize attributes of class object
+        :param brand: brand of the car
+        :param age: age of the car
+        :param mark: model of the car
+        :param color: color of the car
+        :param weight: weight of the car
+        """
         self.brand = brand
         self.age = age
         self.color = color
@@ -51,7 +59,16 @@ class Truck(Auto):
         max_load: int,
         color: str = "",
         weight: int = 0,
-    ):
+    ) -> None:
+        """
+        initialize attributes of class object
+        :param brand: brand of the truck
+        :param age: age of the truck
+        :param mark: model of the truck
+        :param max_load: max_load of the truck
+        :param color: color of the truck
+        :param weight: weight of the truck
+        """
         super().__init__(brand, age, mark, color, weight)
         self.max_load = max_load
 
@@ -81,7 +98,16 @@ class Car(Auto):
         max_speed: int,
         color: str = "",
         weight: int = 0,
-    ):
+    ) -> None:
+        """
+        initialize attributes of class object
+         :param brand: brand of the car
+         :param age: age of the car
+         :param mark: model of the car
+         :param max_speed: max speed of the car
+         :param color: color of the car
+         :param weight: weight of the car
+        """
         super().__init__(brand, age, mark, color, weight)
         self.max_speed = max_speed
 
@@ -91,11 +117,18 @@ class Car(Auto):
 
 
 # объекты класса Truck
-truck_1 = Truck("Volvo", 10, "FH16", 35)
-truck_2 = Truck("Daf", 2, "CF85", 32, "silver", 8)
+truck_1 = Truck(brand="Volvo", age=10, mark="FH16", max_load=35)
+truck_2 = Truck(brand="Daf", age=2, mark="CF85", max_load=32, color="silver", weight=8)
 # объекты класса Car
-car_1 = Car("Lamborghini", 5, "Aventador", 350, "black", 1625)
-car_2 = Car("Opel", 12, "Astra", 244)
+car_1 = Car(
+    brand="Lamborghini",
+    age=5,
+    mark="Aventador",
+    max_speed=350,
+    color="black",
+    weight=1625,
+)
+car_2 = Car(brand="Opel", age=12, mark="Astra", max_speed=244)
 
 # проверка методов и атрибутов класса Track
 print(f"Info truck_1\n{truck_1.__dict__}")

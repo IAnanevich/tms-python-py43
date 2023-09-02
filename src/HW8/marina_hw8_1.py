@@ -12,24 +12,38 @@
 class RealString:
     """Anna's class"""
 
-    def __init__(self, word: str | object):
+    def __init__(self, word: str | object) -> None:
+        """
+        initialize attributes of class object
+        :param word: word to compare
+        """
         self.word = str(word)
 
     # переопределим "=="
     def __eq__(self, other: str | object) -> bool:
+        """
+        check for a mach length of two words
+        :param other: word to compare of length with class object
+        :return: result of match
+        """
         if not isinstance(other, RealString):
             other = RealString(other)
         return len(self.word) == len(other.word)
 
     # переопределим ">"
     def __gt__(self, other: str | object) -> bool:
+        """
+        checking if the first word is greater than the second
+        :param other: word to compare of length with class object
+        :return: result of match
+        """
         if not isinstance(other, RealString):
             other = RealString(other)
         return len(self.word) > len(other.word)
 
 
-word_1 = RealString("Apple")
-word_2 = RealString("Яблоко")
+word_1 = RealString(word="Apple")
+word_2 = RealString(word="Яблоко")
 word_3 = "Melon"
 word_4 = "555"
 

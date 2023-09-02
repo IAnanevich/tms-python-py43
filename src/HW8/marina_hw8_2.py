@@ -9,7 +9,15 @@ class Auto:
 
     def __init__(
         self, brand: str, age: int, mark: str, color: str = "", weight: int = 0
-    ):
+    ) -> None:
+        """
+        initialize attributes of class object
+        :param brand: brand of the car
+        :param age: age of the car
+        :param mark: model of the car
+        :param color: color of the car
+        :param weight: weight of the car
+        """
         self.brand = brand
         self.age = age
         self.color = color
@@ -37,7 +45,7 @@ class Auto:
         self.age += 1
 
 
-carr = Auto("opel", 11, "astra", "silver")
+carr = Auto(brand="opel", age=11, mark="astra", color="silver")
 
 # проверяем метод move
 carr.move()
