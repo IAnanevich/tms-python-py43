@@ -18,7 +18,7 @@ class Arithmetic:
         self.x = x
 
     @staticmethod
-    def _mathematics() -> None:
+    def mathematics() -> None:
         """
         static method of the Arithmetic class
         :return: None
@@ -41,6 +41,13 @@ class Arithmetic:
         """
         check = other if isinstance(other, int) else other.x
         return print(f'add: {self.x + check}')
+
+    def _protected(self) -> None:
+        """
+
+        :return: none
+        """
+        return print("protected method")
 
     def __sub__(self, other) -> None:
         """
@@ -99,14 +106,16 @@ class Compare(Arithmetic):
         return print(f'bool: {self.comp > check}')
 
 
-one = Arithmetic(x=10)
-two = Algebra(y=6)
-three = Compare(comp=30)
+arithmetic = Arithmetic(x=10)
+algebra = Algebra(y=6)
+compare = Compare(comp=30)
 
-one.calculate()
-one.mathematics()
-one.__add__(other=12)
-one.__sub__(other=12)
-two.__mul__(other=12)
-two.__truediv__(other=12)
-three.__gt__(other=9)
+algebra._protected()
+compare._protected()
+arithmetic.calculate()
+arithmetic.mathematics()
+arithmetic.__add__(other=12)
+arithmetic.__sub__(other=12)
+algebra.__mul__(other=12)
+algebra.__truediv__(other=12)
+compare.__gt__(other=9)
