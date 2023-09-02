@@ -4,7 +4,8 @@
 # Методы  move и stop выводят сообщения на экран "move" и "stop", а birthday увеличивает атрибут age на 1.
 # Атрибуты brand, age и mark обязательные при объявлении объекта.
 class Auto:
-    def __init__(self, brand: str, age: int, mark: str, color: str = "no color", weight: float = 0):
+    def __init__(self, brand: str, age: int, mark: str, color: str = "no color", weight: float = 0) -> None:
+        # Инициализация класса по параметрам
         self.brand = brand
         self.age = age
         self.color = color
@@ -12,14 +13,26 @@ class Auto:
         self.weight = weight
 
     @staticmethod
-    def move():
+    def move() -> None:
+        """
+        Движемся
+        :return: Ничего
+        """
         print("move")
 
     @staticmethod
-    def stop():
+    def stop() -> None:
+        """
+        Стоим
+        :return: Ничего
+        """
         print("stop")
 
-    def birthday(self):
+    def birthday(self) -> None:
+        """
+        Увеличиваем возраст на 1
+        :return: Ничего
+        """
         self.age += 1
 
 

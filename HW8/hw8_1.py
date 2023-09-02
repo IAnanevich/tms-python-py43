@@ -13,14 +13,21 @@
 # Сравнивать между собой можно как объекты класса, так и обычные строки с экземплярами класса RealString.
 class RealString:
 
-    def __init__(self, string: str):
+    def __init__(self, string: str) -> None:
+        # Инициализация класса
         self.real_string = string
 
-    def __gt__(self, other: any):
+    def __gt__(self, other: any) -> bool:
+        # Операция для сравнения объектов класса
         return self.string_value(self) > self.string_value(other)
 
     @staticmethod
-    def string_value(some_value: any):
+    def string_value(some_value: any) -> int:
+        """
+        Количество входящих в строку символов
+        :param some_value:
+        :return: Количество символов
+        """
         if isinstance(some_value, RealString):
             return len(some_value.real_string)
         try:

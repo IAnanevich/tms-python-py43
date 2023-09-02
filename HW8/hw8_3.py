@@ -3,6 +3,7 @@ from time import sleep
 
 class Auto:
     def __init__(self, brand: str, age: int, mark: str, color: str = "no color", weight: float = 0):
+        # Инициализация класса по параметрам
         self.brand = brand
         self.age = age
         self.color = color
@@ -10,39 +11,65 @@ class Auto:
         self.weight = weight
 
     @staticmethod
-    def move():
+    def move() -> None:
+        """
+        Движемся
+        :return: Ничего
+        """
         print("move")
 
     @staticmethod
-    def stop():
+    def stop() -> None:
+        """
+        Стоим
+        :return: Ничего
+        """
         print("stop")
 
-    def birthday(self):
+    def birthday(self) -> None:
+        """
+        Увеличиваем возраст на 1
+        :return: Ничего
+        """
         self.age += 1
 
 
 class Truck(Auto):
-    def __init__(self, brand: str, age: int, mark: str, max_load: float, color: str = "no color", weight: float = 0):
+    def __init__(self, brand: str, age: int, mark: str, max_load: float, color: str = "no", weight: float = 0) -> None:
+        # Инициализация класса по параметрам с вызовом инита из родительского класса
         super().__init__(brand=brand, age=age, mark=mark, color=color, weight=weight)
         self.max_load = max_load
 
-    def move(self):
+    def move(self) -> None:
+        """
+        Внимание!
+        :return: Ничего
+        """
         print("attention")
         super().move()
 
     @staticmethod
-    def load():
+    def load() -> None:
+        """
+        Грузимся
+        :return: Ничего
+        """
         sleep(1)
         print("load")
         sleep(1)
 
 
 class Car(Auto):
-    def __init__(self, brand: str, age: int, mark: str, max_speed: float, color: str = "no color", weight: float = 0):
+    def __init__(self, brand: str, age: int, mark: str, max_speed: float, color: str = "no", weight: float = 0) -> None:
+        # Инициализация класса по параметрам с вызовом инита из родительского класса
         super().__init__(brand=brand, age=age, mark=mark, color=color, weight=weight)
         self.max_speed = max_speed
 
-    def move(self):
+    def move(self) -> None:
+        """
+        Движемся
+        :return: Ничего
+        """
         super().move()
         print(f"Max speed is {self.max_speed}")
 
