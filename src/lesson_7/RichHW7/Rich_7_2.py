@@ -10,10 +10,8 @@ text4 = input(str("Enter text4 "))
 
 with open('file.txt', "w") as file:
     file.write(f'{text1}\n{text2}\n')
-    file.close()
 print(f'The first 2 lines are written: \n {text1} \n {text2}')
 # Дозапись оставшихся 2 строк
 with open('file.txt', "a") as file:
     file.write(f'{text3}\n{text4}\n')
-    file.close()
 print(f'The second 2 lines are written: \n {text3} \n {text4}')
