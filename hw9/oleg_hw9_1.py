@@ -40,7 +40,8 @@ class Toy(Item):
         self.num_battery = num_battery  # количество бареек
 
     def canPlay(self):
-        return f"Ребенок может играть с '{self.name}'" if self.__access() else f"Ребенок запрещено играть с '{self.name}''. Минимальный возраст {self.minimum_age}"
+        return f"Ребенок может играть с '{self.name}'" if self.__access() else \
+            f"Ребенок запрещено играть с '{self.name}''. Минимальный возраст {self.minimum_age}"
 
     def __access(self) -> bool:
         return self.child_age >= self.minimum_age
@@ -48,7 +49,7 @@ class Toy(Item):
 
 class BuildingTools(Item):
     """ class BuildingTools (Строительный инструмент). """
-    def __init__(self, name: str, width: float, height: float, weight: float, type: str = "mechanical", only_socket = False, num_battery: int = 0):
+    def __init__(self, name: str, width: float, height: float, weight: float, type: str="mechanical", only_socket=False, num_battery: int=0):
         super().__init__(name, width, height, weight)
         self.type = type # тип инструмента
         self.num_battery = num_battery  # количество батареек
@@ -66,6 +67,6 @@ print(toy_2.canPlay())
 b_tools_1 = BuildingTools(name="Шлифовальная машина", width=50, height=40, weight=600, type="electric", num_battery=1)
 b_tools_2 = BuildingTools(name="Молоток", width=10, height=30, weight=150, type="mechanical")
 
-print(f"Кол-во заведенных игрушек {toy_1.count_items}");
-print(f"Кол-во заведенных инструментов {b_tools_2.count_items}");
+print(f"Кол-во заведенных игрушек {toy_1.count_items}")
+print(f"Кол-во заведенных инструментов {b_tools_2.count_items}")
 del b_tools_1, b_tools_2, toy_1, toy_2
