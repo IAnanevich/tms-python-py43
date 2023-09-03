@@ -25,7 +25,7 @@ class Item:
         pass
         str_log = str(datetime.now())
         for key, value in vars(self).items():
-           str_log += f" {key} = {value},"
+            str_log += f" {key} = {value},"
         with open("log_file_hw9.txt", "a+") as text_file:
             text_file.write(f"{str_log}\r")
 
@@ -74,7 +74,8 @@ if __name__ == "__main__":
     toy_2.child_age = 2
     print(toy_2.canPlay())
 
-    b_tools_1 = BuildingTools(name="Шлифовальная машина", width=50, height=40, weight=600, type="electric", num_battery=1)
+    b_tools_1 = BuildingTools(name="Шлифовальная машина", width=50, height=40, weight=600, type="electric",
+                              num_battery=1)
     b_tools_2 = BuildingTools(name="Молоток", width=10, height=30, weight=150, type="mechanical")
 
     print(f"Кол-во заведенных игрушек {toy_1.count_items}")
