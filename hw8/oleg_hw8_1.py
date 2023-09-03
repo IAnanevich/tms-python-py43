@@ -38,7 +38,6 @@ class RealString:
         """ Определяет поведение оператора больше, > """
         if not isinstance(other, RealString):
             other = RealString(other)
-        #print(other)
         return self.len_row > other.len_row
 
     def __le__(self, other: str | object) -> bool:
@@ -52,6 +51,7 @@ class RealString:
         if not isinstance(other, RealString):
             other = RealString(other)
         return self.len_row >= other.len_row
+
 
 if __name__ == "__main__":
     str_1 = RealString("Яблоко");
