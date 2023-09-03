@@ -9,7 +9,7 @@ from time import sleep
 
 
 class Auto:
-    def __init__(self, brand: str, age: int, mark: str, color: str = " ", weight: int = 0):
+    def __init__(self, brand: str, age: int, mark: str, color: str = " ", weight: int = 0) -> None:
         self.brand = brand
         self.age = age
         self.mark = mark
@@ -46,7 +46,7 @@ auto_1.birthday()
 
 class Truck(Auto):
     def __init__(self, brand: str, age: int, mark: str, color: str, weight: int, max_load: int):
-        Auto.__init__(self, brand, age, mark, color, weight)
+        super().__init__()
         self.max_load = max_load
 
     def move(self):
