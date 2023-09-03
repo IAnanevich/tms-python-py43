@@ -10,32 +10,60 @@
 
 class RealString:
     def __init__(self, string):
+        """
+        :param string: =
+        """
         self.string = string
 
     def __lt__(self, other):
+        """
+        :param other: < (less)
+        :return:
+        """
         return len(self.string) < len(other.string)
 
-    def __le__(self, other):    
+    def __le__(self, other):
+        """
+        :param other: (less or equal)
+        :return:
+        """
         return len(self.string) <= len(other.string)
 
     def __eq__(self, other):
+        """
+        :param other: == (comparison)
+        :return:
+        """
         return len(self.string) == len(other.string)
 
     def __ne__(self, other):
+        """
+        :param other: != equality
+        :return:
+        """
         return len(self.string) != len(other.string)
 
     def __gt__(self, other):
+        """
+        :param other: > more
+        :return:
+        """
         return len(self.string) > len(other.string)
 
     def __ge__(self, other):
+        """
+        :param other: >= (more equal)
+        :return:
+        """
         return len(self.string) >= len(other.string)
 
 
-# Создаем экземпляры класса
+# Create class instances
 string1 = RealString("Яблоко")
 string2 = RealString("Apple")
 
-# Сравниваем объекты класса между собой
+
+# Compare class objects with each other
 print(string1 < string2)
 print(string1 <= string2)
 print(string1 == string2)

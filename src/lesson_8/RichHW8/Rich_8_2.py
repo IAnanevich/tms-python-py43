@@ -12,13 +12,15 @@
 
 
 class Auto:
-    def __init__(self,
-                 brand: str,
-                 age: int,
-                 mark: str,
-                 color: str = "",
-                 weight: float = 0
-                 ):
+    def __init__(
+            self, brand: str, age: int = 1, mark: str = 'st', color: str = "", weight: int = 0) -> None:
+        """
+        :param brand: str
+        :param age: int
+        :param mark: str
+        :param color: str
+        :param weight: int
+        """
         self.brand = brand
         self.age = age
         self.color = color
@@ -26,14 +28,26 @@ class Auto:
         self.weight = weight
 
     @staticmethod
-    def move():
+    def move() -> None:
+        """
+        print 'move'
+        :return:
+        """
         print("move")
 
     @staticmethod
-    def stop():
+    def stop() -> None:
+        """
+        print 'stop'
+        :return:
+        """
         print("stop")
 
-    def birthday(self):
+    def birthday(self) -> None:
+        """
+        increasing the age of the automobile by 1
+        :return:
+        """
         self.age += 1
 
 
@@ -41,28 +55,40 @@ car_one = Auto("mazda", 7, "ford")
 car_one.move()
 car_one.stop()
 car_one.birthday()
-
-print(car_one.brand, car_one.age, car_one.color, car_one.mark, car_one.weight)
+print(f"Brand: {car_one.brand}")
+print(f"Age: {car_one.age} years")
+print(f"Color: {car_one.color}")
+print(f"Mark: {car_one.mark}")
+print(f"Weight: {car_one.weight} kg")
 
 
 class Truck(Auto):
-    def __init__(self,
-                 brand: str,
-                 age: int,
-                 mark: str,
-                 color: str,
-                 weight: int,
-                 max_load: int
-                 ):
-        Auto.__init__(self, brand, age, mark, color, weight)
+    def __init__(
+            self,
+            brand: str,
+            age: int,
+            mark: str,
+            color: str,
+            weight: int,
+            max_load: int
+    ):
+        super().__init__(self, brand, age, mark, color, weight)
         self.max_load = max_load
 
     def move(self):
+        """
+        print attention
+        :return:
+        """
         print("attention")
         super().move()
 
     @staticmethod
     def load():
+        """
+        time +1 sec and print 'loading'
+        :return:
+        """
         import time
         time.sleep(1)
         print('Loading')
@@ -70,24 +96,34 @@ class Truck(Auto):
 
 
 class Car(Auto):
-    def __init__(self,
-                 brand=str,
-                 age=int,
-                 mark=str,
-                 color=str,
-                 weight=int,
-                 max_speed=int,
-                 ):
-        Auto.__init__(self, brand, age, mark, color, weight)
+    def __init__(
+            self,
+            brand=str,
+            age=int,
+            mark=str,
+            color=str,
+            weight=int,
+            max_speed=int,
+    ):
+        super().__init__(self, brand, age, mark, color, weight)
         self.max_load = max_speed()
 
     def move(self):
+        """
+        print max speed
+        :return:
+        """
         max_speed = int()
         super().move()
         print(f"Max speed  {max_speed}")
 
 
-car_one = Car("mazda", 9, "UNO")
+car_one = Auto("mazda", 7, "ford")
 car_one.move()
-car_one.birthday()
 car_one.stop()
+car_one.birthday()
+print(f"Brand: {car_one.brand}")
+print(f"Age: {car_one.age} years")
+print(f"Color: {car_one.color}")
+print(f"Mark: {car_one.mark}")
+print(f"Weight: {car_one.weight} kg")
