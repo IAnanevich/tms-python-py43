@@ -11,6 +11,7 @@
 для воплощения задуманного.
 """
 
+
 class RealString:
     def __init__(self, row: str):
         self.row = row

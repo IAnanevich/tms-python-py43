@@ -40,6 +40,7 @@ class Car(Auto):
         super().move()
         print(f"max_speed is {self.max_speed}")
 
+
 if __name__ == "__main__":
     truck_1 = Truck(max_load=9700, brand="МАЗ", age=5, mark="53363", color='white', weight=8300)
     truck_2 = Truck(max_load=20000, brand="КамАЗ", age=14, mark="5320", color='black', weight=7000)
