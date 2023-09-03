@@ -63,7 +63,7 @@ class Department:
         self.get_info()
 
     # переопределим ">"
-    def __gt__(self, other) -> bool:
+    def __gt__(self, other: object) -> bool:
         """
         checking if the first person works more than the second
         :param other: person who with we compare experience

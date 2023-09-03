@@ -50,5 +50,6 @@ class Messages(metaclass=MyMeta):
 
 # проверка с новыми названиями методов
 my_text = Messages()
-my_text.funk_1()
-my_text.funk_2()
+# ниже - ругается на метод, поэтому уношу в игнор
+my_text.funk_1()  # type: ignore
+my_text.funk_2()  # type: ignore
