@@ -22,10 +22,10 @@ class Item:
         return age >= min_age
 
     def __del__(self):
+        pass
         str_log = str(datetime.now())
         for key, value in vars(self).items():
-            str_log += f" {key} = {value},"
-
+           str_log += f" {key} = {value},"
         with open("log_file_hw9.txt", "a+") as text_file:
             text_file.write(f"{str_log}\r")
 
@@ -49,31 +49,34 @@ class Toy(Item):
 
 class BuildingTools(Item):
     """ class BuildingTools (Строительный инструмент). """
+
     def __init__(
             self, name: str,
             width: float,
             height: float,
             weight: float,
-            type: str="mechanical",
+            type: str = "mechanical",
             only_socket=False,
-            num_battery: int=0):
+            num_battery: int = 0):
         super().__init__(name, width, height, weight)
         self.type = type  # тип инструмента
         self.num_battery = num_battery  # количество батареек
         self.only_socket = only_socket  # только от розетки
 
-toy_1 = Toy(name="Машинка электрическая", width=10, height=15, weight=75, minimum_age=3, num_battery=5)
-toy_1.child_age = 2
-print(toy_1.canPlay())
-print(Toy.isAdult(10, 9))
 
-toy_2 = Toy(name="Плюшевый мишка", width=50, height=100, weight=50, minimum_age=1)
-toy_2.child_age = 2
-print(toy_2.canPlay())
+if __name__ == "__main__":
+    toy_1 = Toy(name="Машинка электрическая", width=10, height=15, weight=75, minimum_age=3, num_battery=5)
+    toy_1.child_age = 2
+    print(toy_1.canPlay())
+    print(Toy.isAdult(10, 9))
 
-b_tools_1 = BuildingTools(name="Шлифовальная машина", width=50, height=40, weight=600, type="electric", num_battery=1)
-b_tools_2 = BuildingTools(name="Молоток", width=10, height=30, weight=150, type="mechanical")
+    toy_2 = Toy(name="Плюшевый мишка", width=50, height=100, weight=50, minimum_age=1)
+    toy_2.child_age = 2
+    print(toy_2.canPlay())
 
-print(f"Кол-во заведенных игрушек {toy_1.count_items}")
-print(f"Кол-во заведенных инструментов {b_tools_2.count_items}")
-del b_tools_1, b_tools_2, toy_1, toy_2
+    b_tools_1 = BuildingTools(name="Шлифовальная машина", width=50, height=40, weight=600, type="electric", num_battery=1)
+    b_tools_2 = BuildingTools(name="Молоток", width=10, height=30, weight=150, type="mechanical")
+
+    print(f"Кол-во заведенных игрушек {toy_1.count_items}")
+    print(f"Кол-во заведенных инструментов {b_tools_2.count_items}")
+    del b_tools_1, b_tools_2, toy_1, toy_2
