@@ -4,6 +4,7 @@ from datetime import datetime
 class Item:
     """ Базовый класс для всех предметов """
     count_items = 0  # количество заведенных предметов в рамках подкласса
+
     def __init__(self, name: str, width: float, height: float, weight: float):
         self.name = name
         self.width = width
@@ -32,6 +33,7 @@ class Item:
 class Toy(Item):
     """ class Toy (Игрушка). """
     child_age = 0 # возраст ребенка который будет играть с этой игрушкой
+
     def __init__(self, name: str, width: float, height: float, weight: float, minimum_age: int, num_battery: int = 0):
         super().__init__(name, width, height, weight)
         self.minimum_age = minimum_age # минимальный возраст
