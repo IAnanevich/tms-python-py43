@@ -9,6 +9,7 @@
 должна появиться надпись "max speed is <max_speed>".
 Создать по два объекта для каждого из классов truck & car, проверить все их методы и атрибуты.
 """
+import time
 
 
 class Auto:
@@ -89,7 +90,6 @@ class Truck(Auto):
         time +1 sec and print 'loading'
         :return:
         """
-        import time
         time.sleep(1)
         print('Loading')
         time.sleep(1)
