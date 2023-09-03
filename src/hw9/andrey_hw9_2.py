@@ -2,16 +2,16 @@
 
 
 class Meta(type):
-    def __new__(cls, name, bases, attrs, *args, **kwargs):
+    def __new__(cls, name: str, bases: tuple, attrs: dict, *args: tuple, **kwargs: dict) -> object:
         if name == 'Get':
-            def date(datas: str) -> dict:
+            def date(self, datas: str) -> None:
                 """
                 converts string data to dict
                 :param datas:
                 :return:
                 """
                 import json
-                return json.loads(datas)
+                self.body = json.loads(datas)
 
             attrs.setdefault('date', date)
         if name == 'Post':
@@ -42,9 +42,9 @@ class Post(metaclass=Meta):
 
 
 get = Get(body='', head={'Content-Type': ''})
-response = get.date('{ "id": 121, "name": "Naveen", "course": "MERN Stack"}')
-print(response)
-print(type(response))
+get.date('{ "id": 121, "name": "Naveen", "course": "MERN Stack"}')
+print(get.body)
+print(type(get.body))
 
 post = Post(body={"id": 121, "name": "Naveen", "course": "MERN Stack"}, head={'Content-Type': ''})
 response = post.return_body()

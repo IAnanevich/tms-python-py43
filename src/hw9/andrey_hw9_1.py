@@ -23,7 +23,7 @@ class Animal:
         return 'different'
 
     @classmethod
-    def info(cls) -> str:
+    def info(cls) -> str | None:
         """
         class information
         :return:
@@ -44,7 +44,7 @@ class Animal:
                 """
         return self.lifespan - self.age
 
-    def __lt__(self, other):
+    def __lt__(self, other: object) -> bool | None:
         if not isinstance(self, Animal):
             return
         return self.age < other.age
@@ -99,7 +99,7 @@ class Fish(Animal):
 
         return (self.lifespan - self.age) * coef
 
-    def __lt__(self, other: object):
+    def __lt__(self, other: object) -> bool | None:
         if not isinstance(other, Fish):
             return
         return self.size < other.size
