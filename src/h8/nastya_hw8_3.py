@@ -38,3 +38,47 @@ class RealString:
 
 words = RealString('liluililuiluil', 'fgyju')
 words.check()
+
+# -----------------------------------------------------------------------------
+
+
+class RealString2:
+    """
+    class RealString2 with attributes and methods
+    Attributes: string_1, string_2
+    Methods: __init__, __lt__, __eq__
+    """
+    def __init__(self, string_1: str, string_2: str) -> None:
+        """
+        Makes a new class object.
+        :param string_1: string_1
+        :param string_2: string_2
+        """
+        self.string_1 = string_1
+        self.string_2 = string_2
+
+    def __lt__(self) -> str:
+        """
+        Compares 2 strings by the number of characters
+        :return: string
+        """
+        if len(self.string_1) > len(self.string_2):
+            return f'{self.string_1} > {self.string_2}'
+        elif len(self.string_1) < len(self.string_2):
+            return f'{self.string_1} < {self.string_2}'
+        else:
+            return f'{self.string_1} = {self.string_2}'
+
+    def __eq__(self, other) -> str:
+        """
+        Compares 2 objects of a class for equality
+        :param other: other object
+        :return: True/False
+        """
+        return self.string_1 == other.string_1 and self.string_2 == other.string_2
+
+
+word_1 = RealString2('RGTRHTHT', 'TRHRTGHJHGFDBNHNGFVGNJH')
+word_2 = RealString2('RGTRHTHT', 'JH')
+print(word_1.__lt__())
+print(word_1.__eq__(word_2))

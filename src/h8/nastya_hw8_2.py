@@ -15,7 +15,7 @@ class Auto:
     Attributes: brand, age, mark, color, weight
     Methods: stop, move, birthday
     """
-    def __init__(self, brand: str, age: int, mark: str, color: None = str, weight: None = int):
+    def __init__(self, brand: str, age: int, mark: str, color: None = str, weight: None = int) -> None:
         """
         Makes a new class object.
         :param brand: brand
@@ -57,7 +57,7 @@ class Truck(Auto):
     Attributes: brand, age, mark, max_load, color, weight
     Methods: stop, move, birthday, load
     """
-    def __init__(self, brand: str, age: int, mark: str, max_load: int, color: str = None, weight: int = None):
+    def __init__(self, brand: str, age: int, mark: str, max_load: int, color: str = None, weight: int = None) -> None:
         """
         Makes a new class object.
         :param brand: brand
@@ -97,7 +97,7 @@ class Car(Auto):
     Attributes: max_speed, brand, age, mark, color, weight
     Methods: stop, move, birthday
     """
-    def __init__(self, max_speed, brand, age, mark, color=None, weight=None):
+    def __init__(self, max_speed, brand, age, mark, color=None, weight=None) -> None:
         """
         Makes a new class object.
         :param max_speed: max_speed
