@@ -68,6 +68,7 @@ class Fish(Animal):
     """
     describes the Fish
     """
+
     @staticmethod
     def movement() -> str:
         """
@@ -111,7 +112,7 @@ if __name__ == "__main__":
     print(animal.movement())
     print(animal.points)
     print(animal < animal_2)
-    print('-'*20)
+    print('-' * 20)
 
     human = Mammals(name='Human', age=50)
     cow = Mammals(name='cow', age=2)
