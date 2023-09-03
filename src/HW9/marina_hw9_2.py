@@ -1,6 +1,6 @@
 # Реализовать любой мета класс (сами придумываете что ваш класс будет делать)
 # Переименовывает все методы класса в funk_n, где n - порядковый номер метода в описании
-from typing import Callable, Any
+from typing import Any
 
 
 class MyMeta(type):
