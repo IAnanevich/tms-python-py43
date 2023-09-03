@@ -49,9 +49,16 @@ class Toy(Item):
 
 class BuildingTools(Item):
     """ class BuildingTools (Строительный инструмент). """
-    def __init__(self, name: str, width: float, height: float, weight: float, type: str="mechanical", only_socket=False, num_battery: int=0):
+    def __init__(
+            self, name: str,
+            width: float,
+            height: float,
+            weight: float,
+            type: str="mechanical",
+            only_socket=False,
+            num_battery: int=0):
         super().__init__(name, width, height, weight)
-        self.type = type # тип инструмента
+        self.type = type  # тип инструмента
         self.num_battery = num_battery  # количество батареек
         self.only_socket = only_socket  # только от розетки
 
