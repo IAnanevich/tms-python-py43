@@ -2,8 +2,8 @@ from datetime import datetime
 
 
 class Item:
-    """Базовый класс для всех предметов"""
-    count_items = 0 # количество заведенных предметов в рамках подкласса
+    """ Базовый класс для всех предметов """
+    count_items = 0  # количество заведенных предметов в рамках подкласса
 
     def __init__(self, name: str, width: float, height: float, weight: float):
         self.name = name
@@ -31,13 +31,13 @@ class Item:
 
 
 class Toy(Item):
-    """class Toy (Игрушка)."""
-    child_age = 0 # возраст ребенка который будет играть с этой игрушкой
+    """ class Toy (Игрушка). """
+    child_age = 0  # возраст ребенка который будет играть с этой игрушкой
 
     def __init__(self, name: str, width: float, height: float, weight: float, minimum_age: int, num_battery: int = 0):
         super().__init__(name, width, height, weight)
-        self.minimum_age = minimum_age # минимальный возраст
-        self.num_battery = num_battery # количество бареек
+        self.minimum_age = minimum_age  # минимальный возраст
+        self.num_battery = num_battery  # количество бареек
 
     def canPlay(self):
         return f"Ребенок может играть с '{self.name}'" if self.__access() else f"Ребенок запрещено играть с '{self.name}''. Минимальный возраст {self.minimum_age}"
@@ -47,12 +47,12 @@ class Toy(Item):
 
 
 class BuildingTools(Item):
-    """class BuildingTools (Строительный инструмент)."""
+    """ class BuildingTools (Строительный инструмент). """
     def __init__(self, name: str, width: float, height: float, weight: float, type: str = "mechanical", only_socket = False, num_battery: int = 0):
         super().__init__(name, width, height, weight)
         self.type = type # тип инструмента
-        self.num_battery = num_battery # количество батареек
-        self.only_socket = only_socket # только от розетки
+        self.num_battery = num_battery  # количество батареек
+        self.only_socket = only_socket  # только от розетки
 
 toy_1 = Toy(name="Машинка электрическая", width=10, height=15, weight=75, minimum_age=3, num_battery=5)
 toy_1.child_age = 2
