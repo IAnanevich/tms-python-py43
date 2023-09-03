@@ -6,6 +6,7 @@
 
 from accessify import protected
 from dataclasses import dataclass
+from typing_extensions import Any
 
 
 @dataclass
@@ -63,7 +64,7 @@ class Department:
         self.get_info()
 
     # переопределим ">"
-    def __gt__(self, other: object) -> bool:
+    def __gt__(self, other: Any) -> bool:
         """
         checking if the first person works more than the second
         :param other: person who with we compare experience

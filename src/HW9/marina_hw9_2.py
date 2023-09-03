@@ -8,7 +8,7 @@ class MyMeta(type):
     Переименовывает все методы класса в funk_n, где n - порядковый номер метода в классе
     """
 
-    def __new__(cls, name: str, bases: tuple[Any], attrs: dict[Any, Any]) -> Callable:
+    def __new__(cls, name: str, bases: tuple[Any], attrs: dict[Any, Any]) -> Any:
         """
         constructor
         :param name: name

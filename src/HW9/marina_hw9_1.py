@@ -5,6 +5,7 @@
 # которые можете (один метод должен быть переопределен ТОЛЬКО ОДИН раз в любом классе ребенке)
 # Сделать проверку, что все работает (создать объекты от классов).
 from accessify import protected
+from typing_extensions import Any
 
 
 class Department:
@@ -49,7 +50,7 @@ class Department:
         self.get_info()
 
     # переопределим ">"
-    def __gt__(self, other: object) -> bool:
+    def __gt__(self, other: Any) -> bool:
         """
         checking if the first person works more than the second
         :param other: person who with we compare experience
@@ -116,7 +117,7 @@ class Sales(Department):
         self.get_info()
 
     # переопределим ">" для дочернего класса
-    def __gt__(self, other: object) -> bool:
+    def __gt__(self, other: Any) -> bool:
         """
         checking if the first person has more subordinates than the second
         :param other: person who with we compare number of sub
