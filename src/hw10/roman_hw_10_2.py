@@ -1,3 +1,4 @@
+# Сделать свое исключение и подключить к try/except.
 class MyException(Exception):
     """
     Определяет пользовательское исключение MyException.
@@ -26,5 +27,6 @@ class MyException(Exception):
 
 try:
     raise MyException("Ошибка при работе с файлом", 404)
+
 except MyException as e:
     print(e)

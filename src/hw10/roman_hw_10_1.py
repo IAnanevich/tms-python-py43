@@ -5,6 +5,8 @@
 ее в скрипте, который будет запрашивать у пользователя два числа, обрабатывать ввод
 и выдавать либо среднее геометрическое чисел, либо сообщение об ошибке. Для решения
 задачи используйте в теле функции инструкцию raise, а в скрипте try/except.'''
+
+
 def avg(x: float, y: float) -> float:
     """
     The function takes two positive numbers and returns their geometric mean.
@@ -26,6 +28,7 @@ def avg(x: float, y: float) -> float:
     if x <= 0 or y <= 0:
         raise ValueError
     return (x * y) ** 0.5
+
 
 try:
     x = float(input("Введите первое число: "))
