@@ -10,9 +10,9 @@ def mail(email: str) -> None:
     :return: None
     """
     if isinstance(email, str) and re.match(pattern, email) is not None:
-        print("Проверка пройдена")
+        print(f"Проверка пройдена - {email}")
     else:
-        print("Проверка не пройдена")
+        print(f"Проверка не пройдена - {email}")
 
 
 mail("makarenkoek.@yandex.ru")

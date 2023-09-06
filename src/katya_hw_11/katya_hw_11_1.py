@@ -1,4 +1,7 @@
-def gen_gp(limit: int, b: int, q: int) -> 'collections.Iterable':
+from typing import Any
+
+
+def gen_gp(limit: int, b: int, q: int) -> Any:
     while limit >= 0:
         a = b * q
         limit -= 1
