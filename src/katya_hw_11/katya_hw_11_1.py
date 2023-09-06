@@ -1,4 +1,4 @@
-def gen_gp(limit: int, b: int, q: int):
+def gen_gp(limit: int, b: int, q: int) -> 'collections.Iterable':
     while limit >= 0:
         a = b * q
         limit -= 1
@@ -8,6 +8,5 @@ def gen_gp(limit: int, b: int, q: int):
         raise StopAsyncIteration
 
 
-gt = gen_gp(limit=10, b=5, q=7)
-for i in gt:
+for i in gen_gp(limit=10, b=5, q=7):
     print(i)
