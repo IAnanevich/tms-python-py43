@@ -1,7 +1,7 @@
-from typing import Generator
+from typing import Generator, Any
 
 
-def gen_gp(limit: int, b: float, q: float) -> Generator[float | None]:
+def gen_gp(limit: int, b: float, q: float) -> Generator[Any]:
     """
 
     :param limit:
