@@ -1,9 +1,10 @@
 import re
+from typing import Any
 
 pattern = r"^[a-zA-z0-9!#%&*+-/=?^_{|}]+[^./b]+@[a-zA-z0-9-]+[^-/b]+\.[a-zA-z0-9-][^-/b]+$"
 
 
-def mail(email: str) -> None:
+def mail(email: Any) -> None:
     """
     Filter email
     :param email: Email

@@ -1,7 +1,14 @@
-from typing import Any
+from typing import Generator
 
 
-def gen_gp(limit: int, b: int, q: int) -> Any:
+def gen_gp(limit: int, b: float, q: float) -> Generator[float | None]:
+    """
+
+    :param limit:
+    :param b:
+    :param q:
+    :return:
+    """
     while limit >= 0:
         a = b * q
         limit -= 1
