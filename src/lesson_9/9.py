@@ -157,36 +157,3 @@ from dataclasses import dataclass, asdict, astuple
 # print(hasattr(Foo, 'bar'))
 # print(hasattr(Foo, 'BAR'))
 # print(f.BAR)
-
-#
-# class TypeCheckMeta(type):
-#     def __new__(cls, name, bases, attrs):
-#         # Проходимся по всем атрибутам класса
-#         for attr_name, attr_value in attrs.items():
-#             # Проверяем, является ли атрибут функцией
-#             if callable(attr_value):
-#                 # Заменяем оригинальный метод на обертку с проверкой типов
-#                 attrs[attr_name] = cls.wrap_method(attr_value)
-#
-#         return super().__new__(cls, name, bases, attrs)
-#
-#     @staticmethod
-#     def wrap_method(method):
-#         def wrapper(*args, **kwargs):
-#             # Получаем аннотации аргументов метода
-#             annotations = method.__annotations__
-#
-#             # Проверяем типы аргументов
-#             for arg_name, arg_type in annotations.items():
-#                 if arg_name in kwargs:
-#                     if not isinstance(kwargs[arg_name], arg_type):
-#                         raise TypeError(f"Argument '{arg_name}' must be of type {arg_type.__name__}")
-#                 elif arg_name in args:
-#                     arg_index = args.index(arg_name)
-#                     if not isinstance(args[arg_index], arg_type):
-#                         raise TypeError(f"Argument '{arg_name}' must be of type {arg_type.__name__}")
-#
-#             return method(*args, **kwargs)
-#
-#         return wrapper
-
