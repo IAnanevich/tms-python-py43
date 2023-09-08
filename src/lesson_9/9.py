@@ -10,23 +10,23 @@
 #
 #     def info(self):
 #         return f'I am {self.get_name()}'
-        # return f'I am {self.name}'
-    #
-    # @staticmethod
-    # def hello():
-    #     print(User(name='Petr', age=10).info())
-        # return 'Hello world'
-    #
-    # @classmethod
-    # def some_method(cls):
-    #     print(cls.mro())
-    #
-    # @classmethod
-    # def get_cls(cls):
-    #     print(cls)
-    #
-    # def get_self(self):
-    #     print(self)
+# return f'I am {self.name}'
+#
+# @staticmethod
+# def hello():
+#     print(User(name='Petr', age=10).info())
+# return 'Hello world'
+#
+# @classmethod
+# def some_method(cls):
+#     print(cls.mro())
+#
+# @classmethod
+# def get_cls(cls):
+#     print(cls)
+#
+# def get_self(self):
+#     print(self)
 #
 #
 # User(name='Petr', age=10).hello()
@@ -36,9 +36,6 @@
 # user.get_self()
 
 # print(user.get_name)
-
-
-from dataclasses import dataclass, asdict, astuple
 
 
 # class Coordinate:
@@ -73,16 +70,16 @@ from dataclasses import dataclass, asdict, astuple
 
 # @dataclass(slots=True)
 # class Person:
-    # __slots__ = ('name', 'age')
-    # name: str
-    # age: int
-    # is_admin: bool = False
+# __slots__ = ('name', 'age')
+# name: str
+# age: int
+# is_admin: bool = False
 
 
 # @dataclass(slots=True)
 # class Employee(Person):
-    # __slots__ = super().__slots__ + ('salary', )
-    # salary: int
+# __slots__ = super().__slots__ + ('salary', )
+# salary: int
 
 
 # employee_1 = Employee(name='Petr', age=25, salary=1000)
@@ -108,9 +105,8 @@ from dataclasses import dataclass, asdict, astuple
 #     return self.name
 #
 #
-# my_class = type('MyClass', (), {'name': 'Petr', 'get_name': get_name})  # name, bases (родительские классы), attrs (аттрибуты класса)
-# print(my_class().name)
-# print(my_class().get_name())
+# my_class = type('MyClass', (), {'name': 'Petr', 'get_name': get_name})  # name, bases (родительские классы),
+# attrs (аттрибуты класса) print(my_class().name) print(my_class().get_name())
 
 
 # class Foo(metaclass=something, kwarg1=value1, ...):
