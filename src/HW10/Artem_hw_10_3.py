@@ -1,4 +1,4 @@
-class Input(Exception):
+class InputError(Exception):
     """
     Exception class
     """
