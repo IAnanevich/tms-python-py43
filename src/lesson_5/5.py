@@ -1,4 +1,4 @@
-from typing import Union, Optional
+from typing import Union, Optional, Any
 
 # def main():
 #     return 1
@@ -168,3 +168,27 @@ from typing import Union, Optional
 #     if not i % 2:
 #         a.append(i * 2)
 # print(a)
+
+
+def main(info: str, *args: Any, **kwargs: Any) -> None:
+    """
+
+    :param info:
+    :param args:
+    :param kwargs:
+    :return:
+    """
+    # print(info)
+    # print(args)
+    # print(type(args))
+    # print(kwargs)
+    # print(type(kwargs))
+
+    for i in args:
+        print(i)
+
+    for key, value in kwargs.items():
+        print(f'{key}: {value}')
+
+
+main('1', 2, '3', name='Petr', age=23)

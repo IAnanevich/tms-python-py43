@@ -10,6 +10,7 @@
 #
 #     def info(self):
 #         return f'I am {self.get_name()}'
+<<<<<<< HEAD
 # return f'I am {self.name}'
 #
 # @staticmethod
@@ -27,6 +28,25 @@
 #
 # def get_self(self):
 #     print(self)
+=======
+        # return f'I am {self.name}'
+    #
+    # @staticmethod
+    # def hello():
+    #     print(User(name='Petr', age=10).info())
+        # return 'Hello world'
+    #
+    # @classmethod
+    # def some_method(cls):
+    #     print(cls.mro())
+    #
+    # @classmethod
+    # def get_cls(cls):
+    #     print(cls)
+    #
+    # def get_self(self):
+    #     print(self)
+>>>>>>> main
 #
 #
 # User(name='Petr', age=10).hello()
@@ -38,6 +58,12 @@
 # print(user.get_name)
 
 
+<<<<<<< HEAD
+=======
+from dataclasses import dataclass, asdict, astuple
+
+
+>>>>>>> main
 # class Coordinate:
 #
 #     def __init__(self, x, y, z):
@@ -70,16 +96,28 @@
 
 # @dataclass(slots=True)
 # class Person:
+<<<<<<< HEAD
 # __slots__ = ('name', 'age')
 # name: str
 # age: int
 # is_admin: bool = False
+=======
+    # __slots__ = ('name', 'age')
+    # name: str
+    # age: int
+    # is_admin: bool = False
+>>>>>>> main
 
 
 # @dataclass(slots=True)
 # class Employee(Person):
+<<<<<<< HEAD
 # __slots__ = super().__slots__ + ('salary', )
 # salary: int
+=======
+    # __slots__ = super().__slots__ + ('salary', )
+    # salary: int
+>>>>>>> main
 
 
 # employee_1 = Employee(name='Petr', age=25, salary=1000)
@@ -105,8 +143,14 @@
 #     return self.name
 #
 #
+<<<<<<< HEAD
 # my_class = type('MyClass', (), {'name': 'Petr', 'get_name': get_name})  # name, bases (родительские классы),
 # attrs (аттрибуты класса) print(my_class().name) print(my_class().get_name())
+=======
+# my_class = type('MyClass', (), {'name': 'Petr', 'get_name': get_name})  # name, bases (родительские классы), attrs (аттрибуты класса)
+# print(my_class().name)
+# print(my_class().get_name())
+>>>>>>> main
 
 
 # class Foo(metaclass=something, kwarg1=value1, ...):
@@ -153,3 +197,38 @@
 # print(hasattr(Foo, 'bar'))
 # print(hasattr(Foo, 'BAR'))
 # print(f.BAR)
+<<<<<<< HEAD
+=======
+
+
+class TypeCheckMeta(type):
+    def __new__(cls, name, bases, attrs):
+        # Проходимся по всем атрибутам класса
+        for attr_name, attr_value in attrs.items():
+            # Проверяем, является ли атрибут функцией
+            if callable(attr_value):
+                # Заменяем оригинальный метод на обертку с проверкой типов
+                attrs[attr_name] = cls.wrap_method(attr_value)
+
+        return super().__new__(cls, name, bases, attrs)
+
+    @staticmethod
+    def wrap_method(method):
+        def wrapper(*args, **kwargs):
+            # Получаем аннотации аргументов метода
+            annotations = method.__annotations__
+
+            # Проверяем типы аргументов
+            for arg_name, arg_type in annotations.items():
+                if arg_name in kwargs:
+                    if not isinstance(kwargs[arg_name], arg_type):
+                        raise TypeError(f"Argument '{arg_name}' must be of type {arg_type.__name__}")
+                elif arg_name in args:
+                    arg_index = args.index(arg_name)
+                    if not isinstance(args[arg_index], arg_type):
+                        raise TypeError(f"Argument '{arg_name}' must be of type {arg_type.__name__}")
+
+            return method(*args, **kwargs)
+
+        return wrapper
+>>>>>>> main
