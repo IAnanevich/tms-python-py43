@@ -1,4 +1,4 @@
-# Калькулятор на Python
+# Калькулятор на Python.
 
 def plus(a: int, b: int) -> int:
     """
