@@ -16,7 +16,11 @@ class MetaClass(type):
 
 
 class Method(metaclass=MetaClass):
-    def second(self):
+    def second(self) -> str:
+        """
+
+        :return: l1
+        """
         return f'{self.l1}'
 
 
