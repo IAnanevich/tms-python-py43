@@ -6,7 +6,7 @@ import time
 
 
 def list_numbers(n) -> list[str]:
-    """гениратор списка"""
+    """генератор списка"""
     new_list = []
     for i in range(1, n + 1):
         new_list.append(datetime.strftime(datetime.now(time.sleep(1)), '%Y-%m-%d %H:%M:%S'))
