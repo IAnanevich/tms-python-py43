@@ -9,7 +9,7 @@ def check_email(email: str) -> None:
     :return: none
     """
     # pat = r'\w+@\w+\.\w+'
-    pat = r"^([a-zA-z0-9_]+)(\.?)([a-zA-z0-9_]+)@(([^\b-])([a-zA-z0-9-]+)([^-\b])){,63}\.(([^\b-])([a-zA-z0-9-]+)([^-\b])){,63}+$"
+    pat = r"^([a-zA-z0-9_]+)(\.?)([a-zA-z0-9_]+)@(([^\b-])([a-zA-z0-9-]+)([^-\b])){,63}\.(([a-zA-z0-9]+)){,63}+$"
     if re.fullmatch(pat, email) is not None:
         print("is an email")
     else:
