@@ -26,8 +26,8 @@ def say(a, b):
     return a / b
 
 
-a = (input("Enter first number: "))
-b = (input("Enter second number: "))
+a = input("Enter first number: ")
+b = input("Enter second number: ")
 if a.isdigit() and b.isdigit():
     print(say(float(a), float(b)))
 else:
