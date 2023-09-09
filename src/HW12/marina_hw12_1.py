@@ -8,7 +8,7 @@ from typing import Any
 
 
 # подключение к сессии
-def connect_to_session(path: str) -> sqlite3.Connection:
+def connect_to_session(path: str) -> Any:
     """
     connect to session
     :param path: path to date base
@@ -45,7 +45,7 @@ class ProductsList:
         except sqlite3.Error as error:
             print(error)
 
-    def read(self, table: str) -> list[Any]:
+    def read(self, table: str) -> Any:
         """
         read the base
         :param table: name of base
@@ -54,6 +54,7 @@ class ProductsList:
         cursor = self.session.cursor()
         try:
             cursor.execute(f"select * from {table}")
+            print(type(cursor.fetchall()))
             return cursor.fetchall()
         except sqlite3.Error as error:
             print(error)
