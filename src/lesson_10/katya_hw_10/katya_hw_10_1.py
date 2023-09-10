@@ -11,23 +11,25 @@
 # используйте в теле функции инструкцию raise, а в скрипте try/except.
 
 
-def avg(x: float, y: float) -> float:
+def avg(x: str, y: str) -> float | str:
     """
 
     :param x:
     :param y:
     :return:
     """
-    if x > 0 and y > 0:
+    if x.isnumeric() and y.isnumeric():
+        x = float(x)
+        y = float(y)
         return pow(x * y, 0.5)
-    else:
-        raise ValueError("Числа должны быть положительными и не равняться нулю")
+    return "Введите положительное число. Числа должны быть положительными и не равняться нулю"
 
 
-x = float(input("Введите число x: "))
-y = float(input("Введите число y: "))
+x_1 = input("Введите число x: ")
+y_1 = input("Введите число y: ")
+
 
 try:
-    print(avg(x, y))
+    print(avg(x_1, y_1))
 except ValueError as error:
     print(error)
