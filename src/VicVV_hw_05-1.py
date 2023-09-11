@@ -21,7 +21,7 @@ def my_mult(a_: float, b_: float) -> float:
     return a_ * b_
 
 
-def my_div(a_: float, b_: float) -> (float, None):
+def my_div(a_: float, b_: float) -> [float, None]:
     if not b_:
         return None
     else:
