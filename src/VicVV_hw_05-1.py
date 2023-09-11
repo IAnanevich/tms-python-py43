@@ -9,26 +9,26 @@ def my_is_number(dig1: str, dig2: str) -> bool:
         return False
 
 
-def my_add(a_: float, b_: float) -> float:
+def my_add(a_: int | float, b_: int | float) -> int | float:
     return a_ + b_
 
 
-def my_sub(a_: float, b_: float) -> float:
+def my_sub(a_: int | float, b_: int | float) -> int | float:
     return a_ - b_
 
 
-def my_mult(a_: float, b_: float) -> float:
+def my_mult(a_: int | float, b_: int | float) -> int | float:
     return a_ * b_
 
 
-def my_div(a_: float, b_: float) -> [float, None]:
+def my_div(a_: int | float, b_: int | float) -> float | None:
     if not b_:
         return None
     else:
         return a_ / b_
 
 
-def my_exp(a_: float, b_: float) -> float:
+def my_exp(a_: int | float, b_: int | float) -> int | float:
     return a_ ** b_
 
 
@@ -40,8 +40,8 @@ while 1:
         a = input("Число a = ")
         b = input("Число b = ")
         if my_is_number(a, b):
-            aa = float(a)
-            bb = float(b)
+            aa = int | float(a)
+            bb = int | float(b)
         else:
             print(f"надо было ввести числа, а не {a} и {b}...")
     else:
