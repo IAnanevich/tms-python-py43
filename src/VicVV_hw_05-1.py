@@ -40,8 +40,8 @@ while 1:
         a = input("Число a = ")
         b = input("Число b = ")
         if my_is_number(a, b):
-            aa = int | float(a)
-            bb = int | float(b)
+            aa = float(a)
+            bb = float(b)
         else:
             print(f"надо было ввести числа, а не {a} и {b}...")
     else:
