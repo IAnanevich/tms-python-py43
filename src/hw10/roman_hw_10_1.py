@@ -35,7 +35,7 @@ try:
     y = float(input("Введите второе число: "))
 
     result = avg(x, y)
-    print("Среднее геометрическое чисел", x, "и", y, "равно", result)
+    print(f"Среднее геометрическое чисел {x} и {y} равно {result}")
 
 except (ValueError, TypeError) as e:
     print("Ошибка: Ввод должен быть числом!")
