@@ -4,7 +4,7 @@
 def my_is_number(dig1: str, dig2: str) -> bool:
     try:
         dig = float(dig1) + float(dig2)
-        return True
+        return dig == dig
     except ValueError:
         return False
 
