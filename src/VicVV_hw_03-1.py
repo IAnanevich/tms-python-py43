@@ -1,5 +1,6 @@
 # Ввести предложение состоящее из двух слов.  Поменять местами слова...
 # fraza = input('Enter 2 words: ')
+
 fraza = "hello VicVV rrrf ffff w ffff frrrr"
 words = fraza.split()
 if len(words) != 2:

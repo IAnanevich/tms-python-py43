@@ -8,18 +8,18 @@ while 1:
     c = float(input("c = "))
     if a == 0 and b != 0:
         x = -c / b
-        print("Линейное уравнение:  x = %.2f" % x)
+        print(f"Линейное уравнение:  x = {x}")
     elif a != 0:
         d = b ** 2 - 4 * a * c
         print(f"Дискриминант = {d}")
 
-        if d > 0 :
+        if d > 0:
             x1 = (-b + (d**0.5)) / (2 * a)
             x2 = (-b - (d**0.5)) / (2 * a)
-            print("x1 = %.2f \nx2 = %.2f" % (x1, x2))
+            print(f"x1 = {x1} \nx2 = {x2}")
         elif d == 0:
             x = -b / (2 * a)
-            print("x = %.2f" % x)
+            print(f"x = {x}")
         else:
             print("нет решения")
     elif c != 0:
