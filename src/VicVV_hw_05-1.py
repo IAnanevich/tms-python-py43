@@ -35,27 +35,27 @@ def my_exp(a_: float, b_: float) -> float:
 while 1:
     print("1. Сложить \n2. Отнять \n3. Умножить \n4. Поделить \n5. Х в степень Y")
     choice = input("Любой другой символ - завершить. Что считаем? ")
-
+    aa, bb = 1.2, -5.5
+    
     if choice in ['1', '2', '3', '4', '5']:
         a = input("Число a = ")
         b = input("Число b = ")
         if my_is_number(a, b):
-            a = float(a)
-            b = float(b)
+            aa = float(a)
+            bb = float(b)
         else:
             print(f"надо было ввести числа, а не {a} и {b}...")
-            a = 1.2
-            b = -5.5
+           
     else:
         break
 
     if choice == '1':
-        print(f'{a} + {b} = {my_add(a, b)}')
+        print(f'{aa} + {bb} = {my_add(aa, bb)}')
     elif choice == '2':
-        print(f'{a} - {b} = {my_sub(a, b)}')
+        print(f'{aa} - {bb} = {my_sub(aa, bb)}')
     elif choice == '3':
-        print(f'{a} * {b} = {my_mult(a, b)}')
+        print(f'{aa} * {bb} = {my_mult(aa, bb)}')
     elif choice == '4':
-        print(f'{a} / {b} = {my_div(a, b)}')
+        print(f'{aa} / {bb} = {my_div(aa, bb)}')
     elif choice == '5':
-        print(f'{a} ^ {b} = {my_exp(a, b)}')
+        print(f'{aa} ^ {bb} = {my_exp(aa, bb)}')

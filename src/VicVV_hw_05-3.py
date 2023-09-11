@@ -1,6 +1,6 @@
 # 3. найти повторы чисел
 
-def repeat_dig(list_):
+def repeat_dig(list_: list) -> dict:
     keys_ = set(list_)
     # dict_ = {}
     dict_ = dict.fromkeys(keys_, 0)
