@@ -12,5 +12,5 @@ def get_list(sec: int) -> list:
     return list_d
 
 
-ss = int(input("Сколько элементов списка? "))
+ss = int(input("Сколько будет элементов списка? "))
 print(get_list(ss))

@@ -1,11 +1,11 @@
 # 3. найти повторы чисел
 
-def repeat_dig(list_1):
-    keys_ = set(list_1)
+def repeat_dig(list_):
+    keys_ = set(list_)
     # dict_ = {}
     dict_ = dict.fromkeys(keys_, 0)
     for key in keys_:
-        dict_[key] = list_1.count(key)
+        dict_[key] = list_.count(key)
         # print(dict_[key])
     return dict_
 

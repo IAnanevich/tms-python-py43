@@ -3,34 +3,33 @@
 
 def my_is_number(dig1: str, dig2: str) -> bool:
     try:
-        dig1 = float(dig1)
-        dig2 = float(dig2)
+        dig = float(dig1) + float(dig2)
         return True
     except ValueError:
         return False
 
 
-def my_add(a: float, b: float) -> float:
-    return a + b
+def my_add(a_: float, b_: float) -> float:
+    return a_ + b_
 
 
-def my_sub(a: float, b: float) -> float:
-    return a - b
+def my_sub(a_: float, b_: float) -> float:
+    return a_ - b_
 
 
-def my_mult(a: float, b: float) -> float:
-    return a * b
+def my_mult(a_: float, b_: float) -> float:
+    return a_ * b_
 
 
-def my_div(a: float, b: float) -> (float, None):
-    if b == 0:
+def my_div(a_: float, b_: float) -> (float, None):
+    if not b_:
         return None
     else:
-        return a / b
+        return a_ / b_
 
 
-def my_exp(a: float, b: float) -> float:
-    return a ** b
+def my_exp(a_: float, b_: float) -> float:
+    return a_ ** b_
 
 
 while 1:

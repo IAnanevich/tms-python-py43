@@ -6,6 +6,5 @@ def factor(n: int) -> int:
     else:
         return 1
 
-
 f = 64
 print(f"факториал {f} = {factor(f)}")
