@@ -68,7 +68,6 @@ class Products:
             return False
 
     def update(self, row_id: int, name: str, price: float, qty: float, comments: str = "") -> bool:
-        pass
         # """
         # Обновляет запись в таблице
         # :param row_id: id записи
@@ -93,7 +92,6 @@ class Products:
             return False
 
     def delete(self, row_id: int) -> bool:
-        pass
         # """
         # Удаляет запись из таблицу
         # :param row_id: id записи
