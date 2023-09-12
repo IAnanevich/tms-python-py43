@@ -1,4 +1,4 @@
-def main(name):
+def main(name) -> None:
     print(f'Hi, {name}')
 
 

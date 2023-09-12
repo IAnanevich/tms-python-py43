@@ -4,10 +4,10 @@ from sqlite3 import Error
 
 class SQLite3Client:
     DATABASE = "d:\\Program Files\\djangoProject\\db\\hw12.db"
+    total_changes = 0
+    last_row_id = 0
 
     def __init__(self) -> None:
-        self.total_changes = None
-        self.last_row_id = None
         try:
             self.db = sqlite3.connect(database=self.DATABASE)
         except Error as e:

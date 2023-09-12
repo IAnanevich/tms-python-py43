@@ -4,7 +4,7 @@ from faker import Faker
 sys.path.insert(0, '/tms/hw12/tms-python-py43/src/hw12/')
 
 
-def print_main_menu():
+def print_main_menu() -> None:
     print_color("""
            ******************************************************
            *         Выберите пункт меню                        *
@@ -16,7 +16,7 @@ def print_main_menu():
            ******************************************************""", "blue")
 
 
-def print_color(text: str, color: str):
+def print_color(text: str, color: str) -> None:
     access_color = {
         "green": "\033[32m",
         "blue": "\033[34m",
