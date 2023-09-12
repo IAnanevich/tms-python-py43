@@ -17,7 +17,7 @@ class SQLite3Client:
         cursor = self.db.cursor()
         self.total_changes = 0
         try:
-            cursor.execute(query, params)
+            cursor.execute(query, params if params else None)
             self.db.commit()
             self.last_row_id = cursor.lastrowid
             self.total_changes = self.db.total_changes
@@ -26,7 +26,8 @@ class SQLite3Client:
             print("error query", e)
         finally:
             cursor.close()
+        return None
 
-    def __del__(self):
+    def __del__(self) -> None:
         if self.db:
             self.db.close()

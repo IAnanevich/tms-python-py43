@@ -40,9 +40,8 @@ while True:
         if menu == 1:
             id = input('Введите ID записи: ')
             if id.isdigit():
-                id = int(id)
                 filter = {
-                    "id": id,
+                    "id": int(id),
                 }
                 result = product.get_list(filter=filter)
                 if len(result):
@@ -72,11 +71,10 @@ while True:
                 "comment": fake.text(),
             }
             if id.isdigit():
-                id = int(id)
                 # TODO создаем заново объект т.к. хотим точно знать обновилось или нет. total_changes считает все
                 #  изменения в сессии. а нам надо только в этой операции.
                 product = Product()
-                if product.update(id=id, params=params):
+                if product.update(id=int(id), params=params):
                     print_color(f"Запись {id} обновлена", "green")
                 else:
                     print_color(f"Запись {id} обновить не удалось", "red")
@@ -87,11 +85,10 @@ while True:
             id = input('Введите ID записи для удаления: ')
             print_main_menu()
             if id.isdigit():
-                id = int(id)
                 # TODO создаем заново объект т.к. хотим точно знать удалилась запись или нет. наверно есть более
                 #  нормальный способ. пока так
                 product = Product()
-                if product.delete(id=id):
+                if product.delete(id=int(id)):
                     print_color(f"Запись {id} удалена", "green")
                 else:
                     print_color(f"Запись {id} удалить не удалось", "red")
