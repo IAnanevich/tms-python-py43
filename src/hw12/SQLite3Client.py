@@ -3,7 +3,7 @@ from sqlite3 import Error
 
 
 class SQLite3Client:
-    DATABASE = "d:\Program Files\djangoProject\db\hw12.db"
+    DATABASE = "d:\\Program Files\\djangoProject\\db\\hw12.db"
 
     def __init__(self) -> None:
         self.total_changes = None
