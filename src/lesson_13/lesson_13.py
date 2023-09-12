@@ -1,7 +1,8 @@
 from datetime import datetime
+from typing import Any
 
-from sqlalchemy import create_engine, Column, Integer, String, Boolean, DateTime
-from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy import create_engine, Column, Integer, String, Boolean, DateTime, SmallInteger, ForeignKey
+from sqlalchemy.orm import sessionmaker, declarative_base, relationship
 
 engine = create_engine('sqlite:///test.db', echo=True)
 
@@ -23,6 +24,11 @@ session = Session()
 Base = declarative_base()
 
 
+# O20 - one to one
+# O2M - one to many / many to one
+# M2M - many to many
+
+
 class User(Base):  # model
     __tablename__ = 'users'
     id = Column('id', Integer, primary_key=True, autoincrement=True)
@@ -34,18 +40,77 @@ class User(Base):  # model
     created_at = Column(DateTime(), default=datetime.now)
     updated_at = Column(DateTime(), default=datetime.now, onupdate=datetime.now)
 
+    # o2o
+    # books = relationship('Book')
+
+    # o2m
+    # books = relationship('Book', backref='user', uselist=False)
+
+    # m2m
+    groups = relationship('UserGroup', backref='user')
+
+
+class Book(Base):
+    __tablename__ = 'books'
+    id = Column('id', Integer, primary_key=True, autoincrement=True)
+    title = Column(String(100), nullable=False)
+    copyright = Column(SmallInteger, nullable=False)
+
+    # o2o
+    # user_id = Column(Integer, ForeignKey('users.id'))
+
+    # o2m
+    user_id = Column(Integer, ForeignKey('users.id'))
+
+
+# session.query(User).join(Book).all() - join
+
+class UserGroup(Base):
+    id = Column('id', Integer, primary_key=True, autoincrement=True)
+    user_id = Column(Integer, ForeignKey('users.id'))
+    group_id = Column(Integer, ForeignKey('groups.id'))
+
+
+class Group(Base):
+    # m2m
+    __tablename__ = 'groups'
+    id = Column('id', Integer, primary_key=True, autoincrement=True)
+    title = Column(String(100), nullable=False)
+    users = relationship(UserGroup, backref='group')
+
 
 class UserHandle:
-    def __init__(self) -> None:
-        pass
-
     @staticmethod
     def read():
         return session.query(User).all()
 
     @staticmethod
+    def get_by_id(pk: int) -> User:
+        return session.query(User).get(ident=pk)
+
+    @staticmethod
     def create(user: User):
         session.add(instance=user)
+        session.commit()
+
+    @classmethod
+    def update(cls, pk: int, data: dict):
+        obj = cls.get_by_id(pk=pk)
+
+        for key, value in data.items():
+            # obj.key = value
+            # getattr(obj, key)
+            setattr(obj, key, value)
+        # obj.first_name = data
+        session.add(obj)
+        session.commit()
+        # session.refresh(obj)
+        # return obj
+
+    @classmethod
+    def delete(cls, pk: int):
+        obj = cls.get_by_id(pk=pk)
+        session.delete(obj)
         session.commit()
 
 
@@ -53,11 +118,18 @@ Base.metadata.create_all(engine)
 
 user_handle = UserHandle()
 # user_handle.create(user=User(
-#     first_name='Petr',
-#     last_name='Petrov',
-#     email='petr1@gmail.com',
+#     first_name='Ivan',
+#     last_name='Ivanov',
+#     email='ivan@gmail.com',
 #     age=23
 # ))
+user_handle.update(pk=1, data={'first_name': 'Dima', 'age': 45})
 users = user_handle.read()
+
+print()
+print()
+print()
+
+# print(users[0].email)
 for i in users:
-    print(i.last_name)
+    print(i.first_name, i.id, i.age)
