@@ -32,7 +32,7 @@ product = Product()
 # product.create()  # создаем таблицу
 fake = Faker("ru_RU")  # объект для случайных записей
 print_main_menu()  # рисуем меню
-
+# flake8: noqa: C901
 while True:
     menu = input('Выберете действие: ')
     if menu.isdigit():
