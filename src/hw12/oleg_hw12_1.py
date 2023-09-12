@@ -1,5 +1,7 @@
-from hw12.models.product import Product
+import sys
+from models.product import Product
 from faker import Faker
+sys.path.insert(0, '/tms/hw12/tms-python-py43/src/hw12/')
 
 
 def print_main_menu():
@@ -71,7 +73,8 @@ while True:
             }
             if id.isdigit():
                 id = int(id)
-                # TODO создаем заново объект т.к. хотим точно знать обновилось или нет. total_changes считает все изменения в сессии. а нам надо только в этой операции.
+                # TODO создаем заново объект т.к. хотим точно знать обновилось или нет. total_changes считает все
+                #  изменения в сессии. а нам надо только в этой операции.
                 product = Product()
                 if product.update(id=id, params=params):
                     print_color(f"Запись {id} обновлена", "green")
@@ -85,7 +88,8 @@ while True:
             print_main_menu()
             if id.isdigit():
                 id = int(id)
-                # TODO создаем заново объект т.к. хотим точно знать удалилась запись или нет. наверно есть более нормальный способ. пока так
+                # TODO создаем заново объект т.к. хотим точно знать удалилась запись или нет. наверно есть более
+                #  нормальный способ. пока так
                 product = Product()
                 if product.delete(id=id):
                     print_color(f"Запись {id} удалена", "green")

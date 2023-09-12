@@ -1,4 +1,4 @@
-from hw12.SQLite3Client import SQLite3Client
+from SQLite3Client import SQLite3Client
 
 
 class Product(SQLite3Client):
@@ -12,7 +12,7 @@ class Product(SQLite3Client):
     def get_list(self, filter: dict) -> list[tuple] | None:
         pre_filter = []
         for key, value in filter.items():
-            if type(value) == list:
+            if isinstance(value, list):
                 pre_filter.append(f"{key} IN ('" + "','".join(list) + ")'")
             else:
                 pre_filter.append(f"{key} = '{value}'")
