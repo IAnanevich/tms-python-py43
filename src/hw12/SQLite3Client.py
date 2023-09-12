@@ -19,8 +19,8 @@ class SQLite3Client:
         try:
             cursor.execute(query, params if params else None)
             self.db.commit()
-            self.last_row_id = cursor.lastrowid
-            self.total_changes = self.db.total_changes
+            self.last_row_id = int(cursor.lastrowid)
+            self.total_changes = int(self.db.total_changes)
             return cursor.fetchall()
         except Error as e:
             print("error query", e)
