@@ -2,6 +2,7 @@
 комментарий. Реализовать CRUD (создание, чтение, обновление по id, удаление по id)
 для продуктов. Создать пользовательский интерфейс.'''
 import sqlite3
+from typing import List, Dict, Union
 
 # Подключение к базе данных
 conn = sqlite3.connect('products.db')
@@ -9,7 +10,7 @@ c = conn.cursor()
 
 
 # Создание таблицы продуктов
-def create_table():
+def create_table() -> None:
     c.execute('''CREATE TABLE IF NOT EXISTS products 
                  (id INTEGER PRIMARY KEY, 
                  name TEXT, 
@@ -19,27 +20,27 @@ def create_table():
 
 
 # Добавление продукта
-def add_product(id, name, price, quantity, comment):
+def add_product(id: int, name: str, price: float, quantity: int, comment: str) -> None:
     c.execute("INSERT OR REPLACE INTO products (id, name, price, quantity, comment) VALUES (?, ?, ?, ?, ?)",
               (id, name, price, quantity, comment))
     conn.commit()
 
 
 # Получение всех продуктов
-def get_all_products():
+def get_all_products() -> List[tuple]:
     c.execute("SELECT * FROM products")
     return c.fetchall()
 
 
 # Обновление продукта по id
-def update_product(id, new_values):
+def update_product(id: int, new_values: Dict[str, Union[int, float, str]]) -> None:
     for key, value in new_values.items():
         c.execute("UPDATE products SET {} = ? WHERE id = ?".format(key), (value, id))
     conn.commit()
 
 
 # Удаление продукта по id
-def delete_product(id):
+def delete_product(id: int) -> None:
     c.execute("DELETE FROM products WHERE id = ?", (id,))
     conn.commit()
 
