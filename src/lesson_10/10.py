@@ -73,9 +73,9 @@ class FileIsEmptyError(Exception):
 
 
 try:
-    with open('file.txt', 'r') as file:
+    with open("file.txt", "r") as file:
         result = file.readlines()
         if not result:
-            raise FileIsEmptyError('File is empty')
+            raise FileIsEmptyError("File is empty")
 except FileNotFoundError as error:
     print(error)

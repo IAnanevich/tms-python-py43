@@ -188,7 +188,7 @@ def main(info: str, *args: Any, **kwargs: Any) -> None:
         print(i)
 
     for key, value in kwargs.items():
-        print(f'{key}: {value}')
+        print(f"{key}: {value}")
 
 
-main('1', 2, '3', name='Petr', age=23)
+main("1", 2, "3", name="Petr", age=23)
