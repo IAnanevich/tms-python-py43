@@ -20,7 +20,7 @@ def create_table():
 
 # Добавление продукта
 def add_product(id, name, price, quantity, comment):
-    c.execute("INSERT INTO products (id, name, price, quantity, comment) VALUES (?, ?, ?, ?, ?)",
+    c.execute("INSERT OR REPLACE INTO products (id, name, price, quantity, comment) VALUES (?, ?, ?, ?, ?)",
               (id, name, price, quantity, comment))
     conn.commit()
 
@@ -49,19 +49,21 @@ create_table()
 
 # Пример использования
 
-# Добавление нового продукта
+# Добавление новых продуктов
 add_product(1, "Хлеб", 1.5, 10, "Свежий хлеб")
-add_product(2, "Молоко", 2.0, 5, "Пастеризованное молоко")
+add_product(2, "Молоко", 2.0, 5, "Молоко 3.5%")
+add_product(3, "Сырок", 0.8, 10, "Сырок ТОП")
 
 # Получение всех продуктов
 products = get_all_products()
 for product in products:
     print(product)
 
-# Обновление продукта с id=1
-update_product(1, {"price": 1.2, "quantity": 15})
+# Обновление продуктов с id=1 и 2
+update_product(1, {"price": 1.2, "quantity": 8, "comment": "Черствый хлеб"})
+update_product(2, {"price": 1.5, "quantity": 2, "comment": "Скисшее молоко"})
 
-# Удаление продукта с id=2
-delete_product(2)
+# Удаление продукта с id=3
+delete_product(3)
 
 conn.close()
