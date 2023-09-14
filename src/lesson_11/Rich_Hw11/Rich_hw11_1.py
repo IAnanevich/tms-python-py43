@@ -16,11 +16,16 @@ def geometric_progression(param_a, param_b, param_c):
         generated += 1
 
 
-param_a = input("Num: ")
-param_b = input("koefficent progression: ")
-param_c = input("Element: ")
+try:
+    param_a = input("Num: ")
+    param_b = input("koefficent progression: ")
+    param_c = input("Element: ")
 
-progression = geometric_progression(param_a, param_b, param_c)
+    progression = geometric_progression(param_a, param_b, param_c)
 
-for element in progression:
-    print(element)
+    for element in progression:
+        print(element)
+except KeyboardInterrupt:
+    print("\n End with admin")
+except Exception as e:
+    print(f"Error {str(e)}")
