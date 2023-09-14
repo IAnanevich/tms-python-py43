@@ -3,17 +3,17 @@ import sqlite3
 
 def connect_to_session(path: str) -> sqlite3.Connection:
     """
-    connecting from a session
-    :param path: file path
-    :return:
-    """
+        connecting from a session
+        :param path: file path
+        :return:
+        """
     try:
         return sqlite3.connect(database=path)
     except sqlite3.Error as error:
         print(error)
 
 
-class Foodstuff:
+class FoodStuff:
     def __init__(self, session: sqlite3.Connection) -> None:
         """
 
@@ -31,6 +31,7 @@ class Foodstuff:
         try:
             cursor.execute(query)
             self.session.commit()
+
         except sqlite3.Error as error:
             print('create: ', error)
 
@@ -62,7 +63,7 @@ class Foodstuff:
         except sqlite3.Error as error:
             print('update: ', error)
 
-    def delete(self, id_field: int):
+    def delete(self, id_field: int) -> None:
         """
         method for deleting a field by id
         :param id_field: column id
@@ -74,8 +75,25 @@ class Foodstuff:
         except sqlite3.Error as error:
             print('delete: ', error)
 
+    def insert(self, id_insert: int, title: str, price: float, amount: float, comment: str) -> None:
+        """
+        method for adding a row to the database
+        :param id_insert:
+        :param title:
+        :param price:
+        :param amount:
+        :param comment:
+        :return:
+        """
+        cursor = self.session.cursor()
+        try:
+            cursor.execute(f"INSERT INTO products VALUES (?, ?, ?, ?, ?);",
+                           (id_insert, title, price, amount, comment))
+        except sqlite3.Error as error:
+            print('insert', error)
 
-products = Foodstuff(session=connect_to_session(path='./foodstuff.sqlite'))
+
+products = FoodStuff(session=connect_to_session(path='./foodstuff.sqlite'))
 create_table_products = """
 CREATE TABLE IF NOT EXISTS products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -102,9 +120,10 @@ products.create(query=create_table_products)
 
 while True:
     print('1.Read table')
-    print('2.Update table')
-    print('3.Delete table')
-    print('4.Exit')
+    print('2.Update field')
+    print('3.Delete field')
+    print('4.Add new field')
+    print('5.Exit')
 
     choice = input('Выберете действие: ')
     if choice.isdigit():
@@ -113,27 +132,37 @@ while True:
         if choice == 1:
             print(products.read(table='products'))
         elif choice == 2:
-            another_id = int(input('choose an id from 1 to 5: '))
+            another_id = input('select the id field: ')
             print('1.title')
             print('2.price')
             print('3.amount')
             print('4.comment')
             another_field = input('choose the field to change it: ')
-
-            if another_id == 1 or 2 or 3 or 4 or 5 and another_field == 1:
-                products.update(id_field=another_id, any_field='title')
-            elif another_id == 1 or 2 or 3 or 4 or 5 and another_field == 2:
-                products.update(id_field=another_id, any_field='price')
-            elif another_id == 1 or 2 or 3 or 4 or 5 and another_field == 3:
-                products.update(id_field=another_id, any_field='amount')
-            elif another_id == 1 or 2 or 3 or 4 or 5 and another_field == 4:
-                products.update(id_field=another_id, any_field='comment')
-            else:
-                print('choose an id from 1 to 5: ')
+            if another_id.isdigit():
+                if another_field == 1:
+                    products.update(id_field=int(another_id), any_field='title')
+                elif another_field == 2:
+                    products.update(id_field=int(another_id), any_field='price')
+                elif another_field == 3:
+                    products.update(id_field=int(another_id), any_field='amount')
+                elif another_field == 4:
+                    products.update(id_field=int(another_id), any_field='comment')
+                else:
+                    print('choose an id from 1 to 5: ')
+                    # print('problem in IF ELIF UPDATE')
         elif choice == 3:
             delete_id = int(input('delete id 1-5: '))
             products.delete(id_field=delete_id)
         elif choice == 4:
+            products.insert(
+                id_insert=int(input('id: ')),
+                title=str(input('title: ')),
+                price=float(input('price: ')),
+                amount=float(input('amount: ')),
+                comment=str(input('comment: '))
+            )
+        elif choice == 5:
+            print('Successful exit')
             break
         else:
-            print('Enter a number 1-4: ')
+            print('Enter a number 1-5: ')
