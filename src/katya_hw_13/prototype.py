@@ -54,11 +54,3 @@ class Genre(Base):
 
 Base.metadata.create_all(bind=engine)
 
-while True:
-    print(
-        '1: Сделать заказ/n'
-        '2: Добавить/n'
-        '3: Прочитать/n'
-        '4: Изменить/n'
-        '5: Сделать заказ/n' 
-    )
