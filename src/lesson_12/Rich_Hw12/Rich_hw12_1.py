@@ -74,7 +74,7 @@ while True:
     elif choice == '4':
         delete_product()
     elif choice == '5':
-        print("Goodbye!")
+        print("by!")
         break
     else:
         print("Invalid choice. Please try again.")
