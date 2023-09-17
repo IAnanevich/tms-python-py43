@@ -7,7 +7,11 @@ from UpdateMixin import update_user, update_book, update_genre, update_order
 
 class Menu:
     def menu_viz(cls, menu: str) -> None:
+        """
 
+        :param menu:
+        :return:
+        """
         if menu == 'Главное':
             print('1. Прочитать')
             print('2. Добавить')
@@ -44,6 +48,13 @@ class Menu:
             print('0. Выйти')
 
     def menu_imp(cls, session: Session, menu: str, choose: str):
+        """
+
+        :param session:
+        :param menu:
+        :param choose:
+        :return:
+        """
         try:
             choose = int(choose)
         except ValueError as error:

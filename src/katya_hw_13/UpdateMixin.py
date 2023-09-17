@@ -4,6 +4,11 @@ from ReadMixin import read_user, read_book, read_order, read_genre
 
 
 def update_user(session: Session):
+    """
+
+    :param session:
+    :return:
+    """
     read_user(session=session)
 
     upd_user = session.query(User).get(ident=int(input('Введите id пользователя для редактирования  ')))
@@ -19,6 +24,11 @@ def update_user(session: Session):
 
 
 def update_book(session: Session):
+    """
+
+    :param session:
+    :return:
+    """
     read_book(session=session)
     upd_book = session.query(Book).get(ident=int(input('Введите id книги для редатирования ')))
 
@@ -29,10 +39,15 @@ def update_book(session: Session):
 
     session.add(upd_book)
     session.commit()
-    print(f'Книга  {upd_book.title}, в кол-ве {upd_book.amount} по цене {upd_book.price} отредактирована ')
+    print(f'Книга {upd_book.title}, в кол-ве {upd_book.amount} по цене {upd_book.price} отредактирована ')
 
 
 def update_order(session: Session):
+    """
+
+    :param session:
+    :return:
+    """
     read_order(session=session)
     upd_order = session.query(Order).get(ident=int(input('Введите id заказа для редактирования ')))
 
@@ -62,6 +77,11 @@ def update_order(session: Session):
 
 
 def update_genre(session: Session):
+    """
+
+    :param session:
+    :return:
+    """
     read_genre(session=session)
     upd_genre = session.query(Genre).get(ident=int(input('Введите id жанра для редактирования ')))
     upd_genre.name = input('Введите новое название жанра ')

@@ -4,6 +4,11 @@ from ReadMixin import read_user, read_book, read_order, read_genre
 
 
 def delete_user(session: Session):
+    """
+
+    :param session:
+    :return:
+    """
     read_user(session=session)
     del_user = session.query(User).get(ident=int(input('Введите id удаляемого пользователя ')))
 
@@ -12,6 +17,11 @@ def delete_user(session: Session):
 
 
 def delete_book(session: Session):
+    """
+
+    :param session:
+    :return:
+    """
     read_book(session=session)
     del_book = session.query(Book).get(ident=int(input('Введите id удаляемой книги ')))
 
@@ -20,6 +30,11 @@ def delete_book(session: Session):
 
 
 def delete_order(session: Session):
+    """
+
+    :param session:
+    :return:
+    """
     read_order(session=session)
     del_order = session.query(Order).get(ident=int(input('Введите id удаляемого заказа ')))
 
@@ -32,6 +47,11 @@ def delete_order(session: Session):
 
 
 def delete_genre(session: Session):
+    """
+
+    :param session:
+    :return:
+    """
     read_genre(session=session)
     del_genre = session.query(Genre).get(ident=int(input('Введите id удаляемого жанра ')))
 
