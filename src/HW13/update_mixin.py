@@ -49,7 +49,7 @@ def update_genre():
 #
 # def update_order_plus():
 #     s = update(Reader.balance).where(Book.amount == int).values(
-#         amount=+1
+#
 #     )
 
-# 6:33 zeq tech
+
