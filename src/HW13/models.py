@@ -4,6 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, relationship
 from sqlalchemy.orm import sessionmaker
 from base_model import BaseModel
+
 # from base_model import BaseModel
 
 engine = create_engine('sqlite:///bookshop.db', echo=True)
@@ -62,5 +63,3 @@ class Genre(BaseModel):
 
 
 Base.metadata.create_all(bind=engine)
-
-

@@ -42,7 +42,6 @@ def update_genre():
     session.commit()
     print(s)
 
-
 # def update_order_minus():
 #     s = update(Reader.balance).where(Book.price == int)
 #
@@ -51,5 +50,3 @@ def update_genre():
 #     s = update(Reader.balance).where(Book.amount == int).values(
 #
 #     )
-
-

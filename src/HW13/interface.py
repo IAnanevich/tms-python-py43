@@ -70,15 +70,3 @@ while True:
         elif choice == 0:
             print('you are out')
             break
-
-
-
-
-
-
-
-
-
-
-
-
