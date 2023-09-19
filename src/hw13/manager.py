@@ -47,7 +47,7 @@ class BaseManager:
             session.rollback()
             Helpers.print_color("Транзакция не удалась.", "red")
 
-    def get_by_id(self, pk: int):
+    def get_by_id(self, pk: int) -> None | object:
         # return session.query(self.entity).get(ident=pk)  # ругается на deprecated. еще глянуть потом
         return session.query(self.entity).filter_by(id=pk).scalar()
 
@@ -144,7 +144,7 @@ class UserManager(BaseManager):
 
         return False
 
-    def remove(self, pk) -> None | bool:
+    def remove(self, pk: int) -> None | bool:
         # смотрим нет ли заказов у этого пользователя. Если есть возвращаем ошибку и id первого заказов
         order = session.query(Order).filter_by(user_id=pk).first()
         if order is not None:
@@ -233,7 +233,7 @@ class BookManager(BaseManager):
         book.updated_at = datetime.now()
         self._save(book)  # Update book
 
-    def remove(self, pk) -> None | bool:
+    def remove(self, pk: int) -> None | bool:
         # смотрим нет ли заказов с этой книгой.
         order = session.query(Order).filter_by(book_id=pk).first()
         if order is not None:
@@ -325,7 +325,7 @@ class OrderManager(BaseManager):
         # TODO при случае сделать обновление
         pass
 
-    def remove(self, pk) -> None:
+    def remove(self, pk: int) -> None:
         try:
             order = session.query(Order).filter_by(id=pk).first()
 
@@ -387,7 +387,7 @@ class GenreManager(BaseManager):
         genre.updated_at = datetime.now()
         self._save(genre)  # Update book
 
-    def remove(self, pk) -> None:
+    def remove(self, pk: int) -> None:
         # На все книги (в таблице book) с жанром который удаляем ставим None
         book = session.query(Book).filter_by(genre_id=pk).all()
         if len(book) > 0:

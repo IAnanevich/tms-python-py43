@@ -4,7 +4,7 @@ import re
 
 class Helpers:
     @staticmethod
-    def htmlspecialchars(text):
+    def htmlspecialchars(text) -> str:
         text = str(text)
         return (
             text.replace("&", "&amp;").
@@ -14,7 +14,7 @@ class Helpers:
         )
 
     @staticmethod
-    def validate_email(email: str):
+    def validate_email(email: str) -> bool:
         # pattern = r"^[-\w\.]+@([-\w]+\.)+[-\w]{2,4}$"
         pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,4}+$"
         if re.match(pattern, email) is not None:
@@ -22,7 +22,7 @@ class Helpers:
         return False
 
     @staticmethod
-    def print_pretty_table(data, cell_sep=' | ', header_separator=True):
+    def print_pretty_table(data, cell_sep=' | ', header_separator=True) -> None:
         rows = len(data)
         cols = len(data[0])
 
@@ -45,12 +45,12 @@ class Helpers:
             print(cell_sep.join(result))
 
     @staticmethod
-    def object_as_dict(obj):
+    def object_as_dict(obj) -> dict:
         return {c.key: str(getattr(obj, c.key))
                 for c in inspect(obj).mapper.column_attrs}
 
     @staticmethod
-    def print_list(data=list):
+    def print_list(data=list) -> None:
 
         if data is None or len(data) == 0:
             return False
