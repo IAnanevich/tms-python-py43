@@ -14,7 +14,7 @@ Base = declarative_base()
 # Base.metadata.create_all(engine)
 
 # 1) Человек (поля: id, first name: str, last_name: str, email: str, age: int, balance: float, created at, updated at)
-class User(Base):
+class User(Base):  # type: ignore
     """User account."""
     __tablename__ = "user"
     id = Column(Integer, primary_key=True, autoincrement="auto")
@@ -28,7 +28,7 @@ class User(Base):
 
 
 # 2) Книга (поля: id, title: str, description: text, amount: int, price: float, genre_id: int, created at, updated at)
-class Book(Base):
+class Book(Base):  # type: ignore
     """Book list"""
     __tablename__ = "book"
     id = Column(Integer, primary_key=True, autoincrement="auto")
@@ -44,7 +44,7 @@ class Book(Base):
 
 # 3) Заказ (поля: id, title_id: int, user_id: int, created at, updated at) - промежуточная для связи M2M между
 # Человек и Девайс
-class Order(Base):
+class Order(Base):  # type: ignore
     """Order list"""
     __tablename__ = "order"
     id = Column(Integer, primary_key=True, autoincrement="auto")
@@ -58,7 +58,7 @@ class Order(Base):
 
 
 # 4) Жанр (поля: id, name: str, created at, updated at)
-class Genre(Base):
+class Genre(Base):  # type: ignore
     """Genre list"""
     __tablename__ = "genre"
     id = Column(Integer, primary_key=True, autoincrement="auto")

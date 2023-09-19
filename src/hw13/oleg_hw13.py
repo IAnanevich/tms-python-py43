@@ -5,8 +5,8 @@ from models import User, Order, Book, Genre
 
 
 # меню немного изменил. не по ТЗ. привычней выбрать сущность и потом что то с ней делать (добавить, удалить...)
-def menu(user=UserManager(), book=BookManager(), order=OrderManager(), genre=GenreManager()):  # noqa: C901
-    def sub_menu_1():  # заказы
+def menu(user=UserManager(), book=BookManager(), order=OrderManager(), genre=GenreManager()) -> None:  # noqa: C901
+    def sub_menu_1() -> None:  # заказы
         # показываем список первых LIMIT_ITEM_PAGE
         cur_page = 1
         items = order.list(limit=config.LIMIT_ITEM_PAGE, page=cur_page)
@@ -74,7 +74,7 @@ def menu(user=UserManager(), book=BookManager(), order=OrderManager(), genre=Gen
                 cur_page += 1
                 point_menu_next(order, cur_page)
 
-    def sub_menu_2():  # пользователи
+    def sub_menu_2() -> None:  # пользователи
         # показываем список первых LIMIT_ITEM_PAGE
         cur_page = 1
         items = user.list(limit=config.LIMIT_ITEM_PAGE, page=cur_page)
@@ -143,7 +143,7 @@ def menu(user=UserManager(), book=BookManager(), order=OrderManager(), genre=Gen
                 cur_page += 1
                 point_menu_next(user, cur_page)
 
-    def sub_menu_3():  # книги
+    def sub_menu_3() -> None:  # книги
         # показываем список первых LIMIT_ITEM_PAGE
         cur_page = 1
         items = book.list()
@@ -214,7 +214,7 @@ def menu(user=UserManager(), book=BookManager(), order=OrderManager(), genre=Gen
                 cur_page += 1
                 point_menu_next(book, cur_page)
 
-    def sub_menu_4():  # жанры
+    def sub_menu_4() -> None:  # жанры
         # показываем список первых LIMIT_ITEM_PAGE
         cur_page = 1
         items = genre.list()

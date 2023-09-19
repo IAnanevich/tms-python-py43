@@ -10,7 +10,7 @@ import config
 class BaseManager:
     last_error = ""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.entity = None
 
     def list(self, filter: list | None = None, limit: int | None = None, page: int | None = 0) -> list:
@@ -53,7 +53,7 @@ class BaseManager:
 
 
 class UserManager(BaseManager):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self.entity = User
 
@@ -144,7 +144,7 @@ class UserManager(BaseManager):
 
         return False
 
-    def remove(self, pk):
+    def remove(self, pk) -> None | bool:
         # смотрим нет ли заказов у этого пользователя. Если есть возвращаем ошибку и id первого заказов
         order = session.query(Order).filter_by(user_id=pk).first()
         if order is not None:
@@ -154,7 +154,7 @@ class UserManager(BaseManager):
 
 
 class BookManager(BaseManager):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self.entity = Book
 
@@ -180,6 +180,7 @@ class BookManager(BaseManager):
         try:
             genre_id = int(params["genre_id"])
             if session.query(Genre).filter_by(id=genre_id).scalar() is None:
+                del genre_id
                 genre_id = None
         except ValueError:
             genre_id = None
@@ -232,7 +233,7 @@ class BookManager(BaseManager):
         book.updated_at = datetime.now()
         self._save(book)  # Update book
 
-    def remove(self, pk):
+    def remove(self, pk) -> None | bool:
         # смотрим нет ли заказов с этой книгой.
         order = session.query(Order).filter_by(book_id=pk).first()
         if order is not None:
@@ -242,7 +243,7 @@ class BookManager(BaseManager):
 
 
 class OrderManager(BaseManager):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self.entity = Order
 
@@ -324,7 +325,7 @@ class OrderManager(BaseManager):
         # TODO при случае сделать обновление
         pass
 
-    def remove(self, pk):
+    def remove(self, pk) -> None:
         try:
             order = session.query(Order).filter_by(id=pk).first()
 
@@ -353,7 +354,7 @@ class OrderManager(BaseManager):
 
 
 class GenreManager(BaseManager):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self.entity = Genre
 
@@ -386,7 +387,7 @@ class GenreManager(BaseManager):
         genre.updated_at = datetime.now()
         self._save(genre)  # Update book
 
-    def remove(self, pk):
+    def remove(self, pk) -> None:
         # На все книги (в таблице book) с жанром который удаляем ставим None
         book = session.query(Book).filter_by(genre_id=pk).all()
         if len(book) > 0:
