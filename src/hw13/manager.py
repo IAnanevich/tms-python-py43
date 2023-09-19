@@ -1,8 +1,8 @@
 ﻿from datetime import datetime
 from sqlalchemy.exc import IntegrityError
 
-from models import Base, User, Order, Book, Genre
-from database import session, engine
+from models import User, Order, Book, Genre
+from database import session
 from helpers import Helpers
 import config
 
@@ -60,19 +60,19 @@ class UserManager(BaseManager):
     def add(self, params: dict) -> int | bool:
         email = Helpers.htmlspecialchars(params["email"])
         if not Helpers.validate_email(email):
-            self.last_error = "Введенный емейл невалиден";
+            self.last_error = "Введенный емейл невалиден"
             return False
 
         # проверяем нет ли уже такого пользователя по еймейл
         res = session.query(self.entity).filter_by(email=email).scalar()
         if res is not None:
-            self.last_error = f"Email уже используется c ID = {res.id}";
+            self.last_error = f"Email уже используется c ID = {res.id}"
             return False
 
         first_name = Helpers.htmlspecialchars(params["first_name"])
         last_name = Helpers.htmlspecialchars(params["last_name"])
         if len(first_name) < 3 or len(last_name) < 3:
-            self.last_error = "Введите имя и фамилию";
+            self.last_error = "Введите имя и фамилию"
             return False
 
         try:
@@ -102,19 +102,19 @@ class UserManager(BaseManager):
     def update(self, id: int, params: dict) -> None | bool:
         user = self.get_by_id(pk=id)
         if user is None:
-            self.last_error = f"Пользователь {id} не найден";
+            self.last_error = f"Пользователь {id} не найден"
             return False
 
         email = Helpers.htmlspecialchars(params["email"])
         if len(email) > 0:
             if not Helpers.validate_email(email):
-                self.last_error = "Введенный емейл невалиден";
+                self.last_error = "Введенный емейл невалиден"
                 return False
 
             # проверяем нет ли уже такого еймейла у другого пользователя
             res = session.query(User).filter(User.id != id, User.email == email).scalar()
             if res is not None:
-                self.last_error = f"Email используется у другого пользователя c ID = '{res.id}'";
+                self.last_error = f"Email используется у другого пользователя c ID = '{res.id}'"
                 return False
 
         first_name = Helpers.htmlspecialchars(params["first_name"])
@@ -162,7 +162,7 @@ class BookManager(BaseManager):
 
         name = Helpers.htmlspecialchars(params["name"])
         if len(name) <= 3:
-            self.last_error = "Введите название книги";
+            self.last_error = "Введите название книги"
             return False
 
         description = Helpers.htmlspecialchars(params["description"])
@@ -201,7 +201,7 @@ class BookManager(BaseManager):
     def update(self, id: int, params: dict) -> None | bool:
         book = self.get_by_id(pk=id)
         if book is None:
-            self.last_error = f"Книга {id} не найдена";
+            self.last_error = f"Книга {id} не найдена"
             return False
 
         if len(params["name"]) > 3:
@@ -262,10 +262,10 @@ class OrderManager(BaseManager):
         try:
             quantity = int(params["quantity"])
             if quantity <= 0:
-                self.last_error = f"Введите количество > 0"
+                self.last_error = "Введите количество > 0"
                 return False
         except ValueError:
-            self.last_error = f"Введите корректное количество"
+            self.last_error = "Введите корректное количество"
             return False
 
         # существует ли книга и достаточно ли в наличии
@@ -361,7 +361,7 @@ class GenreManager(BaseManager):
 
         name = Helpers.htmlspecialchars(params["name"])
         if len(name) < 3:
-            self.last_error = "Введите название жанра";
+            self.last_error = "Введите название жанра"
             return False
 
         genre = self.entity(
@@ -377,7 +377,7 @@ class GenreManager(BaseManager):
     def update(self, id: int, params: dict) -> None | bool:
         genre = self.get_by_id(pk=id)
         if genre is None:
-            self.last_error = f"Жанр {id} не найдена";
+            self.last_error = f"Жанр {id} не найдена"
             return False
 
         if len(params["name"]) >= 3:

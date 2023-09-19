@@ -67,5 +67,5 @@ class Genre(Base):
     updated_at = Column(DateTime, server_default=func.now(), nullable=False)
 
 
-#Base.metadata.drop_all(engine)
+# Base.metadata.drop_all(engine)
 Base.metadata.create_all(engine)

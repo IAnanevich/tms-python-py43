@@ -36,7 +36,7 @@ def menu(user=UserManager(), book=BookManager(), order=OrderManager(), genre=Gen
                         "quantity": input("Кол-во книг: "),
                     }
                     order.update(id, params)
-                    print(f"Заказ после обновления")
+                    print("Заказ после обновления")
 
                     info = order.list(filter=(Order.id == id))
                     Helpers.print_list(info)
@@ -104,7 +104,7 @@ def menu(user=UserManager(), book=BookManager(), order=OrderManager(), genre=Gen
                     "balance": input("Баланс: "),
                 }
                 user.update(id, params)
-                print(f"Пользователь после обновления")
+                print("Пользователь после обновления")
                 # info = user.list(filter=(user.entity.property_list["id"] == id))
                 info = user.list(filter=(User.id == id))
                 Helpers.print_list(info)
@@ -173,7 +173,7 @@ def menu(user=UserManager(), book=BookManager(), order=OrderManager(), genre=Gen
                         "genre_id": input("Жанр (ID из таблицы genre): "),
                     }
                     book.update(id, params)
-                    print(f"Книга после обновления")
+                    print("Книга после обновления")
                     # info = book.list(filter=(book.entity.property_list["id"] == id))
                     info = book.list(filter=(Book.id == id))
                     Helpers.print_list(info)
@@ -239,7 +239,7 @@ def menu(user=UserManager(), book=BookManager(), order=OrderManager(), genre=Gen
                         "name": input("Название жанра: ")
                     }
                     genre.update(id, params)
-                    print(f"Жанр после обновления")
+                    print("Жанр после обновления")
 
                     info = genre.list(filter=(Genre.id == id))
                     Helpers.print_list(info)
