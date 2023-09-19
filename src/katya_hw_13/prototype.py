@@ -2,11 +2,11 @@ from datetime import datetime
 from sqlalchemy import create_engine, Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship
 
-engine = create_engine('sqlite:///test.db', echo=True)
+engine = create_engine('sqlite:///bookshop.db', echo=True)
 Session = sessionmaker(bind=engine)
 session = Session()
-
 Base = declarative_base()
+Base.metadata.create_all(bind=engine)
 
 
 class User(Base):  # model
@@ -52,5 +52,5 @@ class Genre(Base):
     updated_at = Column(DateTime(), default=datetime.now, onupdate=datetime.now)
 
 
-Base.metadata.create_all(bind=engine)
+
 
