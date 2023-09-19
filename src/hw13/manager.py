@@ -99,7 +99,7 @@ class UserManager(BaseManager):
             return user.id
         return False
 
-    def update(self, id: int, params: dict) -> None | bool:
+    def update(self, id: int, params: dict) -> None | bool:  # noqa: C901
         user = self.get_by_id(pk=id)
         if user is None:
             self.last_error = f"Пользователь {id} не найден"
@@ -198,7 +198,7 @@ class BookManager(BaseManager):
             return book.id
         return False
 
-    def update(self, id: int, params: dict) -> None | bool:
+    def update(self, id: int, params: dict) -> None | bool:  # noqa: C901
         book = self.get_by_id(pk=id)
         if book is None:
             self.last_error = f"Книга {id} не найдена"
@@ -246,7 +246,7 @@ class OrderManager(BaseManager):
         super().__init__()
         self.entity = Order
 
-    def create(self, params: dict) -> int | bool:
+    def create(self, params: dict) -> int | bool:  # noqa: C901
         # существует ли пользователь
         try:
             user_id = int(params["user_id"])

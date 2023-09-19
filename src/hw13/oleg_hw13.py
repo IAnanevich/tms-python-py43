@@ -5,7 +5,7 @@ from models import User, Order, Book, Genre
 
 
 # меню немного изменил. не по ТЗ. привычней выбрать сущность и потом что то с ней делать (добавить, удалить...)
-def menu(user=UserManager(), book=BookManager(), order=OrderManager(), genre=GenreManager()):
+def menu(user=UserManager(), book=BookManager(), order=OrderManager(), genre=GenreManager()):  # noqa: C901
     def sub_menu_1():  # заказы
         # показываем список первых LIMIT_ITEM_PAGE
         cur_page = 1
