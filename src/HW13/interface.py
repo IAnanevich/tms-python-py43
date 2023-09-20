@@ -1,10 +1,9 @@
-from create_mixin import create_reader, create_book, create_genre
+from create_mixin import create_reader, create_book, create_genre, create_order
 from delete_mixin import delete_genre, delete_order, delete_reader, delete_book
-from update_mixin import update_reader, update_book, update_genre
+from update_mixin import update_reader, update_book, update_genre, update_order
 from list_mixin import read_reader_table, read_book_table, read_genre_table, read_order_table
 
 while True:
-    # print('2.Insert')
     print('1.Create')
     print('2.Read')
     print('3.Update')
@@ -20,13 +19,15 @@ while True:
             print('1.Create reader')
             print('2.Create book')
             print('3.Create genre')
-            # print('4.Create order')
+            print('4.Create order')
             if create_choice == 1:
                 create_reader()
             elif create_choice == 2:
                 create_book()
             elif create_choice == 3:
                 create_genre()
+            elif create_choice == 4:
+                create_order()
         elif choice == 2:
             read_choice = input('Enter your read action: ')
             print('1.Read reader')
@@ -46,13 +47,15 @@ while True:
             print('1.Update reader')
             print('2.Update book')
             print('3.Update genre')
-            # print('4.Update order')
+            print('4.Update order')
             if update_choice == 1:
                 update_reader()
             elif update_choice == 2:
                 update_book()
             elif update_choice == 3:
                 update_genre()
+            elif update_choice == 4:
+                update_order()
         elif choice == 4:
             delete_choice = input('Enter your delete action: ')
             print('1.Delete reader')

@@ -1,11 +1,20 @@
-from models import Reader, Genre, Book, Order, engine
-from sqlalchemy.orm import sessionmaker
-from create_mixin import create_reader, create_book, create_genre
-from list_mixin import read_reader_table
+from models import Reader, Genre, Book, Order
+from sqlalchemy.orm import Session
 from sqlalchemy import update
 
-Session = sessionmaker(bind=engine)
 session = Session()
+
+
+def update_order():
+    new_balance = update(Order).where(Order.user_id == id(input('Reader id: '))).values(
+        balance=Reader.balance - Book.price
+    )
+    new_amount = update(Order).where(Order.book_id == id(input('Book id: '))).values(
+        amount=-1
+    )
+    session.execute(new_balance)
+    session.execute(new_amount)
+    session.commit()
 
 
 def update_reader():
@@ -35,18 +44,9 @@ def update_book():
 
 
 def update_genre():
-    s = update(Genre).where(Genre.id.pk == id(input("update genre by id: "))).values(
+    s = update(Genre).where(Genre.pk == id(input("update genre by id: "))).values(
         name=str(input())
     )
     session.execute(s)
     session.commit()
     print(s)
-
-# def update_order_minus():
-#     s = update(Reader.balance).where(Book.price == int)
-#
-#
-# def update_order_plus():
-#     s = update(Reader.balance).where(Book.amount == int).values(
-#
-#     )

@@ -1,7 +1,5 @@
 from models import Reader, Genre, Book, Order, engine
 from sqlalchemy.orm import sessionmaker
-from create_mixin import create_reader, create_book, create_genre
-from list_mixin import read_reader_table
 from sqlalchemy import delete
 
 Session = sessionmaker(bind=engine)
