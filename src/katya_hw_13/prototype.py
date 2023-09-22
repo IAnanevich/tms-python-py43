@@ -9,7 +9,7 @@ Base = declarative_base()
 Base.metadata.create_all(bind=engine)
 
 
-class User(Base):  # model
+class User(Base):
     __tablename__ = 'users'
     id = Column('id', Integer, primary_key=True, autoincrement=True)
     first_name = Column(String(20), nullable=False)
