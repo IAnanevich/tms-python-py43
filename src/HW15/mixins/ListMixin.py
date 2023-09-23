@@ -9,8 +9,3 @@ class ListMixin:
         query = select(table)
         objects = session.execute(query)
         return objects.scalars().all()
-
-"""
-сначала создаем получение айпи потом втсавляем https://ipinfo.io/161.185.160.93/geo
- и в https://ipinfo.io/(полученный айпи)/geo
-"""
