@@ -1,5 +1,6 @@
 from sqlalchemy.exc import IntegrityError
-from database import session, engine
+from database import session, engine # noqa: F401
+# TODO посставил костыль. что то напутал с путями и бъет ошибку. и pycharm ругается. прога работает.
 
 
 class BaseManager:

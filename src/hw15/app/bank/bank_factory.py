@@ -6,7 +6,7 @@ class Bank(object):
 
     @staticmethod
     def get(class_name: str) -> object:
-        if type(class_name) != str:
+        if isinstance(class_name, str):
             raise ValueError("class_name must be a string!")
 
         raw_subclasses_ = BankApi.__subclasses__()

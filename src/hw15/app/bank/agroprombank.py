@@ -16,8 +16,8 @@ class AgroPromBank(BankApi):
         min_rate = 0
         if "Currency" in rates["DailyExRates"]:
             for i, rate in enumerate(rates["DailyExRates"]["Currency"]):
-                if (rate["CharCode"] == "USD" and float(rate["RateSell"]) > 0 and
-                        (float(rate["RateSell"]) < min_rate or min_rate == 0)):
+                if (rate["CharCode"] == "USD" and float(rate["RateSell"]) > 0
+                        and (float(rate["RateSell"]) < min_rate or min_rate == 0)):
                     min_rate = float(rate["RateSell"])
                 # TODO очень не нравится. как правильно писать, чтобы был 1 float, 1 if и без доп переменных ?
         return min_rate

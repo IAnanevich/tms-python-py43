@@ -17,6 +17,8 @@ from constant import MENU
 
 
 rate = RateManager()
+
+
 def menu():
     def sub_menu_1():  # заказы
         # Шлем по всем апи запросы. сохраняем в БД
@@ -24,7 +26,6 @@ def menu():
 
     def sub_menu_2():
         # показываем список USD всех банков
-        cur_page = 1
         items = rate.list()
 
         if items:
