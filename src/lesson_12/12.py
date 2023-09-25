@@ -9,7 +9,7 @@
 import sqlite3
 
 
-def connect_to_session(path: str) -> sqlite3.Connection | None:
+def connect_to_session(path: str) -> sqlite3.Connection:
     try:
         return sqlite3.connect(database=path)
     except sqlite3.Error as error:
@@ -28,7 +28,7 @@ class SQLite3Client:
         except sqlite3.Error as error:
             print(error)
 
-    def execute_read_query(self, query: str) -> list[tuple] | None:
+    def execute_read_query(self, query: str) -> list[tuple]:
         cursor = self.session.cursor()
         try:
             cursor.execute(query)
