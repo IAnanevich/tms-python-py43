@@ -10,6 +10,25 @@
 #
 #     def info(self):
 #         return f'I am {self.get_name()}'
+<<<<<<< HEAD
+# return f'I am {self.name}'
+#
+# @staticmethod
+# def hello():
+#     print(User(name='Petr', age=10).info())
+# return 'Hello world'
+#
+# @classmethod
+# def some_method(cls):
+#     print(cls.mro())
+#
+# @classmethod
+# def get_cls(cls):
+#     print(cls)
+#
+# def get_self(self):
+#     print(self)
+=======
         # return f'I am {self.name}'
     #
     # @staticmethod
@@ -27,6 +46,7 @@
     #
     # def get_self(self):
     #     print(self)
+>>>>>>> main
 #
 #
 # User(name='Petr', age=10).hello()
@@ -38,9 +58,12 @@
 # print(user.get_name)
 
 
+<<<<<<< HEAD
+=======
 from dataclasses import dataclass, asdict, astuple
 
 
+>>>>>>> main
 # class Coordinate:
 #
 #     def __init__(self, x, y, z):
@@ -73,16 +96,28 @@ from dataclasses import dataclass, asdict, astuple
 
 # @dataclass(slots=True)
 # class Person:
+<<<<<<< HEAD
+# __slots__ = ('name', 'age')
+# name: str
+# age: int
+# is_admin: bool = False
+=======
     # __slots__ = ('name', 'age')
     # name: str
     # age: int
     # is_admin: bool = False
+>>>>>>> main
 
 
 # @dataclass(slots=True)
 # class Employee(Person):
+<<<<<<< HEAD
+# __slots__ = super().__slots__ + ('salary', )
+# salary: int
+=======
     # __slots__ = super().__slots__ + ('salary', )
     # salary: int
+>>>>>>> main
 
 
 # employee_1 = Employee(name='Petr', age=25, salary=1000)
@@ -108,9 +143,14 @@ from dataclasses import dataclass, asdict, astuple
 #     return self.name
 #
 #
+<<<<<<< HEAD
+# my_class = type('MyClass', (), {'name': 'Petr', 'get_name': get_name})  # name, bases (родительские классы),
+# attrs (аттрибуты класса) print(my_class().name) print(my_class().get_name())
+=======
 # my_class = type('MyClass', (), {'name': 'Petr', 'get_name': get_name})  # name, bases (родительские классы), attrs (аттрибуты класса)
 # print(my_class().name)
 # print(my_class().get_name())
+>>>>>>> main
 
 
 # class Foo(metaclass=something, kwarg1=value1, ...):
@@ -157,6 +197,8 @@ from dataclasses import dataclass, asdict, astuple
 # print(hasattr(Foo, 'bar'))
 # print(hasattr(Foo, 'BAR'))
 # print(f.BAR)
+<<<<<<< HEAD
+=======
 
 
 class TypeCheckMeta(type):
@@ -189,3 +231,4 @@ class TypeCheckMeta(type):
             return method(*args, **kwargs)
 
         return wrapper
+>>>>>>> main
