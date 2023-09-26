@@ -14,15 +14,16 @@ class SQLclient:
         except sqlite3.Error as err:
             print(err)
 
-    def read(self, table_name: str, cond: str = "True"):
+    def read(self, table_name: str, cond: str = "True") -> list:
         cursor = self.session.cursor()
         try:
             cursor.execute(f"select * from {table_name} where {cond}")
             return cursor.fetchall()
         except sqlite3.Error as err:
             print(err)
+            return []
 
-    def update(self, table_name: str, field: dict, cond: str = "True"):
+    def update(self, table_name: str, field: dict, cond: str = "True") -> None:
         cursor = self.session.cursor()
         try:
             f_ = "*"
@@ -37,7 +38,17 @@ class SQLclient:
         except sqlite3.Error as err:
             print(err)
 
-    def insert(self, table_name: str, field: dict):
+    def delete(self, table_name: str, cond: str = "True") -> None:
+        cursor = self.session.cursor()
+        try:
+            q = f"delete from {table_name} where {cond}"
+            cursor.execute(q)
+            self.session.commit()
+            print(q)
+        except sqlite3.Error as err:
+            print(err)
+
+    def insert(self, table_name: str, field: dict) -> None:
         cursor = self.session.cursor()
         try:
             f_ = "*"
@@ -58,7 +69,7 @@ class SQLclient:
             print(err)
 
 
-def create_table(sql_: SQLclient):
+def create_table(sql_: SQLclient) -> None:
     q = """create table if not exists 
     Goods (id integer Primary Key Autoincrement, 
             name Varchar(100),
@@ -100,6 +111,8 @@ while True:
         sql.insert(table_name="Goods", field=val_)
 
     elif f.upper() == "D":
-        print(sql.read("Goods"))
+        id_ = input("id строки для удаления? : ")
+        sql.delete(table_name="Goods", cond=f"id = {id_}")
+        # print(sql.read("Goods"))
     else:
         break
