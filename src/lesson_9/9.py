@@ -38,9 +38,6 @@
 # print(user.get_name)
 
 
-from dataclasses import dataclass, asdict, astuple
-
-
 # class Coordinate:
 #
 #     def __init__(self, x, y, z):

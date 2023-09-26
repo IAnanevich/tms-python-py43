@@ -96,8 +96,6 @@
 #     print(temp)
 
 
-import json
-
 # data = {
 #   "access": [
 #     "switchport mode access",
