@@ -1,8 +1,4 @@
 # Сделать свое исключение и подключить к try/except.
-from datetime import datetime
-
-
-# deadline = datetime.strptime("22/05/2017", "%d/%m/%Y")
 
 class IsInvalidDate(Exception):
     """ My exception """
