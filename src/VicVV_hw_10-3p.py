@@ -13,14 +13,14 @@ class FatalError(Exception):
         if self.ErrorText:
             return f"{self.ErrorText}"
         else:
-            return f"ошибка есть, а описания ошибки нет..."
+            return "ошибка есть, а описания ошибки нет..."
 
 
 def avg(x: float | str, y: float | str) -> float:
     try:
         z = pow(x * y, 0.5)
         return z
-    except:
+    except Exception:
         raise FatalError("косяк с данными. это точно числа?") from None
 
 
