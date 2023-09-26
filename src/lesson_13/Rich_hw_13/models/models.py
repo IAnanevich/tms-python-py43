@@ -2,7 +2,7 @@ from sqlalchemy import Column, ForeignKey
 from sqlalchemy import String, Text, DateTime, Integer, Float
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from src.lesson_13.hw_13.db import Base
+from src.lesson_13.Rich_hw_13.db import Base
 
 
 class BaseModel(Base):

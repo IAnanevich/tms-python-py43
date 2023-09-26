@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import Any
 
 from sqlalchemy import create_engine, Column, Integer, String, Boolean, DateTime, SmallInteger, ForeignKey
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship

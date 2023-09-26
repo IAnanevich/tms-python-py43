@@ -1,13 +1,13 @@
-from src.lesson_13.hw_13.db import session, Base, engine
-from src.lesson_13.hw_13.managers.manager import BookManager
-from src.lesson_13.hw_13.managers.manager import GenreManager
-from src.lesson_13.hw_13.managers.manager import OrderManager
-from src.lesson_13.hw_13.managers.manager import UserManager
-from src.lesson_13.hw_13.menu import Menu
-from src.lesson_13.hw_13.models.models import Book
-from src.lesson_13.hw_13.models.models import Genre
-from src.lesson_13.hw_13.models.models import Order
-from src.lesson_13.hw_13.models.models import User
+from src.lesson_13.Rich_hw_13.db import session, Base, engine
+from src.lesson_13.Rich_hw_13.managers.manager import BookManager
+from src.lesson_13.Rich_hw_13.managers.manager import GenreManager
+from src.lesson_13.Rich_hw_13.managers.manager import OrderManager
+from src.lesson_13.Rich_hw_13.managers.manager import UserManager
+from src.lesson_13.Rich_hw_13.menu import Menu
+from src.lesson_13.Rich_hw_13.models.models import Book
+from src.lesson_13.Rich_hw_13.models.models import Genre
+from src.lesson_13.Rich_hw_13.models.models import Order
+from src.lesson_13.Rich_hw_13.models.models import User
 
 if __name__ == '__main__':
 
