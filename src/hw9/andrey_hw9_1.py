@@ -14,6 +14,17 @@ class Animal:
     describes the animal
     """
 
+    def __init__(self, name: str, age: int) -> None:
+        from random import randint
+        self.name = name
+        self.age = age
+        self.lifespan = age + randint(0, 500)
+
+    def __lt__(self, other: object) -> bool | None:
+        if not isinstance(self, Animal):
+            return
+        return self.age < other.age
+
     @staticmethod
     def movement() -> str:
         """
@@ -30,12 +41,6 @@ class Animal:
         """
         return cls.__doc__
 
-    def __init__(self, name: str, age: int) -> None:
-        from random import randint
-        self.name = name
-        self.age = age
-        self.lifespan = age + randint(0, 500)
-
     @property
     def points(self) -> int:
         """
@@ -43,11 +48,6 @@ class Animal:
                 :return:
                 """
         return self.lifespan - self.age
-
-    def __lt__(self, other: object) -> bool | None:
-        if not isinstance(self, Animal):
-            return
-        return self.age < other.age
 
 
 class Mammals(Animal):
@@ -69,6 +69,12 @@ class Fish(Animal):
     describes the Fish
     """
 
+    def __init__(self, name: str, age: int, size: float) -> None:
+        super().__init__(name, age)
+        from random import randint
+        self.lifespan = age + randint(0, 300)
+        self.size = size
+
     @staticmethod
     def movement() -> str:
         """
@@ -76,12 +82,6 @@ class Fish(Animal):
         :return:
         """
         return 'flippers'
-
-    def __init__(self, name: str, age: int, size: float) -> None:
-        super().__init__(name, age)
-        from random import randint
-        self.lifespan = age + randint(0, 300)
-        self.size = size
 
     @property
     def points(self) -> float:

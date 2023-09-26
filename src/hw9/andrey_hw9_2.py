@@ -1,4 +1,5 @@
 # 2) Реализовать любой метакласс (сами придумываете что ваш метакласс будет делать)
+import json
 
 
 class Meta(type):
@@ -7,6 +8,7 @@ class Meta(type):
             def date(self, datas: str) -> None:
                 """
                 converts string data to dict
+                :param self:
                 :param datas:
                 :return:
                 """
@@ -21,7 +23,6 @@ class Meta(type):
                 :param self:
                 :return:
                 """
-                import json
                 return json.dumps(self.body)
 
             attrs.setdefault('return_body', return_body)
