@@ -10,8 +10,9 @@ class Auto:
         self.color_ = color_
         self.weight = weight
 
-    def move(self):
-        print(f"I'm move")
+    @staticmethod
+    def move():
+        print("I'm move")
 
     def birthday(self):
         self.age = int(self.age) + 1
@@ -19,7 +20,7 @@ class Auto:
 
     @staticmethod
     def stop():
-        print(f"I'm stop")
+        print("I'm stop")
 
     def __str__(self):
         str_ = (

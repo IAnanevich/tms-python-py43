@@ -11,7 +11,7 @@ class Auto:
 
     @staticmethod
     def move():
-        print(f"I'm move")
+        print("I'm move")
 
     def birthday(self):
         self.age = int(self.age) + 1
@@ -19,7 +19,7 @@ class Auto:
 
     @staticmethod
     def stop():
-        print(f"I'm stop")
+        print("I'm stop")
 
     def __str__(self):
         print(
@@ -28,7 +28,7 @@ class Auto:
         )
 
 
-my_car = Auto(brand="Honda", age=2000, mark="Civic", color_="Silver", weight=1200)
+my_car = Auto(brand="Honda", age=2000, mark="Civic", color_="Silver", eight=1200)
 my_car.move()
 print(f"I'm from {my_car.birthday()}")
 my_car.stop()
