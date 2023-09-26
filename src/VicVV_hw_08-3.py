@@ -11,18 +11,18 @@ class Auto:
         self.weight = weight
 
     @staticmethod
-    def move():
+    def move() -> None:
         print("I'm move")
 
-    def birthday(self):
+    def birthday(self) -> int:
         self.age = int(self.age) + 1
         return self.age
 
     @staticmethod
-    def stop():
+    def stop() -> None:
         print("I'm stop")
 
-    def __str__(self):
+    def __str__(self) -> str:
         str_ = (
             f"I'm {self.brand} {self.mark}, my color is {self.color_}."
             f"I'm from {self.age} and my weight is {self.weight}"
@@ -35,12 +35,12 @@ class Truk(Auto):
         Auto.__init__(self, brand, age, mark, color_, weight)
         self.max_load = max_load
 
-    def move(self):
+    def move(self) -> None:
         print("attention!")
         super().move()
 
     @staticmethod
-    def load():
+    def load() -> None:
         time.sleep(1)
         print("I'm load")
         time.sleep(1)
@@ -51,7 +51,7 @@ class Car(Auto):
         Auto.__init__(self, brand, age, mark, color_, weight)
         self.max_sped = max_sped
 
-    def move(self):
+    def move(self) -> None:
         print("I'm move")
         print(f"max sped is {self.max_sped}")
 

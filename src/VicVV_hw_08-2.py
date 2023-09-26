@@ -10,25 +10,26 @@ class Auto:
         self.weight = weight
 
     @staticmethod
-    def move():
+    def move() -> None:
         print("I'm move")
 
-    def birthday(self):
+    def birthday(self) -> int:
         self.age = int(self.age) + 1
         return self.age
 
     @staticmethod
-    def stop():
+    def stop() -> None:
         print("I'm stop")
 
-    def __str__(self):
-        print(
+    def __str__(self) -> str:
+        return (
             f"I'm {self.brand} {self.mark}, my color is {self.color_}. "
             f"I'm from {self.age} and my weight is {self.weight}"
         )
 
 
-my_car = Auto(brand="Honda", age=2000, mark="Civic", color_="Silver", eight=1200)
+my_car = Auto(brand="Honda", age=2000, mark="Civic", color_="Silver", weight=1200)
 my_car.move()
 print(f"I'm from {my_car.birthday()}")
 my_car.stop()
+print(my_car)
