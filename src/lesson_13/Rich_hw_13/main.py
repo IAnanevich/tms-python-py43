@@ -1,13 +1,13 @@
 from src.lesson_13.hw_13.db import session, Base, engine
-from src.lesson_13.hw_13.managers.book_manager import BookManager
-from src.lesson_13.hw_13.managers.genre_manager import GenreManager
-from src.lesson_13.hw_13.managers.order_manager import OrderManager
-from src.lesson_13.hw_13.managers.user_manager import UserManager
+from src.lesson_13.hw_13.managers.manager import BookManager
+from src.lesson_13.hw_13.managers.manager import GenreManager
+from src.lesson_13.hw_13.managers.manager import OrderManager
+from src.lesson_13.hw_13.managers.manager import UserManager
 from src.lesson_13.hw_13.menu import Menu
-from src.lesson_13.hw_13.models.book_model import Book
-from src.lesson_13.hw_13.models.genre_model import Genre
-from src.lesson_13.hw_13.models.order_model import Order
-from src.lesson_13.hw_13.models.user_model import User
+from src.lesson_13.hw_13.models.models import Book
+from src.lesson_13.hw_13.models.models import Genre
+from src.lesson_13.hw_13.models.models import Order
+from src.lesson_13.hw_13.models.models import User
 
 if __name__ == '__main__':
 
@@ -37,8 +37,8 @@ if __name__ == '__main__':
             )
 
             print(f'New order: {order}')
-            print(f'New user balance: {new_user.balance}')
-            print(f'New book amount: {new_book.amount}')
+            print(f'New user balance: {user.balance}')
+            print(f'New book amount: {book.amount}')
 
         elif choice == '2':
 
@@ -84,7 +84,7 @@ if __name__ == '__main__':
                 users = UserManager.list(table=User, session=session)
                 for user in users:
                     print(user.__dict__)
-            
+
             elif sub_choice == '2':
                 books = BookManager.list(table=Book, session=session)
                 for book in books:
@@ -102,7 +102,7 @@ if __name__ == '__main__':
 
             elif sub_choice == '0':
                 pass
-            
+
             else:
                 print('Try again')
 
@@ -158,16 +158,26 @@ if __name__ == '__main__':
 
             elif sub_choice == '0':
                 pass
-
             else:
                 print('Try again')
 
-        elif choice == '5':
-            # сделать удаление
-            pass
+        elif choice == '4':
+            sub_choice = Menu.delete_menu()
 
-        elif choice == '0':
-            break
+            if sub_choice == '1':
+                column_id = int(input('Enter user id: '))
+                user = UserManager.get_by_id(table=User, pk=column_id, session=session)
+                deleted = UserManager.delete(table=User, pk=column_id, session=session)
+                print(deleted.__dict__)
 
-        else:
-            print('Try again')
+            elif sub_choice == '2':
+                column_id = int(input('Enter book id: '))
+                book = BookManager.get_by_id(table=Book, pk=column_id, session=session)
+                deleted = BookManager.delete(table=Book, pk=column_id, session=session)
+                print(deleted.__dict__)
+
+            elif sub_choice == '3':
+                column_id = int(input('Enter genre id: '))
+                genre = GenreManager.get_by_id(table=Genre, pk=column_id, session=session)
+                deleted = GenreManager.delete(table=Genre, pk=column_id, session=session)
+                print(deleted.__dict__)
