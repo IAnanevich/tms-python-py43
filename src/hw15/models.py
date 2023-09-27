@@ -6,7 +6,7 @@ Base = declarative_base()
 
 class CatFact(Base):
     """
-    Модель для хрaнения фактов о кошках.
+    Модель для хрaнения фактов о кошкaх.
     """
 
     __tablename__ = 'cat_facts'
