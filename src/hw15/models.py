@@ -5,10 +5,14 @@ Base = declarative_base()
 
 
 class CatFact(Base):
+    """
+    Модель для хранения фактов о кошках.
+    """
+
     __tablename__ = 'cat_facts'
 
-    id = Column(Integer, primary_key=True)
-    fact = Column(String)
+    id: int = Column(Integer, primary_key=True)
+    fact: str = Column(String)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f'CatFact(id={self.id}, fact={self.fact})'
