@@ -11,7 +11,7 @@ session = Session()
 
 def create_cat_fact() -> None:
     """
-    Создает запись о случайном факте о кошках и сохраняет его в базе данных.
+    Создает зaпись о случайном фaкте о кошках и сохраняет его в базе данных.
     """
     response = requests.get('https://catfact.ninja/fact')
     data = response.json()
