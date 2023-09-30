@@ -4,11 +4,10 @@ from datetime import datetime
 
 
 def time_decorator(func):
-
     def inner(*args, **kwargs):
         time_start = datetime.now()
         func(*args, **kwargs)
-        print(f'Function {func.__name__} has worked {datetime.now() - time_start}')
+        print(f"Function {func.__name__} has worked {datetime.now() - time_start}")
 
     return inner
 
@@ -21,7 +20,7 @@ def make_power(a: int, b: int) -> int:
     :param b: degree
     :return: power result
     """
-    return a ** b
+    return a**b
 
 
 @time_decorator

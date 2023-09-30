@@ -3,10 +3,9 @@
 
 
 def div_decorator(func):
-
     def inner(*args, **kwargs):
         if not args[1]:
-            return 'Division by zero is not defined'
+            return "Division by zero is not defined"
         return func(*args, **kwargs)
 
     return inner
@@ -24,10 +23,12 @@ def div_number(a: float, b: float) -> float:
 
 
 while True:
-    num_1 = input('Enter first number:')
-    num_2 = input('Enter second number:')
-    if num_1.isdigit() and num_2.isdigit():  # проверка на число, ждем получения целых чисел
+    num_1 = input("Enter first number:")
+    num_2 = input("Enter second number:")
+    if (
+        num_1.isdigit() and num_2.isdigit()
+    ):  # проверка на число, ждем получения целых чисел
         print(div_number(int(num_1), int(num_2)))
         break
     else:
-        print('You need to enter number, try again')
+        print("You need to enter number, try again")
