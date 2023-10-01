@@ -10,6 +10,11 @@ from delete_file import delete_user, delete_book, delete_order
 class Menu:
     @classmethod
     def main_menu(cls, session: Session) -> int:
+        """
+        main menu
+        :param session: current session
+        :return: point of main menu
+        """
         while True:
             print("What do you want to do?")
             print(
@@ -50,7 +55,12 @@ class Menu:
     #
 
     @classmethod
-    def make_order_menu(cls, session: Session):
+    def make_order_menu(cls, session: Session) -> None:
+        """
+        check to create order
+        :param session:  current session
+        :return: None
+        """
         create_order(session)
 
     # 2. Добавить
@@ -61,7 +71,12 @@ class Menu:
     # # 0. Вернуться назад
     # # Пользователь вводит с клавиатуры все данные и вы создаете книгу, юзера или жанр в зависимости от выбора
     @classmethod
-    def add_menu(cls, session: Session):
+    def add_menu(cls, session: Session) -> None:
+        """
+        display add menu
+        :param session: current session
+        :return: None
+        """
         print("What do you want to add?")
         print("1. Add user", "2. Add book", "3. Add genre", "0. Exit", sep="\n")
         try:
@@ -84,7 +99,12 @@ class Menu:
     # # 4. Посмотреть жанры
     # # 0. Вернуться назад
     @classmethod
-    def read_menu(cls, session: Session):
+    def read_menu(cls, session: Session) -> None:
+        """
+        display read menu
+        :param session: current session
+        :return: None
+        """
         print("What do you want to read?")
         print(
             "1. Read users",
@@ -116,8 +136,13 @@ class Menu:
     # 3. Изменить жанр
     # 0. Вернуться назад
     #
-    @classmethod  # изменить!
-    def make_changes_menu(cls, session: Session):
+    @classmethod
+    def make_changes_menu(cls, session: Session) -> None:
+        """
+        display change menu
+        :param session: current session
+        :return: None
+        """
         print("What do you want to update?")
         print(
             "1. Update user", "2. Update book", "3. Update genre", "0. Exit", sep="\n"
@@ -143,7 +168,12 @@ class Menu:
     #
     # удаляет выбранную сущность по id который запрашиваете у пользователя
     @classmethod
-    def delete_menu(cls, session: Session):
+    def delete_menu(cls, session: Session) -> None:
+        """
+        display delete menu
+        :param session: current session
+        :return: None
+        """
         print("What do you want to delete?")
         print(
             "1. Delete user", "2. Delete book", "3. Delete genre", "0. Exit", sep="\n"

@@ -12,12 +12,12 @@ from sqlalchemy import (
 )
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship
 
-Base = declarative_base()
+Base = declarative_base()  # type: ignore
 
 
 # Человек - просто обычный пользователь
 # 1) Человек (поля: id, first name: str, last_name: str, email: str, age: int, balance: float, created at, updated at)
-class User(Base):
+class User(Base):  # type: ignore
     """
     class of Users
     """
@@ -35,7 +35,7 @@ class User(Base):
 
 # Книга - любая книга
 # 2) Книга (поля: id, title: str, description: text, amount: int, price: float, genre_id: int, created at, updated at)
-class Book(Base):
+class Book(Base):  # type: ignore
     """
     class of books
     """
@@ -54,7 +54,7 @@ class Book(Base):
 
 # Заказ - человек заказывает книгу для покупки - промежуточная для связи M2M между Человек и Книга
 # 3) Заказ (поля: id, title_id: int, user_id: int, created at, updated at) - для связи M2M между Человек и Девайс
-class Order(Base):
+class Order(Base):  # type: ignore
     """
     class of orders
     """
@@ -71,7 +71,7 @@ class Order(Base):
 
 # Жанр - содержит жанр книг (O2M с книгами), один жанр = много книг
 # 4) Жанр (поля: id, name: str, created at, updated at)
-class Genre(Base):
+class Genre(Base):  # type: ignore
     """
     class of genres of books
     """
