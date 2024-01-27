@@ -1,6 +1,6 @@
-import asyncio
 import time
 import httpx
+import asyncio
 
 
 async def async_task(name, url):
