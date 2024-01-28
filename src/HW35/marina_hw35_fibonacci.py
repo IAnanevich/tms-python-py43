@@ -1,7 +1,8 @@
 # Написать генератор чисел Фибоначчи
+from typing import Iterator, Generator
 
 
-def gener_fibonacci_number(n: int):
+def gener_fibonacci_number(n: int) -> Iterator[int]:
     """
     n-number Fibonacci's sequence
     :param n: Fibonacci base
@@ -12,7 +13,7 @@ def gener_fibonacci_number(n: int):
     yield numb_2 - numb_1
 
 
-def gener_fibonacci_sequence(n: int):
+def gener_fibonacci_sequence(n: int) -> Generator[int, None, None]:
     """
     Fibonacci's sequence length n
     :param n: Fibonacci base
