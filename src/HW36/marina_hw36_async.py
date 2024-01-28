@@ -10,7 +10,7 @@ async def async_get_url(url: str) -> None:
     :return: None
     """
     async with httpx.AsyncClient() as client:
-        response = await client.get(url)
+        await client.get(url)
 
 
 async def async_get_urls(list_of_urls: list[str]) -> float:

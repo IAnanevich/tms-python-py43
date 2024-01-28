@@ -8,7 +8,7 @@ def get_url(url: str) -> None:
     :param url: url for request
     :return: None
     """
-    response = requests.get(url)
+    requests.get(url)
 
 
 def sync_get_urls(list_of_urls: list[str]) -> float:
