@@ -35,9 +35,9 @@ class Menu:
             List menu:
             1. Get all users
             2. Get all books
-            3. Get all orders
+            3. Get all orders.csv
             4. Get all genres
-            5. Ger all orders
+            5. Ger all orders.csv
             0. Go to back
             """
         )

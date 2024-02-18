@@ -8,7 +8,7 @@ class Order(BaseModel):
     """
     The BookModel class is a subclass of the BaseModel class and represents a model for books in the application.
     """
-    __tablename__ = 'orders'
+    __tablename__ = 'orders.csv'
 
     user_id = Column('user_id', Integer, ForeignKey('users.id'))
     book_id = Column('book_id', Integer, ForeignKey('books.id'))
