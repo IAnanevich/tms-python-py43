@@ -8,7 +8,7 @@ import time
 my_list = []
 
 
-def add_list_elements(start_elem: int, end_elem) -> None:
+def add_list_elements(start_elem: int, end_elem: int) -> None:
     """
     added elements in list
     :param start_elem: first element for add
