@@ -251,6 +251,8 @@ class Switchable:
 
 
 class LightBulb(Switchable):
+    def __init__(self):
+        pass
     def turn_on(self):
         print("LightBulb is on")
 
@@ -282,6 +284,7 @@ class ElectricPowerSwitch:
 
 # Пример использования
 bulb = LightBulb()
+print(bulb.__dict__)
 switch = ElectricPowerSwitch(bulb)
 switch.press()  # Включить лампочку
 switch.press()  # Выключить лампочку
