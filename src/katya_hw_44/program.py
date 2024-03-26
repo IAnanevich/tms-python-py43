@@ -1,8 +1,9 @@
 import sys
 import os
 
-target_name = os.getenv('TARGET_NAME')
-print(f"Hello {target_name}!")
+
+def hello_print(target_name: str):
+    print(f'Hello {target_name}')
 
 
 def add_numbers(num_1, num_2):
@@ -21,6 +22,8 @@ else:
     except ValueError:
         print("Please provide valid integers for addition.")
 
+if __name__ == '__main__':
+    hello_print(os.getenv("target_name"))
 
 if __name__ == '__main__':
     add_numbers(os.getenv("env_num_1"), os.getenv("env_num_2"))

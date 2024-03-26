@@ -1,6 +1,6 @@
 FROM python:3.11
 
-ENV TARGET_NAME="`Oleg`"
+ENV target_name World
 
 ARG num_1
 ARG num_2
@@ -8,12 +8,9 @@ ARG num_2
 ENV env_num_1 ${num_1}
 ENV env_num_2 ${num_2}
 
-WORKDIR /app
+WORKDIR /code
 
-COPY program.py .
-COPY FAQ.txt .
-
+COPY program.py FAQ.txt ./
 
 ENTRYPOINT ["python"]
-CMD [""]
-
+CMD ["python"]
