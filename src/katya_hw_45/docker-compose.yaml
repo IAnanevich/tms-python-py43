@@ -1,0 +1,38 @@
+version: '3.2'
+
+services:
+  django:
+    image: ekmakarenko/django_image
+    ports:
+      - 3306:3306
+    environment:
+      - PORT=8000
+    networks:
+      - custom_network
+    env_file:
+      - .env
+    depends_on:
+      - db
+    entrypoint: python
+    command: python manage.py runserver 0.0.0.0:3306:3306,
+
+  db:
+    image: postgres:12-alpine
+    ports:
+      - 3306
+    env_file:
+      - .env
+    networks:
+      - custom_network
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=dbname
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+networks:
+  custom_network:
+
+volumes:
+  db_data:
