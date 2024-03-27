@@ -13,4 +13,3 @@ WORKDIR /code
 COPY program.py hello.py FAQ.txt ./
 
 ENTRYPOINT ["python"]
-CMD ["python"]
