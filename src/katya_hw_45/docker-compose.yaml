@@ -1,0 +1,32 @@
+version: '3.2'
+
+services:
+  django:
+    image: ekmakarenko/django_image
+    ports:
+      - ${PORT_APP}:${PORT_APP}
+    networks:
+      - custom_network
+    env_file:
+      - .env
+    depends_on:
+      - db
+    command: [ "manage.py", "runserver", "0.0.0.0:${PORT_APP}" ]
+
+
+  db:
+    image: postgres:12-alpine
+    ports:
+      - ${PORT_DB}:${PORT_DB}
+    env_file:
+      - .env
+    networks:
+      - custom_network
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+networks:
+  custom_network:
+
+volumes:
+  db_data:
