@@ -10,7 +10,7 @@ ENV env_num_2 ${num_2}
 
 WORKDIR /code
 
-COPY program.py FAQ.txt ./
+COPY program.py hello.py FAQ.txt ./
 
 ENTRYPOINT ["python"]
 CMD ["python"]

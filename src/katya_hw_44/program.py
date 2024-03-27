@@ -23,7 +23,4 @@ else:
         print("Please provide valid integers for addition.")
 
 if __name__ == '__main__':
-    hello_print(os.getenv("target_name"))
-
-if __name__ == '__main__':
     add_numbers(os.getenv("env_num_1"), os.getenv("env_num_2"))
