@@ -1,0 +1,2 @@
+Usage: python program.py [num_1] [num_2]
+Example: python program.py 10 20
